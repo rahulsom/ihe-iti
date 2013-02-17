@@ -28,19 +28,12 @@
               <wsdlRoot>${basedir}/src/main/wsdl</wsdlRoot>
               <includes>
                 <include>PIXManager.wsdl</include>
+                <include>PIXConsumer.wsdl</include>
+                <include>PDQSupplier.wsdl</include>
                 <include>XDS*.wsdl</include>
-                <include>XCARespondingGatewayQuery.wsdl</include>
-                <include>XCARespondingGatewayRetrieve.wsdl</include>
-                <include>XCAInitiatingGatewayQuery.wsdl</include>
-                <include>XCAInitiatingGatewayRetrieve.wsdl</include>
+                <include>XCA*.wsdl</include>
                 <include>nist_rg.wsdl</include>
               </includes>
-              <excludes>
-                <exclude>HPD*.wsdl</exclude>
-                <exclude>SVS*.wsdl</exclude>
-                <exclude>RFD*.wsdl</exclude>
-                <exclude>XCPD*.wsdl</exclude>
-              </excludes>
               <defaultOptions>
                 <extraargs>
                   <extraarg>-b</extraarg>
