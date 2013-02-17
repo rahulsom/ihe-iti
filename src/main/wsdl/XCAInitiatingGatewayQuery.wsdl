@@ -49,7 +49,7 @@
 
 
 
-	<binding name="InitiatingGatewayQuery_Binding_Soap" type="ihe:InitiatingGatewayQuery_PortType">
+	<binding name="InitiatingGatewayQuery_Binding_Soap12" type="ihe:InitiatingGatewayQuery_PortType">
       <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
   <!-- Added to support Affinity Domain option -->
