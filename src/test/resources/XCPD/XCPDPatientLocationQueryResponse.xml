@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+ <s:Header>
+   <a:Action s:mustUnderstand="1">urn:ihe:iti:2009:PatientLocationQueryResponse</a:Action>
+   <a:RelatesTo>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2055</a:RelatesTo>
+ </s:Header>
+ <s:Body>
+ <xcpd:PatientLocationQueryResponse 
+   xmlns:xcpd="urn:ihe:iti:xcpd:2009"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:ihe:iti:xcpd:2009">
+      <xcpd:PatientLocationResponse>
+          <xcpd:HomeCommunityId>urn:oid:1.2.333495.30291</xcpd:HomeCommunityId>
+          <xcpd:CorrespondingPatientId root="1.2.840.114350.1.13.99997.12" extension="38273N237"/>
+          <xcpd:RequestedPatientId root="1.2.840.114350.1.13.99997.2.3412" extension="38273N237"/>
+      </xcpd:PatientLocationResponse>
+      <xcpd:PatientLocationResponse>
+          <xcpd:HomeCommunityId>urn:oid:555.324.1.2.3</xcpd:HomeCommunityId>
+          <xcpd:CorrespondingPatientId root="555.324.1.2.3.12" extension="7382931"/>
+          <xcpd:RequestedPatientId root="1.2.840.114350.1.13.99997.2.3412" extension="38273N237"/>
+      </xcpd:PatientLocationResponse>
+  </xcpd:PatientLocationQueryResponse>
+ </s:Body>
+</s:Envelope>

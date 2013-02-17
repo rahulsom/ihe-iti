@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MCCI_IN000002UV01 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../schema/HL7V3/NE2008/multicacheschemas/MCCI_IN000002UV01.xsd"
+ xmlns="urn:hl7-org:v3"
+ ITSVersion="XML_1.0">
+    <id root="1.2.840.114350.1.13.999.238" extension="55814"/>
+    <creationTime value="20070428150307"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="MCCI_IN000002UV01"/>
+    <processingCode code="T"/>
+    <processingModeCode code="I"/>
+    <acceptAckCode code="NE"/>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.999.567"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.999.234"/>
+            <telecom value="http://servicelocation/PDQuery"/>
+        </device>
+    </sender>
+    <acknowledgement>
+        <typeCode code="AA"/>
+        <targetMessage>
+            <id root="1.2.840.114350.1.13.0.1.7.1.1" extension="35425"/>
+        </targetMessage>
+    </acknowledgement>
+</MCCI_IN000002UV01>

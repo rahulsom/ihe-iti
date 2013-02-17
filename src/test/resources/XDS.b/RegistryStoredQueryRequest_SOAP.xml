@@ -1,0 +1,54 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+  <!--The following header applies for a Synchronous Web Services Exchange Request 
+        Please note that a soap message can only have one header section. -->
+  <s:Header>
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2007:RegistryStoredQuery</a:Action>
+		<a:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-616c183b2055</a:MessageID>
+		<a:ReplyTo>
+			<a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+		</a:ReplyTo>
+		<a:To s:mustUnderstand="1">http://localhost:2647/XdsService/IHEXDSRegistry.svc</a:To>
+	</s:Header>
+  <!--The following DISABLED header applies for an Asynchronous Web Services Exchange Request 
+        Please note that a soap message can only have one header section. 
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:ihe:iti:2008:RegistryStoredQueryAsync</a:Action>
+    <a:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-616c183b2055</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://192.168.2.4:9080/XDS/DocumentConsumerReceiver.svc</a:Address>
+    </a:ReplyTo>
+    <a:To s:mustUnderstand="1">http://localhost:2647/XdsService/IHEXDSRegistry.svc</a:To>
+  </s:Header>  -->
+  <s:Body>
+		<query:AdhocQueryRequest xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0 ../../schema/ebRS/query.xsd" xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+			<query:ResponseOption returnComposedObjects="true" returnType="LeafClass"/>
+			<rim:AdhocQuery id=" urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d ">
+				<rim:Slot name="$XDSDocumentEntryPatientId">
+					<rim:ValueList>
+						<rim:Value>st3498702^^^&amp;1.3.6.1.4.1.21367.2005.3.7&amp;ISO</rim:Value>
+					</rim:ValueList>
+				</rim:Slot>
+				<rim:Slot name="$XDSDocumentEntryStatus">
+					<rim:ValueList>
+						<rim:Value>('urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Approved')</rim:Value>
+					</rim:ValueList>
+				</rim:Slot>
+				<rim:Slot name="$XDSDocumentEntryCreationTimeFrom">
+					<rim:ValueList>
+						<rim:Value>200412252300</rim:Value>
+					</rim:ValueList>
+				</rim:Slot>
+				<rim:Slot name="$XDSDocumentEntryCreationTimeTo">
+					<rim:ValueList>
+						<rim:Value>200501010800</rim:Value>
+					</rim:ValueList>
+				</rim:Slot>
+				<rim:Slot name="$XDSDocumentEntryHealthcareFacilityTypeCode">
+					<rim:ValueList>
+						<rim:Value>(‘Emergency Department’)</rim:Value>
+					</rim:ValueList>
+				</rim:Slot>
+			</rim:AdhocQuery>
+		</query:AdhocQueryRequest>
+	</s:Body>
+</s:Envelope>

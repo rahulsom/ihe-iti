@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"  
+                  xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <soapenv:Header>
+    <wsa:Action s:mustUnderstand="1">
+                urn:hl7-org:v3:MCCI_IN000002UV01
+    </wsa:Action>
+    <wsa:To s:mustUnderstand="1">http://localhost:2647/Service/DeferredXcpdResponse.svc</wsa:To>
+    <wsa:ReplyTo>
+      <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </wsa:ReplyTo>
+    <wsa:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2057</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2056</wsa:RelatesTo>
+  </soapenv:Header>
+  <soapEnv:Body>
+<MCCI_IN000002UV01 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../schema/HL7V3/NE2008/multicacheschemas/MCCI_IN000002UV01.xsd"
+ xmlns="urn:hl7-org:v3"  ITSVersion="XML_1.0">
+    <id root="f531489e-67f2-11dc-984e-3603d6866807"/>
+    <creationTime  value="20070803130625"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="MCCI_IN000002UV01"/>
+    <processingCode code="P"/>
+    <processingModeCode code="R"/>
+    <acceptAckCode code="NE"/>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.99998.8734"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.99999.4567"/>
+            <telecom value="https://example.org/PatientFeed"/>
+        </device>
+    </sender>
+    <acknowledgement>
+        <typeCode code="AE"/>
+        <targetMessage>
+            <id root="22a0f9e0-4454-11dc-a6be-3603d6866807"/>
+        </targetMessage>
+        <acknowledgementDetail typeCode="E">
+            <code code="NS250" displayName="Unsupported processing mode"/>
+            <text>The responding gateway does not support deferred mode.</text>
+        </acknowledgementDetail>
+    </acknowledgement>
+</MCCI_IN000002UV01>
+  </soapenv:Body>
+</soapenv:Envelope>  

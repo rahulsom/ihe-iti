@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">urn:ihe:iti:2008:RetrieveValueSet</a:Action>
+        <a:MessageID>urn:uuid:0fbfdced-6c01-4d09-a110-2201afedaa02</a:MessageID>
+        <a:ReplyTo>
+            <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+        </a:ReplyTo>
+        <a:To s:mustUnderstand="1">http://valuesetrepository/</a:To>
+    </s:Header>
+    <s:Body>
+        <RetrieveValueSetRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="urn:ihe:iti:svs:2008">
+            <ValueSet id="1.2.840.10008.6.1.308" xml:lang="en-EN"/>
+        </RetrieveValueSetRequest>
+    </s:Body>
+</s:Envelope>

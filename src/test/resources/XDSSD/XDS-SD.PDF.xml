@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 ../schema/infrastructure/cda/CDA.xsd" classCode="DOCCLIN" moodCode="EVN">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.19376.1.2.20"/>
+  <id root="1.3.6.4.1.4.1.2835.2.7777"/>
+  <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SUMMARIZATION OF EPISODE NOTE"/>
+  <title>Good Health Clinic Care Record Summary</title>
+  <effectiveTime value="20050329224411+0500"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="en-US"/>
+  <recordTarget>
+    <patientRole>
+      <id extension="12345" root="2.16.840.1.113883.3.933"/>
+      <addr>
+		<streetAddressLine>17 Daws Rd.</streetAddressLine>
+		<city>Blue Bell</city>
+		<state>MA</state>
+		<postalCode>02368</postalCode>
+		<country>USA</country>
+	</addr>
+      <patient>
+        <name>
+		<prefix>Mrs.</prefix>
+		<given>Ellen</given>
+		<family>Ross</family>
+	  </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19600127"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.1"/>
+    <time value="19990522"/>
+    <assignedAuthor>
+      <id extension="11111111" root="1.3.5.35.1.4436.7"/>
+      <assignedPerson>
+        <name>
+		<prefix>Dr.</prefix>
+		<given>Bernard</given>
+		<family>Wiseman</family>
+		<suffix>Sr.</suffix>
+	  </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="aaaaabbbbb" root="1.3.5.35.1.4436.7"/>
+        <name>Dr. Wiseman&#x2019;s Clinic</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.2"/>
+    <time value="20050329224411+0500"/>
+    <assignedAuthor>
+      <id root="1.3.6.4.1.4.1.2835.2.1234"/>
+      <assignedAuthoringDevice>
+        <code code="CAPTURE" codeSystem="1.2.840.10008.2.16.4" displayName="Image Capture"/>
+        <manufacturerModelName>SOME SCANNER NAME AND MODEL
+				</manufacturerModelName>
+        <softwareName>SCAN SOFTWARE NAME v0.0</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="1.3.6.4.1.4.1.2835.2"/>
+        <name>SOME Scanning Facility</name>
+        <addr>
+		<streetAddressLine>21 North Ave</streetAddressLine>
+		<city>Burlington</city>
+		<state>MA</state>
+		<postalCode>01803</postalCode>
+		<country>USA</country>
+	  </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <dataEnterer>
+    <templateId root="1.3.6.1.4.1.19376.1.2.20.3"/>
+    <time value="20050329224411+0500"/>
+    <assignedEntity>
+      <id extension="22222222" root="1.3.6.4.1.4.1.2835.2"/>
+      <assignedPerson>
+        <name>
+		<prefix>Mrs.</prefix>
+		<given>Bernice</given>
+		<family>Smith</family>
+	  </name>
+      </assignedPerson>
+    </assignedEntity>
+  </dataEnterer>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.3.6.4.1.4.1.2835.2"/>
+        <name>SOME Scanning Facility</name>
+        <addr>
+		<streetAddressLine>21 North Ave</streetAddressLine>
+		<city>Burlington</city>
+		<state>MA</state>
+		<postalCode>01803</postalCode>
+		<country>USA</country>
+	  </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value="19990522"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="11111111" root="1.3.5.35.1.4436.7"/>
+      <assignedPerson>
+        <name>
+		<prefix>Dr.</prefix>
+		<given>Bernard</given>
+		<family>Wiseman</family>
+		<suffix>Sr.</suffix>
+	  </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent>
+      <effectiveTime>
+        <low value="19800127"/>
+        <high value="19990522"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <nonXMLBody>
+      <text representation="B64" mediaType="application/pdf">JVBERi0xLjMKJcfsj6IKNSAwIG9iago8PC9MZW5ndGggNiAwIFI+PgpzdHJlYW0KcSAwLjEyIDAg&#xD;
+MCAwLjEyIDAgMCBjbQowIDAgMCBSRwowIDAgMCByZwpxCjguMzMzMzMgMCAwIDguMzMzMzMgMCAw&#xD;
+IGNtIEJUCi9SNyAxMiBUZgowLjk5ODEwNiAwIDAgMSA4OS45OTk1IDcwOC45NiBUbQpbKJMpLTEu&#xD;
+ODQ0OTMoSCkwLjYzMzUyNShlKS0xLjg0NDkzKGwpLTIuNTMxNTEobCktMi41MzE2NShvKS0wLjk0&#xD;
+OTA2NCggKS0wLjQ3NDUzMih3KTAuNjMzNTI1KG8pLTAuOTQ5MDY0KHIpLTIuNjM1NjEobCkyLjQ3&#xD;
+Nzg0KGQpLTAuOTQ5MTI0KJQpLTEuODQ0MzEoICldVEoKRVQKUQpRCmVuZHN0cmVhbQplbmRvYmoK&#xD;
+NiAwIG9iagoyNzcKZW5kb2JqCjQgMCBvYmoKPDwvVHlwZS9QYWdlL01lZGlhQm94IFswIDAgNjEy&#xD;
+IDc5Ml0KL1JvdGF0ZSAwL1BhcmVudCAzIDAgUgovUmVzb3VyY2VzPDwvUHJvY1NldFsvUERGIC9U&#xD;
+ZXh0XQovRm9udCA5IDAgUgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjMgMCBvYmoKPDwg&#xD;
+L1R5cGUgL1BhZ2VzIC9LaWRzIFsKNCAwIFIKXSAvQ291bnQgMQovUm90YXRlIDA+PgplbmRvYmoK&#xD;
+MSAwIG9iago8PC9UeXBlIC9DYXRhbG9nIC9QYWdlcyAzIDAgUgo+PgplbmRvYmoKOSAwIG9iago8&#xD;
+PC9SOAo4IDAgUi9SNwo3IDAgUj4+CmVuZG9iago4IDAgb2JqCjw8L0Jhc2VGb250L0NvdXJpZXIv&#xD;
+VHlwZS9Gb250Ci9TdWJ0eXBlL1R5cGUxPj4KZW5kb2JqCjcgMCBvYmoKPDwvQmFzZUZvbnQvVGlt&#xD;
+ZXMtUm9tYW4vVHlwZS9Gb250Ci9FbmNvZGluZyAxMCAwIFIvU3VidHlwZS9UeXBlMT4+CmVuZG9i&#xD;
+agoxMCAwIG9iago8PC9UeXBlL0VuY29kaW5nL0RpZmZlcmVuY2VzWwoxNDcvcXVvdGVkYmxsZWZ0&#xD;
+L3F1b3RlZGJscmlnaHRdPj4KZW5kb2JqCjIgMCBvYmoKPDwvUHJvZHVjZXIoQUZQTCBHaG9zdHNj&#xD;
+cmlwdCA4LjE0KQovQ3JlYXRpb25EYXRlKEQ6MjAwNjA3MTMxMzE3MjYpCi9Nb2REYXRlKEQ6MjAw&#xD;
+NjA3MTMxMzE3MjYpCi9UaXRsZShEb2N1bWVudDEpCi9DcmVhdG9yKFBERkNyZWF0b3IgVmVyc2lv&#xD;
+biAwLjguMCkKL0F1dGhvcihJSEUgRXhhbXBsZSkKL0tleXdvcmRzKCkKL1N1YmplY3QoKT4+ZW5k&#xD;
+b2JqCnhyZWYKMCAxMQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDA1NzAgMDAwMDAgbiAKMDAw&#xD;
+MDAwMDg4MCAwMDAwMCBuIAowMDAwMDAwNTAyIDAwMDAwIG4gCjAwMDAwMDAzNjEgMDAwMDAgbiAK&#xD;
+MDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMzQyIDAwMDAwIG4gCjAwMDAwMDA3MTggMDAwMDAg&#xD;
+biAKMDAwMDAwMDY1NiAwMDAwMCBuIAowMDAwMDAwNjE4IDAwMDAwIG4gCjAwMDAwMDA4MDAgMDAw&#xD;
+MDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSAxMSAvUm9vdCAxIDAgUiAvSW5mbyAyIDAgUgovSUQgWygY&#xD;
+6dR/ex2MY1wpCQdjKx9uIikoGOnUf3sdjGNcKQkHYysfbiIpXQo+PgpzdGFydHhyZWYKMTA4Nwol&#xD;
+JUVPRgo=</text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

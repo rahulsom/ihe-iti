@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RetrieveValueSetRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:ihe:iti:svs:2008 ../../schema/IHE/SVS.xsd"
+    xmlns="urn:ihe:iti:svs:2008">
+    <ValueSet id="1.2.840.10008.6.1.308" xml:lang="en-EN"/>
+</RetrieveValueSetRequest>

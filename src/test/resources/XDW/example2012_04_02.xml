@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns3:XDW.WorkflowDocument xmlns:ns1="urn:hl7-org:v3"
+    xmlns:ns2="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/types/200803"
+    xmlns:ns3="urn:ihe:iti:2011:xdw"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:ihe:iti:2011:xdw file:/Users/arianna/Dropbox/AttivitaPrimarie/Standardizzazione/XDW/CP_XDW/CP.3/xsd_es_2012_04_02/XDW-2012-04-02.xsd">
+    <ns3:id root="1.2.3.4.5"/>
+    <ns3:effectiveTime value="20110401031520"/>
+    <ns3:confidentialityCode code="1.24.3.3.3"/>
+    <ns3:patient>
+        <ns3:id root="1.3.6.1.4.1.21367.13.20.1000" extension="33333"  assigningAuthorityName="IHERED"/>
+    </ns3:patient>
+    <ns3:author> 
+        <ns3:assignedPerson>
+            <ns1:name>
+                <ns1:family>Brum</ns1:family>
+                <ns1:prefix>Dr.</ns1:prefix>
+            </ns1:name>
+        </ns3:assignedPerson>
+    </ns3:author>
+    <ns3:workflowInstanceID>urn:oid:1.2.3.4</ns3:workflowInstanceID>   
+    <ns3:workflowDocumentSequenceNumber>3</ns3:workflowDocumentSequenceNumber>
+    <ns3:workflowStatus>CLOSED</ns3:workflowStatus>
+    <ns3:workflowStatusHistory>
+        <ns3:documentEvent>        
+            <ns3:eventTime>2011-03-28T10:00:12.0Z</ns3:eventTime>
+            <ns3:eventType>create</ns3:eventType>
+            <ns3:taskEventIdentifier> urn:oid:1.2.3.4.5</ns3:taskEventIdentifier>
+            <ns3:author>Mr. Rossi</ns3:author>
+            <ns3:previousStatus></ns3:previousStatus> 
+            <ns3:actualStatus>OPEN</ns3:actualStatus>  
+         </ns3:documentEvent>        
+         <ns3:documentEvent>        
+            <ns3:eventTime>2011-04-01T03:15:20.0Z</ns3:eventTime>
+            <ns3:eventType>complete</ns3:eventType>
+            <ns3:taskEventIdentifier> urn:oid:1.2.3.4.7</ns3:taskEventIdentifier>
+            <ns3:author>Dr. Brum</ns3:author>
+            <ns3:previousStatus>OPEN</ns3:previousStatus> 
+            <ns3:actualStatus>CLOSED</ns3:actualStatus>  
+         </ns3:documentEvent>        
+    </ns3:workflowStatusHistory>    
+    <ns3:workflowDefinitionReference>urn:oid:1.2.3.4.5.6.7.8.9</ns3:workflowDefinitionReference>
+    <ns3:TaskList>
+        <ns3:XDWTask>
+            <ns3:taskData>
+                <ns3:taskDetails>
+                    <ns2:id>1</ns2:id>
+                    <ns2:taskType>Requested</ns2:taskType>
+                    <ns2:name>ReferralRequested</ns2:name>
+                    <ns2:status>COMPLETED</ns2:status>
+                    <ns2:actualOwner>Mr. Rossi</ns2:actualOwner>
+                    <ns2:createdTime>2011-03-28T10:00:12.0Z</ns2:createdTime>
+                    <ns2:createdBy>Mr. Rossi</ns2:createdBy>
+                    <ns2:lastModifiedTime>2011-03-28T10:00:12.0Z</ns2:lastModifiedTime>
+                    <ns2:renderingMethodExists>false</ns2:renderingMethodExists>
+                </ns3:taskDetails>
+                <ns3:description>Request for a specialistic visit</ns3:description>	
+                <ns3:taskInput>
+                    <!-- one documentReference element for each document in input -->
+                    <ns3:documentReference>         <!--ClinicalRepDoc1-->
+                        <ns2:identifier>urn:oid:1.2.3.4.4.1</ns2:identifier>
+                        <ns2:name>ClinicalRepDoc1</ns2:name>
+                        <ns2:accessType>urn:IHE:iti:2011:xdw:XDSregistered</ns2:accessType>
+                        <ns2:contentType></ns2:contentType>
+                        <ns2:contentCategory></ns2:contentCategory>
+                        <ns2:attachedTime>2011-03-28T10:00:12.0Z</ns2:attachedTime>
+                        <ns2:attachedBy>Mr. Rossi</ns2:attachedBy> 
+                    </ns3:documentReference>
+                </ns3:taskInput>
+                <ns3:taskOutput>
+                    <!-- one documentReference element for each document in output -->
+                    <ns3:documentReference>      <!--eReferralDoc1-->
+                        <ns2:identifier>urn:oid:1.2.3.4.4.2</ns2:identifier>
+                        <ns2:name>eReferralDoc1</ns2:name>
+                        <ns2:accessType>urn:IHE:iti:2011:xdw:XDSregistered</ns2:accessType>
+                        <ns2:contentType></ns2:contentType>
+                        <ns2:contentCategory></ns2:contentCategory>
+                        <ns2:attachedTime>2011-03-28T10:00:12.0Z</ns2:attachedTime>
+                        <ns2:attachedBy>Mr. Rossi</ns2:attachedBy>
+                    </ns3:documentReference>  
+                </ns3:taskOutput>
+            </ns3:taskData>
+            <ns3:taskEventHistory>
+                <ns3:taskEvent>
+                    <ns3:id>101</ns3:id>
+                    <ns3:eventTime>2011-03-28T10:00:12.0Z</ns3:eventTime>
+                    <ns3:identifier>urn:oid:1.2.3.4.5</ns3:identifier>  
+                    <ns3:eventType>create</ns3:eventType>
+                    <ns3:status>COMPLETED</ns3:status>
+                </ns3:taskEvent>
+            </ns3:taskEventHistory>        
+        </ns3:XDWTask>
+        <ns3:XDWTask>
+            <ns3:taskData>
+                <ns3:taskDetails>
+                    <ns2:id>2</ns2:id>
+                    <ns2:taskType>Referral Referred</ns2:taskType>
+                    <ns2:name>Referred</ns2:name>
+                    <ns2:status>COMPLETED</ns2:status>
+                    <ns2:actualOwner>Dr. Brum</ns2:actualOwner>
+                    <ns2:createdTime>2011-03-29T09:20:01.0Z</ns2:createdTime>
+                    <ns2:createdBy>Dr. Brum</ns2:createdBy> 
+                    <ns2:lastModifiedTime>2011-04-01T03:15:20.0Z</ns2:lastModifiedTime>
+                    <ns2:renderingMethodExists>false</ns2:renderingMethodExists>   
+                </ns3:taskDetails>
+                <ns3:description>Specialistic visit</ns3:description>
+                <ns3:taskInput>
+                    <!-- one documentReference element for each document in input -->
+                    <ns3:documentReference>         <!--eReferralDoc1-->
+                        <ns2:identifier>urn:oid:1.2.3.4.4.2</ns2:identifier>
+                        <ns2:name>eReferralDoc1</ns2:name>
+                        <ns2:accessType>urn:IHE:iti:2011:xdw:XDSregistered</ns2:accessType>
+                        <ns2:contentType></ns2:contentType>
+                        <ns2:contentCategory></ns2:contentCategory>
+                        <ns2:attachedTime>2011-03-29T09:20:01.0Z</ns2:attachedTime>
+                        <ns2:attachedBy>Dr. Brum</ns2:attachedBy>
+                    </ns3:documentReference>
+                </ns3:taskInput>
+                <ns3:taskOutput>
+                    <!-- one documentReference element for each document in input -->
+                    <ns3:documentReference>      <!--ClinicalRepDoc2-->
+                        <ns2:identifier>urn:oid:1.2.3.4.4.4</ns2:identifier>
+                        <ns2:name>ClinicalRepDoc2</ns2:name>
+                        <ns2:accessType>urn:IHE:iti:2011:xdw:XDSregistered</ns2:accessType>
+                        <ns2:contentType></ns2:contentType>
+                        <ns2:contentCategory></ns2:contentCategory>
+                        <ns2:attachedTime>2011-04-01T03:15:20.0Z</ns2:attachedTime>
+                        <ns2:attachedBy>Dr. Brum</ns2:attachedBy>
+                    </ns3:documentReference>  
+                </ns3:taskOutput>
+            </ns3:taskData>
+            <ns3:taskEventHistory>
+                <ns3:taskEvent>
+                    <ns3:id>201</ns3:id>
+                    <ns3:eventTime>2011-03-29T09:20:01.0Z</ns3:eventTime>
+                    <ns3:identifier>urn:oid:1.2.3.4.6</ns3:identifier>
+                    <ns3:eventType>create</ns3:eventType>
+                    <ns3:status>IN_PROGRESS</ns3:status>
+                </ns3:taskEvent>
+                <ns3:taskEvent>
+                    <ns3:id>202</ns3:id>
+                    <ns3:eventTime>2011-04-01T03:15:20.0Z</ns3:eventTime>
+                    <ns3:identifier>urn:oid:1.2.3.4.7</ns3:identifier>
+                    <ns3:eventType>complete</ns3:eventType>
+                    <ns3:status>COMPLETED</ns3:status>
+                </ns3:taskEvent>
+            </ns3:taskEventHistory>
+        </ns3:XDWTask>
+    </ns3:TaskList>     
+</ns3:XDW.WorkflowDocument>

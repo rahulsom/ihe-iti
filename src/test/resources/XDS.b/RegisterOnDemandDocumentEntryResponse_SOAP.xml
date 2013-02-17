@@ -1,0 +1,11 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+  <!--The following header applies for a Synchronous Web Services Exchange Response 
+        Please note that a soap message can only have one header section. -->
+  <s:Header>
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2010:RegisterOnDemandDocumentResponse</a:Action>
+		<a:RelatesTo>urn:uuid:1ec52e14-4aad-4ba1-b7d3-fc9812a21340</a:RelatesTo>
+	</s:Header>
+  <s:Body>
+		<rs:RegistryResponse xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0 ../../schema/ebRS/rs.xsd" status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+	</s:Body>
+</s:Envelope>

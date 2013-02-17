@@ -1,0 +1,9 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2007:CrossGatewayQueryResponse</a:Action>
+		<a:RelatesTo>urn:uuid:def119ad-dc13-49c1-a3c7-e3742531f9b3</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<query:AdhocQueryResponse xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"/>
+	</s:Body>
+</s:Envelope>

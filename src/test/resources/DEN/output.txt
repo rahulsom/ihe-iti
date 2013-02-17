@@ -1,0 +1,34 @@
+Testing OpenSSL -> OpenSSL
+**************************
+0 (mime)
+1A (sign)
+1B (digest)
+2A SIGNATURE (RSA, SHA256) ENCRYPTION (CERTIFICATE, AES256)
+   DIGEST    (     SHA256) ENCRYPTION (CERTIFICATE, AES192)
+2B SIGNATURE (RSA, SHA256) ENCRYPTION (PASSWORD   , AES128)
+   DIGEST    (     SHA256) ENCRYPTION (PASSWORD   , AES256)
+2C SIGNATURE (RSA, SHA256) ENCRYPTION (SHAREDKEY  , AES192)
+   DIGEST    (     SHA256) ENCRYPTION (SHAREDKEY  , AES128)
+3A (decrypt)
+3B (decrypt)
+3C (decrypt)
+4A (verify)
+Verification successful
+Verification successful
+Verification successful
+4B (verify)
+Verification successful
+Verification successful
+Verification successful
+5 (done)
+***************************
+Verify input & output files
+***************************
+(same hash value indicates success)
+4e30ee8154ca8aa3ac46145f952319bf  doc.mime
+4e30ee8154ca8aa3ac46145f952319bf  doc.digested.encrypted_cert.decrypted.verified
+4e30ee8154ca8aa3ac46145f952319bf  doc.digested.encrypted_pass.decrypted.verified
+4e30ee8154ca8aa3ac46145f952319bf  doc.digested.encrypted_symm.decrypted.verified
+4e30ee8154ca8aa3ac46145f952319bf  doc.signed.encrypted_cert.decrypted.verified
+4e30ee8154ca8aa3ac46145f952319bf  doc.signed.encrypted_pass.decrypted.verified
+4e30ee8154ca8aa3ac46145f952319bf  doc.signed.encrypted_symm.decrypted.verified

@@ -1,0 +1,22 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+  <!--The following header applies for a Synchronous Web Services Exchange Response 
+        Please note that a soap message can only have one header section. -->
+  <s:Header>
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse</a:Action>
+		<a:RelatesTo>urn:uuid:6d296e90-e5dc-43d0-b455-7c1f3eb35d83</a:RelatesTo>
+	</s:Header>
+  <!--The following DISABLED header applies for an Asynchronous Web Services Exchange 'Reply'
+        Please note that:
+        1. An Asynchronous Web Services Exchange 'Reply' is in reality a new Request sent by the Receiver.
+           Refer to TF-2:Appendix V for more information on Asynchronous Web Services Exchange.
+        2. A soap message can only have one header section
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bAsyncResponse</a:Action>
+    <a:MessageID>urn:uuid:D6C21225-8E7B-454E-9750-821622C099DB</a:MessageID>
+		<a:RelatesTo>urn:uuid:6d296e90-e5dc-43d0-b455-7c1f3eb35d83</a:RelatesTo>
+		<a:To s:mustUnderstand="1">http://localhost:2647/XdsService/DocumentSourceReceiver.svc</a:To>
+  </s:Header>  -->
+  <s:Body>
+		<rs:RegistryResponse xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0 ../../schema/ebRS/rs.xsd" status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+	</s:Body>
+</s:Envelope>

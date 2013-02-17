@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:xcpd="urn:ihe:iti:xcpd:2009"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="urn:ihe:iti:xcpd:2009">
+ <s:Header>
+  <a:Action s:mustUnderstand="1">urn:hl7- org:v3:PRPA_IN201303UV02</a:Action>
+  <a:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2055</a:MessageID>
+  <a:To s:mustUnderstand="1">http://servicelocation/IHEXCPDRespondingGateway</a:To>
+</s:Header>
+<s:Body>
+
+<v3:PRPA_IN201303UV02 xmlns:v3="urn:hl7-org:v3" ITSVersion="XML.1.0">
+<v3:id root="4ed7f067-3320-46fc-85c0-c4a8aecbeb2f"/>
+<v3:creationTime value="20111025200240"/>
+<v3:interactionId extension="PRPA_IN201303UV02" root="2.16.840.1.113883.1.6"/>
+<v3:processingModeCode code="T"/>
+<v3:acceptAckCode code="AL"/>
+<v3:receiver typeCode="RCV">
+<v3:device classCode="DEV" determinerCode="INSTANCE">
+<v3:asAgent classCode="AGNT">
+<v3:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+<v3:id root="Reciever"/>
+</v3:representedOrganization>
+</v3:asAgent>
+</v3:device>
+</v3:receiver>
+<v3:sender typeCode="SND">
+<v3:device classCode="DEV" determinerCode="INSTANCE">
+<v3:asAgent classCode="AGNT">
+<v3:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+<v3:id root="Sender"/>
+</v3:representedOrganization>
+</v3:asAgent>
+</v3:device>
+</v3:sender>
+<v3:controlActProcess classCode="CACT" moodCode="EVN">
+<v3:code code="PRPA_TE201303UV02" codeSystem="2.16.840.1.113883.1.6"/>
+
+<v3:authorOrPerformer typeCode="AUT">
+<v3:assignedDevice>
+<v3:id root="1.2.3"/>
+</v3:assignedDevice>
+</v3:authorOrPerformer>
+
+<v3:subject typeCode="SUBJ">
+<v3:registrationEvent>
+<v3:id nullFlavor="NA"/>
+<v3:statusCode code="active"/>
+<v3:subject1 typeCode="SBJ">
+<v3:patient classCode="PAT">
+<v3:id extension="201109095123" root="1.2.3"/>
+<v3:id extension="1234" root="1.2.3.4"/>
+<v3:statusCode code="nullified"/>
+<v3:patientPerson>
+<v3:name nullFlavor="NA"/>
+</v3:patientPerson>
+</v3:patient>
+</v3:subject1>
+<v3:custodian>
+<v3:assignedEntity classCode="ASSIGNED">
+<v3:id root="Sender"/>
+</v3:assignedEntity>
+</v3:custodian>
+</v3:registrationEvent>
+</v3:subject>
+</v3:controlActProcess>
+</v3:PRPA_IN201303UV02>
+</s:Body>
+</s:Envelope>

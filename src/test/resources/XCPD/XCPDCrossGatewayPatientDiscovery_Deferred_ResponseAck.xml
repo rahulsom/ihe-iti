@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"  
+                  xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <soapenv:Header>
+    <wsa:Action s:mustUnderstand="1">
+                urn:hl7-org:v3:MCCI_IN000002UV01
+    </wsa:Action>
+    <wsa:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2059</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2058</wsa:RelatesTo>
+    <wsa:To s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+
+  </soapenv:Header>
+  <soapEnv:Body>
+    <MCCI_IN000002UV01 xmlns="urn:hl7-org:v3" ITSVersion="XML_1.0">
+      <id extension="-777cd525:11f89b9d1c3:-7cff" root="MCCIIN000002UV01" />
+      <creationTime value="20080627043800" />
+      <interactionId extension="MCCIIN000002UV01" />
+      <processingCode code="T" />
+      <processingModeCode code="T" />
+      <acceptAckCode code="NE" />
+      <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.99998.8734"/>
+        </device>
+      </receiver>
+    </MCCI_IN000002UV01>
+  </soapenv:Body>
+</soapenv:Envelope> 

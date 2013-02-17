@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:xcpd="urn:ihe:iti:xcpd:2009"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="urn:ihe:iti:xcpd:2009">
+ <s:Header>
+  <a:Action s:mustUnderstand="1">urn:hl7-org:v3:PRPA_IN201305UV02:CrossGatewayPatientDiscovery</a:Action>
+  <a:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2055</a:MessageID>
+  <a:ReplyTo>
+    <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+  </a:ReplyTo>
+  <a:To s:mustUnderstand="1">http://servicelocation/IHEXCPDRespondingGateway</a:To>
+  <!--Recommend a 7 day cache for correlations resulting from this request. -->
+  <xcpd:CorrelationTimeToLive>P0Y0M7D</xcpd:CorrelationTimeToLive>
+</s:Header>
+
+<s:Body>
+  <PRPA_IN201305UV02 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:hl7-org:v3 ../../schema/HL7V3/NE2008/multicacheschemas/PRPA_IN201305UV02.xsd"
+   xmlns="urn:hl7-org:v3"
+   ITSVersion="XML_1.0">
+    <id root="1.2.840.114350.1.13.0.1.7.1.1" extension="35423"/>
+    <creationTime value="20090417150301"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="PRPA_IN201305UV02"/>
+    <processingCode code="P"/>
+    <processingModeCode code="T"/>
+    <acceptAckCode code="AL"/>
+    <receiver typeCode="RCV">
+        <device  classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.999.234"/>
+            <telecom value="http://servicelocation/IHEXCPDRespondingGateway"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="1.2.840.114350.1.13.999.567"/>
+            <!-- Used to carry the homeCommunityId -->
+            <asAgent classCode="AGNT">
+            	<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+		            <!-- homeCommunityId=urn:oid:1.2.3.928.955 -->
+            		<id root="1.2.3.928.955"/>
+            	</representedOrganization>
+            </asAgent>
+        </device>
+    </sender>
+    <controlActProcess  classCode="CACT" moodCode="EVN">
+        <code code="PRPA_TE201305UV02" codeSystem="2.16.840.1.113883.1.6"/>
+        
+        <!-- Identifies one of LivingSubjectID for use by responder in XCA Query 
+        	  - provisioning the opposite direction -->
+        <authorOrPerformer typeCode="AUT"> 
+        	<assignedDevice>
+        		<id root="1.2.840.114350.1.13.99997.2.3412"/>  
+        	</assignedDevice>
+        </authorOrPerformer>
+        
+        <queryByParameter>
+            <queryId root="1.2.840.114350.1.13.28.1.18.5.999" extension="18204"/>
+            <statusCode code="new"/>
+            <responsePriorityCode code="I"/>
+            <responseModalityCode code="R"/>
+            <matchCriterionList>
+                <minimumDegreeMatch>
+                    <value xsi:type="INT" value="75"/>
+                    <semanticsText>MinimumDegreeMatch</semanticsText>
+                </minimumDegreeMatch>
+            </matchCriterionList>
+            <parameterList>
+                <livingSubjectAdministrativeGender>
+                    <value code="M"/>
+                    <semanticsText>LivingSubject.administrativeGender</semanticsText>
+                </livingSubjectAdministrativeGender>
+                <livingSubjectBirthTime>
+                   <value value="19630804"/>
+                   <semanticsText>LivingSubject.birthTime</semanticsText>
+               </livingSubjectBirthTime>
+                <livingSubjectName>
+                    <value>
+                        <given>Jimmy</given>
+                        <family>Jones</family>
+                    </value>
+                    <semanticsText>LivingSubject.name</semanticsText>
+                </livingSubjectName>              
+                <LivingSubjectId>
+                    <value root="1.2.840.114350.1.13.99997.2.3412" extension="1234"/>
+                    <semanticsText>LivingSubject.id</semanticsText>
+                </LivingSubjectId>
+                <LivingSubjectId>
+                    <value root="2.16.840.1.113883.4.1" extension="58910"/>
+                    <semanticsText>LivingSubject.id</semanticsText>
+                </LivingSubjectId>
+            </parameterList>
+        </queryByParameter>
+    </controlActProcess>
+  </PRPA_IN201305UV02>
+</s:Body>
+</s:Envelope>

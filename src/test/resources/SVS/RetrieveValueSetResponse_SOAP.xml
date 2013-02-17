@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing"
+ xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">urn:ihe:iti:2008:RetrieveValueSetResponse</a:Action>
+        <a:RelatesTo>urn:uuid:0fbfdced-6c01-4d09-a110-2201afedaa02</a:RelatesTo>
+    </s:Header>
+    <s:Body>
+        <RetrieveValueSetResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="urn:ihe:iti:svs:2008" cacheExpirationHint="2008-08-15T00:00:00-05:00">
+            <ValueSet id="1.2.840.10008.6.1.308"
+                displayName="Common Anatomic Regions Context ID 4031" version="20061023">
+                <ConceptList xml:lang="en-US">
+                    <Concept code="T-D4000" displayName="Abdomen" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="R-FAB57" displayName="Abdomen and Pelvis" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-15420" displayName="Acromioclavicular joint" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-15750" displayName="Ankle joint " codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-280A0" displayName="Apex of Lung" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-D8200" displayName="Arm" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-60610" displayName="Bile Duct" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-74000" displayName="Bladder" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-04000" displayName="Breast" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-26000" displayName="Bronchus" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-12770" displayName="Calcaneus" codeSystem="2.16.840.1.113883.6.5"/>
+                    <Concept code="T-11501" displayName="Cervical spine" codeSystem="2.16.840.1.113883.6.5"/>
+                </ConceptList>
+            </ValueSet>
+        </RetrieveValueSetResponse>
+    </s:Body>
+</s:Envelope>

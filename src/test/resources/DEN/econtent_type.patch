@@ -1,0 +1,12 @@
+diff -u -r openssl-1.0.0d//apps/cms.c openssl-1.0.0d-new//apps/cms.c
+--- openssl-1.0.0d//apps/cms.c	2009-10-18 16:42:26.000000000 +0200
++++ openssl-1.0.0d-new//apps/cms.c	2011-07-28 23:35:54.000000000 +0200
+@@ -906,6 +906,8 @@
+ 		cms = CMS_encrypt(encerts, in, cipher, flags);
+ 		if (!cms)
+ 			goto end;
++		if (econtent_type)
++			CMS_set1_eContentType(cms, econtent_type);
+ 		if (secret_key)
+ 			{
+ 			if (!CMS_add0_recipient_key(cms, NID_undef, 
