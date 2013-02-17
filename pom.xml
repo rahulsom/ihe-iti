@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.rahulsom</groupId>
+  <artifactId>ihe-iti</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+          <execution>
+            <id>generate-sources</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <defaultOptions>
+                <bindingFiles>
+                  <bindingFile>${basedir}/src/main/bindings/bind.xml</bindingFile>
+                </bindingFiles>
+                <noAddressBinding>true</noAddressBinding>
+              </defaultOptions>
+              <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+              <wsdlRoot>${basedir}/src/main/wsdl</wsdlRoot>
+              <includes>
+                <include>PIXManager.wsdl</include>
+                <include>XDS*.wsdl</include>
+                <include>XCARespondingGatewayQuery.wsdl</include>
+                <include>XCARespondingGatewayRetrieve.wsdl</include>
+                <include>XCAInitiatingGatewayQuery.wsdl</include>
+                <include>XCAInitiatingGatewayRetrieve.wsdl</include>
+                <include>nist_rg.wsdl</include>
+              </includes>
+              <excludes>
+                <exclude>HPD*.wsdl</exclude>
+                <exclude>SVS*.wsdl</exclude>
+                <exclude>RFD*.wsdl</exclude>
+                <exclude>XCPD*.wsdl</exclude>
+              </excludes>
+              <defaultOptions>
+                <extraargs>
+                  <extraarg>-b</extraarg>
+                  <extraarg>${basedir}/src/main/bindings/bind.xml</extraarg>
+                  <!--<extraarg>-xjc-Xfluent-api</extraarg>-->
+                  <!--<extraarg>-xjc-Xts</extraarg>-->
+                  <!--<extraarg>-xjc-Xbg</extraarg>-->
+                </extraargs>
+              </defaultOptions>
+            </configuration>
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <properties>
+    <cxf.version>2.7.3</cxf.version>
+  </properties>
+
+</project>
