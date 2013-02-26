@@ -10,42 +10,30 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-codegen-plugin</artifactId>
-        <version>${cxf.version}</version>
+        <groupId>org.jvnet.jax-ws-commons</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <version>2.2</version>
         <executions>
           <execution>
-            <id>generate-sources</id>
-            <phase>generate-sources</phase>
-            <configuration>
-              <defaultOptions>
-                <bindingFiles>
-                  <bindingFile>${basedir}/src/main/bindings/bind.xml</bindingFile>
-                </bindingFiles>
-                <noAddressBinding>true</noAddressBinding>
-              </defaultOptions>
-              <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
-              <wsdlRoot>${basedir}/src/main/wsdl</wsdlRoot>
-              <includes>
-                <include>PIXManager.wsdl</include>
-                <include>PIXConsumer.wsdl</include>
-                <include>PDQSupplier.wsdl</include>
-                <include>XDS*.wsdl</include>
-                <include>XCA*.wsdl</include>
-                <include>nist_rg.wsdl</include>
-              </includes>
-              <defaultOptions>
-                <extraargs>
-                  <extraarg>-b</extraarg>
-                  <extraarg>${basedir}/src/main/bindings/bind.xml</extraarg>
-                  <!--<extraarg>-xjc-Xfluent-api</extraarg>-->
-                  <!--<extraarg>-xjc-Xts</extraarg>-->
-                  <!--<extraarg>-xjc-Xbg</extraarg>-->
-                </extraargs>
-              </defaultOptions>
-            </configuration>
             <goals>
-              <goal>wsdl2java</goal>
+              <goal>wsimport</goal>
+            </goals>
+            <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
+            <configuration>
+              <bindingFiles>
+                <bindingFile>${basedir}/src/main/bindings/bind.xml</bindingFile>
+              </bindingFiles>
+              <wsdlDirectory>${basedir}/src/main/wsdl</wsdlDirectory>
+              <wsdlFiles>
+                <wsdlFile>PDQSupplier.wsdl</wsdlFile>
+              </wsdlFiles>
+              <extension>true</extension>
+              <xadditionalHeaders>true</xadditionalHeaders>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+            <goals>
             </goals>
           </execution>
         </executions>
@@ -81,7 +69,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.8.2</version>
+      <version>3.8.2</version>
       <scope>test</scope>
     </dependency>
 
