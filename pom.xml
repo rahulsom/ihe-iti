@@ -21,22 +21,47 @@
             <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
               <bindingFiles>
-                <bindingFile>${basedir}/src/main/bindings/bind.xml</bindingFile>
+                <bindingFile>${basedir}/src/main/bindings/bind.xjb</bindingFile>
               </bindingFiles>
               <wsdlDirectory>${basedir}/src/main/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
+                <wsdlFile>PIXConsumer.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
+              <sourceDestDir>${project.build.directory}/generated-sources/ihe</sourceDestDir>
             </configuration>
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb22-plugin</artifactId>
+        <executions>
+          <execution>
             <goals>
+              <goal>generate</goal>
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <forceRegenerate>true</forceRegenerate>
+          <schemaDirectory>src/main/schema</schemaDirectory>
+          <schemaIncludes>
+            <include>**/*.xsd</include>
+          </schemaIncludes>
+          <schemaExcludes>
+            <exclude>**/XDW-2012-04-02.xsd</exclude>
+            <exclude>**/XDW/POCD_MT000040.xsd</exclude>
+            <exclude>**/PRPA_IN201303UV02.xsd</exclude>
+            <exclude>**/SVS.xsd</exclude>
+            <exclude>**/ESVS-20100726.xsd</exclude>
+          </schemaExcludes>
+          <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
+          <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
+        </configuration>
       </plugin>
 
       <plugin>
