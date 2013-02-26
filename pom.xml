@@ -27,6 +27,7 @@
               <wsdlFiles>
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
                 <wsdlFile>PIXConsumer.wsdl</wsdlFile>
+                <wsdlFile>PIXManager.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
@@ -39,6 +40,7 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb22-plugin</artifactId>
+        <version>0.8.3</version>
         <executions>
           <execution>
             <goals>
@@ -113,8 +115,12 @@
 
   </dependencies>
 
-  <properties>
-    <cxf.version>2.7.3</cxf.version>
-  </properties>
+  <distributionManagement>
+    <repository>
+      <id>bintray-rahulsom-healthcare-ihe-iti</id>
+      <name>rahulsom-healthcare-ihe-iti</name>
+      <url>https://api.bintray.com/maven/rahulsom/healthcare/ihe-iti</url>
+    </repository>
+  </distributionManagement>
 
 </project>
