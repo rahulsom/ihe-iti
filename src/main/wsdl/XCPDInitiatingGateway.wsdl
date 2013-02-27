@@ -2,25 +2,20 @@
 <!-- NOTE:
    This wsdl is only used if the Initiating Gateway is using the Deferred Response option of XCPD.
 -->
-<wsdl:definitions name="XCPDInitiatingGateway" targetNamespace="urn:ihe:iti:xcpd:2009"
-    xmlns:tns="urn:ihe:iti:xcpd:2009" 
-    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
-    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-    xmlns:wsaw="http://www.w3.org/2007/05/addressing/metadata"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:hl7="urn:hl7-org:v3">
+<wsdl:definitions name="XCPDInitiatingGateway" targetNamespace="urn:ihe:iti:xcpd:2009" xmlns:tns="urn:ihe:iti:xcpd:2009"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsaw="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v3">
     <wsdl:documentation>
     Example WSDL for XCPD Initiating Gateway using the Deferred Response option
     </wsdl:documentation>
 <wsdl:types>
 	<xsd:schema elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:hl7="urn:hl7-org:v3">
 		<!-- Include the message schema -->
-		<xsd:include schemaLocation="../schemas/HL7V3/NE2008/multicacheschemas/PRPA_IN201306UV02.xsd"/>
+		<xsd:include schemaLocation="../schema/HL7V3/NE2008/multicacheschemas/PRPA_IN201306UV02.xsd"/>
 	</xsd:schema>
 	<xsd:schema elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:hl7="urn:hl7-org:v3">
 		<!-- Include the message schema -->
-		<xsd:include schemaLocation="../schemas/HL7V3/NE2008/multicacheschemas/MCCI_IN000002UV01.xsd"/>
+		<xsd:include schemaLocation="../schema/HL7V3/NE2008/multicacheschemas/MCCI_IN000002UV01.xsd"/>
 	</xsd:schema>
 </wsdl:types>
 <wsdl:message name="PRPA_IN201306UV02_Message">

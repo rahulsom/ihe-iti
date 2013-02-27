@@ -32,6 +32,10 @@
                 <wsdlFile>XCAInitiatingGatewayRetrieve.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayQuery.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayRetrieve.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
+                <wsdlFile>XCPDInitiatingGateway.wsdl</wsdlFile>
+                <wsdlFile>XCPDRespondingGateway.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
