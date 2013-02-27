@@ -12,7 +12,7 @@
       <plugin>
         <groupId>org.jvnet.jax-ws-commons</groupId>
         <artifactId>jaxws-maven-plugin</artifactId>
-        <version>2.2</version>
+        <version>${jaxws.plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -40,7 +40,7 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb22-plugin</artifactId>
-        <version>0.8.3</version>
+        <version>${jaxb.plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -49,7 +49,7 @@
           </execution>
         </executions>
         <configuration>
-          <forceRegenerate>true</forceRegenerate>
+          <!--<forceRegenerate>true</forceRegenerate>-->
           <schemaDirectory>src/main/schema</schemaDirectory>
           <schemaIncludes>
             <include>**/*.xsd</include>
@@ -78,7 +78,7 @@
           <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-eclipse-compiler</artifactId>
-            <version>2.7.0-01</version>
+            <version>${gec.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -86,7 +86,7 @@
       <plugin>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-eclipse-compiler</artifactId>
-        <version>2.7.0-01</version>
+        <version>${gec.version}</version>
         <extensions>true</extensions>
       </plugin>
 
@@ -96,21 +96,27 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
-      <version>2.0.6</version>
+      <version>${groovy.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
-      <version>2.2.6</version>
+      <version>${jaxb.impl.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jvnet.jaxb2_commons</groupId>
+      <artifactId>jaxb2-basics-runtime</artifactId>
+      <version>${jaxb.basics.version}</version>
     </dependency>
 
   </dependencies>
@@ -122,5 +128,15 @@
       <url>https://api.bintray.com/maven/rahulsom/healthcare/ihe-iti</url>
     </repository>
   </distributionManagement>
+
+  <properties>
+    <jaxb.basics.version>0.6.4</jaxb.basics.version>
+    <junit.version>3.8.2</junit.version>
+    <groovy.version>2.0.6</groovy.version>
+    <jaxb.impl.version>2.2.6</jaxb.impl.version>
+    <gec.version>2.7.0-01</gec.version>
+    <jaxws.plugin.version>2.2</jaxws.plugin.version>
+    <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+  </properties>
 
 </project>
