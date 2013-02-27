@@ -28,6 +28,10 @@
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
                 <wsdlFile>PIXConsumer.wsdl</wsdlFile>
                 <wsdlFile>PIXManager.wsdl</wsdlFile>
+                <wsdlFile>XCAInitiatingGatewayQuery.wsdl</wsdlFile>
+                <wsdlFile>XCAInitiatingGatewayRetrieve.wsdl</wsdlFile>
+                <wsdlFile>XCARespondingGatewayQuery.wsdl</wsdlFile>
+                <wsdlFile>XCARespondingGatewayRetrieve.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
@@ -49,7 +53,7 @@
           </execution>
         </executions>
         <configuration>
-          <!--<forceRegenerate>true</forceRegenerate>-->
+          <forceRegenerate>true</forceRegenerate>
           <schemaDirectory>src/main/schema</schemaDirectory>
           <schemaIncludes>
             <include>**/*.xsd</include>
