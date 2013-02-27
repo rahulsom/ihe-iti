@@ -68,6 +68,8 @@
             <exclude>**/PRPA_IN201303UV02.xsd</exclude>
             <exclude>**/SVS.xsd</exclude>
             <exclude>**/ESVS-20100726.xsd</exclude>
+            <exclude>**/XCPD_PLQ.xsd</exclude>
+            <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
           </schemaExcludes>
           <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
           <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
