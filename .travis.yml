@@ -1,1 +1,10 @@
 language: java
+
+env:
+  global:
+    - secure: "aAqK7vGBjYcCO1hSusBSeERZJ1+jYiI1i+VmoUsXEIMDNpmOtw6noxS0zTn6\n/Lv9tmzx0RkDmpmtW66QZJccPPq5xvn8qBaOC1UH2+iNm4cWZvQr+GJm31uB\ncLRMi5buwnuGPn0c0E3eRQA8+HVgGyA/FK2RcMSWXhkKrHGxYC8="
+    - BINTRAY_USER=rahulsom
+
+  after_success:
+    - python addServer.py
+    - mvn clean deploy --settings ~/.m2/mySettings.xml
