@@ -20,10 +20,10 @@
             </goals>
             <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
-              <bindingFiles>
-                <bindingFile>${basedir}/src/main/bindings/bind.xjb</bindingFile>
-              </bindingFiles>
-              <wsdlDirectory>${basedir}/src/main/wsdl</wsdlDirectory>
+              <!--<bindingFiles>-->
+                <!--<bindingFile>${basedir}/src/main/resources/bindings/bind.xjb</bindingFile>-->
+              <!--</bindingFiles>-->
+              <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
                 <wsdlFile>PIXConsumer.wsdl</wsdlFile>
@@ -37,6 +37,7 @@
                 <wsdlFile>XCPDInitiatingGateway.wsdl</wsdlFile>
                 <wsdlFile>XCPDRespondingGateway.wsdl</wsdlFile>
               </wsdlFiles>
+              <wsdlLocation>classpath:/iti/wsdl/*</wsdlLocation>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
               <sourceDestDir>${project.build.directory}/generated-sources/ihe</sourceDestDir>
@@ -58,7 +59,7 @@
         </executions>
         <configuration>
           <forceRegenerate>true</forceRegenerate>
-          <schemaDirectory>src/main/schema</schemaDirectory>
+          <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
           <schemaIncludes>
             <include>**/*.xsd</include>
           </schemaIncludes>
@@ -71,7 +72,7 @@
             <exclude>**/XCPD_PLQ.xsd</exclude>
             <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
           </schemaExcludes>
-          <bindingDirectory>${basedir}/src/main/bindings</bindingDirectory>
+          <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
           <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
         </configuration>
       </plugin>
