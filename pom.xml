@@ -130,6 +130,13 @@
       <version>${jaxb.basics.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>xmlunit</groupId>
+      <artifactId>xmlunit</artifactId>
+      <version>1.4</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
 
   <distributionManagement>
@@ -142,7 +149,7 @@
 
   <properties>
     <jaxb.basics.version>0.6.4</jaxb.basics.version>
-    <junit.version>3.8.2</junit.version>
+    <junit.version>4.11</junit.version>
     <groovy.version>2.0.6</groovy.version>
     <jaxb.impl.version>2.2.6</jaxb.impl.version>
     <gec.version>2.7.0-01</gec.version>
