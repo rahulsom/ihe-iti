@@ -79,9 +79,15 @@
               <artifactId>jaxb2-fluent-api</artifactId>
               <version>3.0</version>
             </plugin>
+            <plugin>
+              <groupId>org.jvnet.jaxb2_commons</groupId>
+              <artifactId>jaxb2-commons-lang</artifactId>
+              <version>2.3</version>
+            </plugin>
           </plugins>
           <args>
             <arg>-Xfluent-api</arg>
+            <arg>-Xcommons-lang</arg>
           </args>
         </configuration>
       </plugin>
@@ -183,6 +189,12 @@
       <artifactId>xmlunit</artifactId>
       <version>1.4</version>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
     </dependency>
 
   </dependencies>
