@@ -18,7 +18,24 @@ profiles.
 Usage
 -----
 
-This project is built using Maven. Just checkout the code and run
+If you want to download the library from Sonatype, add this to your dependencies
+section:
+
+    <dependency>
+      <groupId>com.github.rahulsom</groupId>
+      <artifactId>ihe-iti</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+
+And add this to your repositories section:
+
+    <repository>
+      <id>sonatype-oss</id>
+      <url>https://oss.sonatype.org/content/groups/public</url>
+    </repository>
+
+Alternately you can download and build this locally. This project is built using
+Maven. Just checkout the code and run
 
     mvn install
 
@@ -31,11 +48,11 @@ A lot of profiles are not being built because they haven't been tested. If you
 feel you need to use one of these, please feel free to modify the pom and send
 a pull request.
 
-Future
+Builds
 ------
 
 This project is being built on travis. See
 [https://travis-ci.org/rahulsom/ihe-iti](https://travis-ci.org/rahulsom/ihe-iti)
-The goal is to have travis build it and deploy the artifacts to bin tray.
+It gets automatically deployed to [Sonatype OSS](https://oss.sonatype.org/).
 
 [![Build Status](https://travis-ci.org/rahulsom/ihe-iti.png)](https://travis-ci.org/rahulsom/ihe-iti)
