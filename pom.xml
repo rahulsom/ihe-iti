@@ -139,10 +139,15 @@
   </dependencies>
 
   <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-oss-snapshot</id>
+      <name>Nexus OSS Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
     <repository>
-      <id>bintray-rahulsom-healthcare-ihe-iti</id>
-      <name>rahulsom-healthcare-ihe-iti</name>
-      <url>https://api.bintray.com/maven/rahulsom/healthcare/ihe-iti</url>
+      <id>nexus-oss-release</id>
+      <name>Nexus OSS Releases</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
   </distributionManagement>
 

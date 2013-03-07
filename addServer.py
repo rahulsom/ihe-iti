@@ -25,7 +25,7 @@ sonatypeServerId = m2.createElement("id")
 sonatypeServerUser = m2.createElement("username")
 sonatypeServerPass = m2.createElement("password")
 
-idNode = m2.createTextNode("bintray-rahulsom-healthcare-ihe-iti")
+idNode = m2.createTextNode("nexus-oss-snapshot")
 userNode = m2.createTextNode(os.environ["BINTRAY_USER"])
 passNode = m2.createTextNode(os.environ["BINTRAY_PASS"])
 
