@@ -7,4 +7,4 @@ env:
 
 script: python addServer.py 
   && ls -ltr ~/.m2
-  && mvn clean deploy --settings ~/.m2/mySettings.xml
+  && mvn deploy --settings ~/.m2/mySettings.xml
