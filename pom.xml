@@ -102,6 +102,19 @@
 
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -154,6 +167,10 @@
     <gec.version>2.7.0-01</gec.version>
     <jaxws.plugin.version>2.2</jaxws.plugin.version>
     <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+
+    <!-- set the character encoding for the build, so it is not platform-dependent -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
 </project>
