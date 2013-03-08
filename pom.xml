@@ -7,6 +7,25 @@
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
   <version>0.1-SNAPSHOT</version>
+
+  <name>IHE ITI</name>
+  <description>Codegen for IHE ITI Profiles.</description>
+  <url>https://rahulsom.github.com/ihe-iti</url>
+
+  <licenses>
+    <license>
+      <name>Need to fix licensing</name>
+      <url></url>
+      <description></description>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/rahulsom/ihe-iti.git</url>
+    <connection>scm:git:git@github.com:rahulsom/ihe-iti.git</connection>
+    <developerConnection>scm:git:git@github.com:rahulsom/ihe-iti.git</developerConnection>
+  </scm>
+
   <build>
     <plugins>
       <plugin>
