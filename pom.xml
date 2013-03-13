@@ -26,6 +26,14 @@
     <developerConnection>scm:git:git@github.com:rahulsom/ihe-iti.git</developerConnection>
   </scm>
 
+  <developers>
+    <developer>
+      <id>rahulsom</id>
+      <name>Rahul Somasunderam</name>
+      <email>rahul.som@gmail.com</email>
+    </developer>
+  </developers>
+
   <build>
     <plugins>
       <plugin>
