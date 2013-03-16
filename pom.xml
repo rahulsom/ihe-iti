@@ -233,7 +233,7 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
-      <id>nexus-oss-staging</id>
+      <id>sonatype-nexus-staging</id>
       <name>Nexus OSS Staging</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
