@@ -6,7 +6,7 @@
 
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
 
   <name>IHE ITI</name>
   <description>Codegen for IHE ITI Profiles.</description>
@@ -25,6 +25,14 @@
     <connection>scm:git:git@github.com:rahulsom/ihe-iti.git</connection>
     <developerConnection>scm:git:git@github.com:rahulsom/ihe-iti.git</developerConnection>
   </scm>
+
+  <developers>
+    <developer>
+      <id>rahulsom</id>
+      <name>Rahul Somasunderam</name>
+      <email>rahul.som@gmail.com</email>
+    </developer>
+  </developers>
 
   <build>
     <plugins>
@@ -225,7 +233,7 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
-      <id>nexus-oss-staging</id>
+      <id>sonatype-nexus-staging</id>
       <name>Nexus OSS Staging</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
