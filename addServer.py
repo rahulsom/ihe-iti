@@ -19,13 +19,34 @@ if not serversNodes:
   settings.appendChild(serversNode)
 else:
   serversNode = serversNodes[0]
-  
+
+# Add snapshot repo  
 sonatypeServerNode = m2.createElement("server")
 sonatypeServerId = m2.createElement("id")
 sonatypeServerUser = m2.createElement("username")
 sonatypeServerPass = m2.createElement("password")
 
 idNode = m2.createTextNode("nexus-oss-snapshot")
+userNode = m2.createTextNode(os.environ["BINTRAY_USER"])
+passNode = m2.createTextNode(os.environ["BINTRAY_PASS"])
+
+sonatypeServerId.appendChild(idNode)
+sonatypeServerUser.appendChild(userNode)
+sonatypeServerPass.appendChild(passNode)
+
+sonatypeServerNode.appendChild(sonatypeServerId)
+sonatypeServerNode.appendChild(sonatypeServerUser)
+sonatypeServerNode.appendChild(sonatypeServerPass)
+
+serversNode.appendChild(sonatypeServerNode)
+  
+# Add staging repo  
+sonatypeServerNode = m2.createElement("server")
+sonatypeServerId = m2.createElement("id")
+sonatypeServerUser = m2.createElement("username")
+sonatypeServerPass = m2.createElement("password")
+
+idNode = m2.createTextNode("nexus-oss-staging")
 userNode = m2.createTextNode(os.environ["BINTRAY_USER"])
 passNode = m2.createTextNode(os.environ["BINTRAY_PASS"])
 
