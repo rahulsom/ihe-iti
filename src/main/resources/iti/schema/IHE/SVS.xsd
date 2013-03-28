@@ -5,7 +5,7 @@
 	attributeFormDefault="unqualified">
 	<xs:include schemaLocation="../HL7V3/NE2008/coreschemas/datatypes-base.xsd"/>
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"
-		schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+		schemaLocation="../../../w3/xml.xsd"/>
 	<xs:simpleType name="valueSetIdType">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-2](\.(0|[1-9][0-9]*))*"/>

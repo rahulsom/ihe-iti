@@ -4,7 +4,7 @@
 	targetNamespace="urn:ihe:iti:svs:2008" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace"
-		schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+		schemaLocation="../../../w3/xml.xsd"/>
 	<!-- Put proper import here to pull in the HL7 CDA datatypes -->
 	<xs:include schemaLocation="../HL7V3/NE2008/coreschemas/datatypes-base.xsd"/>
 	<xs:simpleType name="valueSetIdType">

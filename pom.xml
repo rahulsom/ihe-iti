@@ -6,7 +6,7 @@
 
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
 
   <name>IHE ITI</name>
   <description>Codegen for IHE ITI Profiles.</description>
@@ -47,6 +47,7 @@
             </goals>
             <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
+              <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/bindings/bind.xjb</bindingFile>
               </bindingFiles>
@@ -84,6 +85,7 @@
           </execution>
         </executions>
         <configuration>
+          <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
           <forceRegenerate>true</forceRegenerate>
           <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
           <schemaIncludes>
