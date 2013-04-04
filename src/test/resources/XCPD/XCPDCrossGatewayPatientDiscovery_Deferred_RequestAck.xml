@@ -7,12 +7,12 @@
     </wsa:Action>
     <wsa:To s:mustUnderstand="1">http://localhost:2647/Service/DeferredXcpdResponse.svc</wsa:To>
     <wsa:ReplyTo>
-      <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+      <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
     </wsa:ReplyTo>
     <wsa:MessageID>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2057</wsa:MessageID>
     <wsa:RelatesTo>urn:uuid:a02ca8cd-86fa-4afc-a27c-16c183b2056</wsa:RelatesTo>
   </soapenv:Header>
-  <soapEnv:Body>
+  <soapenv:Body>
     <MCCI_IN000002UV01 xmlns="urn:hl7-org:v3" ITSVersion="XML_1.0">
       <id extension="-777cd525:11f89b9d1c3:-7cdf" root="MCCIIN000002UV01" />
       <creationTime value="20080627043800" />
