@@ -16,8 +16,8 @@ class PdqTest {
   void testQuery1Response() {
     XmlTestHelper.withMatching(PRPAIN201306UV02, 'PDQV3/02_PDQQuery1Response.xml') { PRPAIN201306UV02 r ->
       def patient = r.controlActProcess.subject.find { it }.registrationEvent.subject1.patient
-      assert patient.providerOrganization.value.name.find { it }.content.find { it } == 'Good Health Clinic'
-      PN pn = patient.patientPerson.value.name[0]
+      assert patient.providerOrganization.name.find { it }.content.find { it } == 'Good Health Clinic'
+      PN pn = patient.patientPerson.name[0]
       List<JAXBElement> nameParts = pn.content.findAll { it instanceof JAXBElement }
       assert nameParts.find { it.declaredType == EnGiven }.value.content.find { it } == 'James'
       assert nameParts.find { it.declaredType == EnFamily }.value.content.find { it } == 'Jones'
