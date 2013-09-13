@@ -3,6 +3,7 @@ package ihe.util
 import org.custommonkey.xmlunit.DetailedDiff
 import org.custommonkey.xmlunit.Diff
 import org.custommonkey.xmlunit.Difference
+import org.hl7.v3.PRPAIN201306UV02
 
 import javax.xml.bind.JAXBContext
 
@@ -12,16 +13,10 @@ import javax.xml.bind.JAXBContext
  */
 class XmlTestHelper {
 
-  /**
-   * Validates parse and rewrite of an xml, with option to run additional tests in closure
-   *
-   * @param clazz The Class that would be the returned on parsing the file
-   * @param file The file (resource) name inside the test classloader
-   * @param closure Code to execute after preliminary tests are completed
-   */
-  static <T> void withMatching(Class<T> clazz, String file, Closure closure = {}) {
-    JAXBContext jaxbContext = JAXBContext.newInstance(clazz)
-    def r = jaxbContext.createUnmarshaller().unmarshal(XmlTestHelper.classLoader.getResourceAsStream(file)) as T
+  @Lazy
+  static jaxbContext = JAXBContext.newInstance(PRPAIN201306UV02)
+
+  static <T> List getIrrecoverableDifferences(r, file) {
     def sw = new StringWriter()
     jaxbContext.createMarshaller().marshal(r, sw)
 
@@ -40,8 +35,6 @@ class XmlTestHelper {
       println ''
     }
 
-    assert !irrecoverableDifferences
-
-    closure?.call(r)
+    irrecoverableDifferences
   }
 }
