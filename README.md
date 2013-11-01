@@ -1,7 +1,7 @@
 ihe-iti
 =======
 
-Java codegen for IHE ITI profiles.
+![Bender](http://i.imgur.com/M6TjMim.jpg)
 
 A better description
 --------------------
