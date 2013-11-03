@@ -61,7 +61,7 @@
             <configuration>
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
-                <bindingFile>${basedir}/src/main/resources/iti/bindings/bind.xjb</bindingFile>
+                <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
               </bindingFiles>
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
