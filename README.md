@@ -24,8 +24,10 @@ section:
     <dependency>
       <groupId>com.github.rahulsom</groupId>
       <artifactId>ihe-iti</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>0.3</version>
     </dependency>
+
+To browse the latest builds, you can see [MavenRepository](http://mvnrepository.com/artifact/com.github.rahulsom/ihe-iti). It also has instructions for Gradle, Ivy, sbt, etc.
 
 And add this to your repositories section:
 
