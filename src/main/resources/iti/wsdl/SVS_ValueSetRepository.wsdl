@@ -52,7 +52,7 @@
 			</output>
 		</operation>
 	</binding>
-	<binding name="ValueSetRepository_Binding_Http" type="ValueSetRepository_HttpPortType">
+	<binding name="ValueSetRepository_Binding_Http" type="ihe:ValueSetRepository_HttpPortType">
 		<http:binding verb="GET"/>
 		<operation name="ValueSetRepository_RetrieveValueSet_Http">
 			<http:operation location="RetrieveValueSet"/>

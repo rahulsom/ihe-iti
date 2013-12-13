@@ -65,17 +65,23 @@
               </bindingFiles>
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
+                <!--
+                This needs DSMLv2 which is missing
+                <wsdlFile>HPD_ProviderInformationDirectory.wsdl</wsdlFile>
+                -->
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
                 <wsdlFile>PIXConsumer.wsdl</wsdlFile>
                 <wsdlFile>PIXManager.wsdl</wsdlFile>
+                <wsdlFile>RFDFormManager.wsdl</wsdlFile>
+                <wsdlFile>SVS_ValueSetRepository.wsdl</wsdlFile>
                 <wsdlFile>XCAInitiatingGatewayQuery.wsdl</wsdlFile>
                 <wsdlFile>XCAInitiatingGatewayRetrieve.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayQuery.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayRetrieve.wsdl</wsdlFile>
-                <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
-                <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
                 <wsdlFile>XCPDInitiatingGateway.wsdl</wsdlFile>
                 <wsdlFile>XCPDRespondingGateway.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
