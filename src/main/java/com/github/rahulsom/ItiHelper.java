@@ -17,6 +17,9 @@ import java.util.List;
  * @author rahulsomasunderam
  */
 public class ItiHelper {
+  public static final String DATE_FORMAT = "yyyyMMdd";
+  public static final String DATE_TIME_FORMAT = "yyyyMMddHHmmss";
+
   public static <T> JAXBElement<T> jaxb(String tagname, Class<T> clazz, T value) {
     return new JAXBElement<T>(new QName("urn:hl7-org:v3", tagname), clazz, value);
   }
@@ -25,8 +28,12 @@ public class ItiHelper {
     return new TS().withValue(value);
   }
 
+  public static TS ts(Date value, String format) {
+    return ts(new SimpleDateFormat(format).format(value));
+  }
+
   public static TS ts(Date value) {
-    return ts(new SimpleDateFormat("yyyyMMdd").format(value));
+    return ts(value, DATE_TIME_FORMAT);
   }
 
   public static ST st(String value) {
@@ -67,6 +74,10 @@ public class ItiHelper {
 
   public static CD cd(String code) {
     return cd(code, null);
+  }
+
+  public static CE ce(String code) {
+    return new CE().withCode(code);
   }
 
   public static PN pn(Collection<JAXBElement<? extends ENXP>> data) {
