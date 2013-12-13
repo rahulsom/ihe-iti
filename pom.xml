@@ -133,6 +133,7 @@
           <args>
             <arg>-Xfluent-api</arg>
             <arg>-Xcommons-lang</arg>
+            <arg>-npa</arg>
           </args>
         </configuration>
       </plugin>
