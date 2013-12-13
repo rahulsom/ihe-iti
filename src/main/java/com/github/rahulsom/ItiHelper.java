@@ -75,6 +75,12 @@ public class ItiHelper {
     return new PN().withContent(arg);
   }
 
+  public static EN en(Collection<JAXBElement<? extends ENXP>> data) {
+    List arg = new ArrayList();
+    arg.addAll(data);
+    return new EN().withContent(arg);
+  }
+
   public static AD ad(Collection<JAXBElement<? extends ADXP>> data) {
     List arg = new ArrayList();
     arg.addAll(data);
@@ -83,6 +89,10 @@ public class ItiHelper {
 
   public static PN pn(JAXBElement<? extends ENXP> ... data) {
     return new PN().withContent(data);
+  }
+
+  public static EN en(JAXBElement<? extends ENXP> ... data) {
+    return new EN().withContent(data);
   }
 
   public static AD ad(JAXBElement<? extends ADXP> ... data) {
