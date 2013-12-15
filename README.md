@@ -21,23 +21,20 @@ Usage
 If you want to download the library from Sonatype, add this to your dependencies
 section:
 
-    <dependency>
-      <groupId>com.github.rahulsom</groupId>
-      <artifactId>ihe-iti</artifactId>
-      <version>0.3</version>
-    </dependency>
+    com.github.rahulsom:ihe-iti:0.4
 
-To browse the latest builds, you can see [MavenRepository](http://mvnrepository.com/artifact/com.github.rahulsom/ihe-iti). It also has instructions for Gradle, Ivy, sbt, etc.
+To browse the latest builds, you can see [MavenRepository](http://mvnrepository.com/artifact/com.github.rahulsom/ihe-iti). It also has instructions for Maven, Gradle, Ivy, sbt, etc.
 
 And add this to your repositories section:
 
-    <repository>
-      <id>sonatype-oss</id>
-      <url>https://oss.sonatype.org/content/groups/public</url>
-    </repository>
+    https://oss.sonatype.org/content/groups/public
+    
+You can browse latest snapshots on:
 
+    http://oss.sonatype.org/content/repositories/snapshots/com/github/rahulsom/ihe-iti/
+    
 Alternately you can download and build this locally. This project is built using
-Maven. Just checkout the code and run
+Maven. Just clone the repo & checkout the branch, and run
 
     mvn install
 
@@ -49,6 +46,13 @@ Contributing
 A lot of profiles are not being built because they haven't been tested. If you
 feel you need to use one of these, please feel free to modify the pom and send
 a pull request.
+
+Issue tracking is done through GitHub at [https://github.com/rahulsom/ihe-iti/issues](https://github.com/rahulsom/ihe-iti/issues). Feel free to raise issues or fix open issues.
+
+Questions & Discussion
+----------------------
+
+There's a Google Groups Mailing list at [ihe-iti](https://groups.google.com/d/forum/ihe-iti). That's the best way to get answers.
 
 Builds
 ------
