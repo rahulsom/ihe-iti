@@ -1,0 +1,14 @@
+<jaxws:bindings
+    xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    jaxb:version="2.0">
+  <jaxws:enableAsyncMapping>true</jaxws:enableAsyncMapping>
+
+  <jaxws:bindings>
+    <jaxb:globalBindings typesafeEnumMaxMembers="2000" generateMixedExtensions="true"/>
+  </jaxws:bindings>
+  <jaxb:bindings >
+    <jaxb:globalBindings typesafeEnumMaxMembers="2000" generateMixedExtensions="true"/>
+  </jaxb:bindings>
+
+</jaxws:bindings>

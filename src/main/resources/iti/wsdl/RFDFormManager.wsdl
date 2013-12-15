@@ -11,7 +11,7 @@
 			  <xsd:import namespace="urn:ihe:iti:rfd:2007" schemaLocation="..\schema\IHE\RFD.xsd"/>
 				note also:  when there are spaces in the file path this same tool failed to resolve the relative reference shown below
 		-->
-		<xsd:include schemaLocation="..\schema\IHE\RFD.xsd" />
+		<xsd:include schemaLocation="../schema/IHE/RFD.xsd" />
     </xsd:schema>
   </types>
 

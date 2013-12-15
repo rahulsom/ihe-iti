@@ -6,7 +6,7 @@
 
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.4</version>
 
   <name>IHE ITI</name>
   <description>Codegen for IHE ITI Profiles.</description>
@@ -61,21 +61,27 @@
             <configuration>
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
-                <bindingFile>${basedir}/src/main/resources/iti/bindings/bind.xjb</bindingFile>
+                <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
               </bindingFiles>
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
+                <!--
+                This needs DSMLv2 which is missing
+                <wsdlFile>HPD_ProviderInformationDirectory.wsdl</wsdlFile>
+                -->
                 <wsdlFile>PDQSupplier.wsdl</wsdlFile>
                 <wsdlFile>PIXConsumer.wsdl</wsdlFile>
                 <wsdlFile>PIXManager.wsdl</wsdlFile>
+                <wsdlFile>RFDFormManager.wsdl</wsdlFile>
+                <wsdlFile>SVS_ValueSetRepository.wsdl</wsdlFile>
                 <wsdlFile>XCAInitiatingGatewayQuery.wsdl</wsdlFile>
                 <wsdlFile>XCAInitiatingGatewayRetrieve.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayQuery.wsdl</wsdlFile>
                 <wsdlFile>XCARespondingGatewayRetrieve.wsdl</wsdlFile>
-                <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
-                <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
                 <wsdlFile>XCPDInitiatingGateway.wsdl</wsdlFile>
                 <wsdlFile>XCPDRespondingGateway.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
+                <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
@@ -133,6 +139,7 @@
           <args>
             <arg>-Xfluent-api</arg>
             <arg>-Xcommons-lang</arg>
+            <arg>-npa</arg>
           </args>
         </configuration>
       </plugin>
@@ -242,6 +249,12 @@
       <version>2.6</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>0.7-groovy-2.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <distributionManagement>
