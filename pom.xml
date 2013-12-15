@@ -16,7 +16,7 @@
     <license>
       <name>Need to fix licensing</name>
       <url>http://foo/</url>
-      <distribution>No details yet</distribution>
+      <distribution>repo</distribution>
     </license>
   </licenses>
 
@@ -25,6 +25,26 @@
     <connection>scm:git:git@github.com:rahulsom/ihe-iti.git</connection>
     <developerConnection>scm:git:git@github.com:rahulsom/ihe-iti.git</developerConnection>
   </scm>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/rahulsom/ihe-iti/issues</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>travis</system>
+    <url>https://travis-ci.org/rahulsom/ihe-iti</url>
+  </ciManagement>
+
+  <mailingLists>
+    <mailingList>
+      <name>Main List</name>
+      <subscribe>ihe-iti-subscribe@googlegroups.com</subscribe>
+      <unsubscribe>ihe-iti-unsubscribe@googlegroups.com</unsubscribe>
+      <post>ihe-iti@googlegroups.com</post>
+      <archive>https://groups.google.com/d/forum/ihe-iti</archive>
+    </mailingList>
+  </mailingLists>
 
   <developers>
     <developer>
