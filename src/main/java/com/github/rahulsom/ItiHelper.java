@@ -110,7 +110,7 @@ public class ItiHelper {
     return new AD().withContent(data);
   }
 
-  static class En {
+  public static class En {
     public static JAXBElement<EnGiven> given(String value) {
       return jaxb("given", EnGiven.class, new EnGiven().withContent(value));
     }
@@ -120,7 +120,7 @@ public class ItiHelper {
     }
   }
 
-  static class Ad {
+  public static class Ad {
     public static JAXBElement<AdxpStreetAddressLine> streetAddressLine(String value) {
       return jaxb("streetAddressLine", AdxpStreetAddressLine.class, new AdxpStreetAddressLine().withContent(value));
     }
