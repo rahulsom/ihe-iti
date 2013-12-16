@@ -111,33 +111,33 @@ public class ItiHelper {
   }
 
   static class En {
-    static JAXBElement<EnGiven> given(String value) {
+    public static JAXBElement<EnGiven> given(String value) {
       return jaxb("given", EnGiven.class, new EnGiven().withContent(value));
     }
 
-    static JAXBElement<EnFamily> family(String value) {
+    public static JAXBElement<EnFamily> family(String value) {
       return jaxb("family", EnFamily.class, new EnFamily().withContent(value));
     }
   }
 
   static class Ad {
-    static JAXBElement<AdxpStreetAddressLine> streetAddressLine(String value) {
+    public static JAXBElement<AdxpStreetAddressLine> streetAddressLine(String value) {
       return jaxb("streetAddressLine", AdxpStreetAddressLine.class, new AdxpStreetAddressLine().withContent(value));
     }
 
-    static JAXBElement<AdxpCity> city(String value) {
+    public static JAXBElement<AdxpCity> city(String value) {
       return jaxb("city", AdxpCity.class, new AdxpCity().withContent(value));
     }
 
-    static JAXBElement<AdxpState> state(String value) {
+    public static JAXBElement<AdxpState> state(String value) {
       return jaxb("state", AdxpState.class, new AdxpState().withContent(value));
     }
 
-    static JAXBElement<AdxpCountry> country(String value) {
+    public static JAXBElement<AdxpCountry> country(String value) {
       return jaxb("country", AdxpCountry.class, new AdxpCountry().withContent(value));
     }
 
-    static JAXBElement<AdxpPostalCode> postalCode(String value) {
+    public static JAXBElement<AdxpPostalCode> postalCode(String value) {
       return jaxb("postalCode", AdxpPostalCode.class, new AdxpPostalCode().withContent(value));
     }
   }
