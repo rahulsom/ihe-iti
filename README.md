@@ -40,6 +40,8 @@ Maven. Just clone the repo & checkout the branch, and run
 
 That should make it possible for you to use these classes.
 
+Sample code is [here](http://rahulsom.github.io/ihe-iti/).
+
 Contributing
 ------------
 
