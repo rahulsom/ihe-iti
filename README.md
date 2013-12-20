@@ -21,7 +21,7 @@ Usage
 If you want to download the library from Sonatype, add this to your dependencies
 section:
 
-    com.github.rahulsom:ihe-iti:0.4
+    com.github.rahulsom:ihe-iti:0.5
 
 To browse the latest builds, you can see [MavenRepository](http://mvnrepository.com/artifact/com.github.rahulsom/ihe-iti). It also has instructions for Maven, Gradle, Ivy, sbt, etc.
 
