@@ -4,7 +4,6 @@
     <jaxb:globalBindings
         typesafeEnumMaxMembers="2000"
         generateMixedExtensions="true"
-        generateElementProperty="false"
         />
   </jaxb:bindings>
 </jaxb:bindings>

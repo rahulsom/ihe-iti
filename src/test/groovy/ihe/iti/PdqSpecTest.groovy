@@ -39,10 +39,10 @@ class PdqSpecTest extends Specification {
     def patient = r1.controlActProcess.subject.find { it }.registrationEvent.subject1.patient
 
     then: "It's provider should be 'Good Health Clinic'"
-    patient.providerOrganization.name.find { it }.content.find { it } == 'Good Health Clinic'
+    patient.providerOrganization.value.name.find { it }.content.find { it } == 'Good Health Clinic'
 
     when: "The patient's name is found"
-    PN pn = patient.patientPerson.name[0]
+    PN pn = patient.patientPerson.value.name[0]
     List<JAXBElement> nameParts = pn.content.findAll { it instanceof JAXBElement }
 
     then: "It's first name name is 'James'"

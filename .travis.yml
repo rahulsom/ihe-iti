@@ -6,3 +6,7 @@ env:
     - BINTRAY_USER=rahulsom
 
 script: ./build.sh
+
+cache:
+  directories:
+    - $HOME/.m2/repository
