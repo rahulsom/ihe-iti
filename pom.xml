@@ -14,9 +14,10 @@
 
   <licenses>
     <license>
-      <name>Need to fix licensing</name>
-      <url>http://foo/</url>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
     </license>
   </licenses>
 
