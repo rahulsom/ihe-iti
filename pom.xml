@@ -79,10 +79,11 @@
             </goals>
             <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
+			<!--
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
-              </bindingFiles>
+              </bindingFiles>-->
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <!--
@@ -102,6 +103,7 @@
                 <wsdlFile>XCPDRespondingGateway.wsdl</wsdlFile>
                 <wsdlFile>XDS.b_DocumentRegistry.wsdl</wsdlFile>
                 <wsdlFile>XDS.b_DocumentRepository.wsdl</wsdlFile>
+                <wsdlFile>XDS-I.b_ImagingDocumentSource.wsdl</wsdlFile>
               </wsdlFiles>
               <extension>true</extension>
               <xadditionalHeaders>true</xadditionalHeaders>
@@ -313,3 +315,4 @@
   </properties>
 
 </project>
+
