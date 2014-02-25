@@ -5,7 +5,8 @@
 
 export GPGKEY=$(gpg --list-keys | grep pub | tr -s " " | cut -d " " -f 2 | cut -d/ -f2 | tail -1)
 echo GPGKEY=$GPGKEY
-export IHEVER=$(cat pom.xml| xpath /project/version/text\(\))
+export LIB_VER=$(cat pom.xml| xpath /project/version/text\(\))
+export LIB_NAME=$(cat pom.xml| xpath /project/artifactId/text\(\))
 PASSPHRASE=$1
 
 if [ "$PASSPHRASE" = "" ]; then
@@ -19,11 +20,11 @@ REPOCONF="-Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
 
 mvn clean install
 
-echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}.jar
-mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}.jar
+echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}.jar
+mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}.jar
 
-echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}-sources.jar -Dclassifier=sources
-mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}-sources.jar -Dclassifier=sources
+echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}-sources.jar -Dclassifier=sources
+mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}-sources.jar -Dclassifier=sources
 
-echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}-javadoc.jar -Dclassifier=javadoc
-mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/ihe-iti-${IHEVER}-javadoc.jar -Dclassifier=javadoc
+echo mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}-javadoc.jar -Dclassifier=javadoc
+mvn gpg:sign-and-deploy-file $REPOCONF -DpomFile=pom.xml -Dfile=target/${LIB_NAME}-${LIB_VER}-javadoc.jar -Dclassifier=javadoc
