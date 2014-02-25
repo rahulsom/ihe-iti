@@ -57,14 +57,14 @@
     <operation name="ImagingDocumentSource_RetrieveImagingDocumentSet">
       <input message="iherad:RetrieveImagingDocumentSetRequest_Message"
         wsaw:Action="urn:ihe:rad:2009:RetrieveImagingDocumentSet"/>
-      <output message="ihe:RetrieveDocumentSetResponse_Message"
+      <output message="iherad:RetrieveDocumentSetResponse_Message"
         wsaw:Action="urn:ihe:iti:2007:RetrieveDocumentSetResponse"/>
     </operation>
   </portType>
   <binding name="ImagingDocumentSource_Binding" type="iherad:ImagingDocumentSource_PortType">
     <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="ImagingDocumentSource_RetrieveImagingDocumentSet">
-      <soap12:operation soapAction="false"/>
+      <soap12:operation soapActionRequired="false" soapAction="urn:ihe:iti:2007:RetrieveImagingDocumentSet"/>
       <input>
         <soap12:body use="literal"/>
       </input>
