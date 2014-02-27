@@ -52,22 +52,4 @@ class PdqSpecTest extends Specification {
     nameParts.find { it.declaredType == EnFamily }.value.content.find { it } == 'Jones'
   }
 
-  def "test query can be parsed and recreated"() {
-    given: "a parser"
-    def jaxbContext = XmlTestHelper.jaxbContext
-
-    when: "the message is parsed"
-    def r = jaxbContext.createUnmarshaller().unmarshal(
-        PdqSpecTest.classLoader.getResourceAsStream('PDQV3/01_PDQQuery1.xml')
-    )
-
-    then: "a valid object should be returned"
-    r instanceof PRPAIN201305UV02
-
-    when: "The object's xml is compared against the original"
-    def id = XmlTestHelper.getIrrecoverableDifferences(r, 'PDQV3/01_PDQQuery1.xml')
-
-    then: "There should be no differences"
-    !id
-  }
 }
