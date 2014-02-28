@@ -54,7 +54,7 @@
     <part name="body" element="ihe:RetrieveDocumentSetResponse"/>
   </message>
   <portType name="ImagingDocumentSource_PortType">
-    <operation name="ImagingDocumentSource_RetrieveImagingDocumentSet">
+    <operation name="RetrieveImagingDocumentSet">
       <input message="iherad:RetrieveImagingDocumentSetRequest_Message"
         wsaw:Action="urn:ihe:rad:2009:RetrieveImagingDocumentSet"/>
       <output message="iherad:RetrieveDocumentSetResponse_Message"
@@ -63,8 +63,8 @@
   </portType>
   <binding name="ImagingDocumentSource_Binding" type="iherad:ImagingDocumentSource_PortType">
     <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="ImagingDocumentSource_RetrieveImagingDocumentSet">
-      <soap12:operation soapActionRequired="false" soapAction="urn:ihe:iti:2007:RetrieveImagingDocumentSet"/>
+    <operation name="RetrieveImagingDocumentSet">
+      <soap12:operation soapActionRequired="false" soapAction="urn:ihe:rad:xdsi-b:2009:RetrieveImagingDocumentSet"/>
       <input>
         <soap12:body use="literal"/>
       </input>
