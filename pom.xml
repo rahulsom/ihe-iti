@@ -78,13 +78,13 @@
             <goals>
               <goal>wsimport</goal>
             </goals>
-            <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
-			<!--
+			        <!--
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
-              </bindingFiles>-->
+              </bindingFiles>
+              -->
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <!--
@@ -144,6 +144,7 @@
             <exclude>**/ESVS-20100726.xsd</exclude>
             <exclude>**/XCPD_PLQ.xsd</exclude>
             <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
+            <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
           </schemaExcludes>
           <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
           <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
@@ -218,6 +219,50 @@
             <id>attach-javadocs</id>
             <goals>
               <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.damage-control.report</groupId>
+        <artifactId>damage-control-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+          <skip>false</skip>
+          <testResultsFolders>
+            <testResultsFolder>target/surefire-reports</testResultsFolder>
+            <testResultsFolder>target/failsafe-reports</testResultsFolder>
+          </testResultsFolders>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.11</version>
+        <configuration>
+          <testFailureIgnore>true</testFailureIgnore>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.16</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>integration-test</goal>
             </goals>
           </execution>
         </executions>
