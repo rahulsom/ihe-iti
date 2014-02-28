@@ -144,6 +144,7 @@
             <exclude>**/ESVS-20100726.xsd</exclude>
             <exclude>**/XCPD_PLQ.xsd</exclude>
             <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
+            <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
           </schemaExcludes>
           <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
           <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
