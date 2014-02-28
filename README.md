@@ -21,7 +21,7 @@ Usage
 If you want to download the library from Sonatype, add this to your dependencies
 section:
 
-    com.github.rahulsom:ihe-iti:0.5
+    com.github.rahulsom:ihe-iti:0.6
 
 To browse the latest builds, you can see [MavenRepository](http://mvnrepository.com/artifact/com.github.rahulsom/ihe-iti). It also has instructions for Maven, Gradle, Ivy, sbt, etc.
 
@@ -41,6 +41,16 @@ Maven. Just clone the repo & checkout the branch, and run
 That should make it possible for you to use these classes.
 
 Sample code is [here](http://rahulsom.github.io/ihe-iti/).
+
+Changelog
+---------
+* 0.7 - Fixed XDS broken by RAD
+* 0.6 - (DO NOT USE) Added support for RAD
+* 0.5 - Added utility methods, async services, RFD-FM, SVS
+* 0.4 - (DO NOT USE) Tried avoiding the `.getValue()` calls
+* 0.3 - Added fluent API
+* 0.2 - No more querying w3.org
+* 0.1 - Inital Release
 
 Contributing
 ------------
