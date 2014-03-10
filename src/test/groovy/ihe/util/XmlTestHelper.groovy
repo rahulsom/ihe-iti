@@ -1,6 +1,12 @@
 package ihe.util
 
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
+import ihe.iti.xds_b._2007.DocumentRegistryPortType
+import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType
+import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType
+import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType
+import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse
+import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType
 import org.custommonkey.xmlunit.DetailedDiff
 import org.custommonkey.xmlunit.Diff
 import org.custommonkey.xmlunit.Difference
@@ -17,7 +23,11 @@ import javax.xml.namespace.QName
 class XmlTestHelper {
 
   @Lazy
-  static jaxbContext = JAXBContext.newInstance(PRPAIN201306UV02,RetrieveValueSetRequestType)
+  static jaxbContext = JAXBContext.newInstance(
+      PRPAIN201306UV02,RetrieveValueSetRequestType,
+      ProvideAndRegisterDocumentSetRequestType, RetrieveDocumentSetRequestType,
+      AdhocQueryResponse, RegistryResponseType, RetrieveDocumentSetResponseType
+  )
 
   static <T> List getIrrecoverableDifferences(r, file) {
     def sw = new StringWriter()
