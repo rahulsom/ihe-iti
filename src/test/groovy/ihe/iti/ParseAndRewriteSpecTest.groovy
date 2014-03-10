@@ -3,6 +3,9 @@ package ihe.iti
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
 import ihe.iti.svs._2008.RetrieveValueSetResponseType
 import ihe.util.XmlTestHelper
+import oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest
+import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest
+import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse
 import org.hl7.v3.*
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -68,9 +71,12 @@ class ParseAndRewriteSpecTest extends Specification {
     'XCPD'  | 'XCPDCrossGatewayPatientDiscoveryResponseAEError.xml'             | PRPAIN201306UV02
     'XCPD'  | 'XCPDCrossGatewayPatientDiscoveryResponseForMoreDemographics.xml' | PRPAIN201306UV02
 
+    'XDS.b' | 'RegisterDocumentSet-bRequest.xml'                                | SubmitObjectsRequest
+    'XDS.b' | 'RegistryStoredQueryRequest.xml'                                  | AdhocQueryRequest
+    'XDS.b' | 'RegistryStoredQueryResponse.xml'                                 | AdhocQueryResponse
     // TODO XCA
     // TODO XCPD Missing
-    // TODO XDS.b
+    // TODO XDS.b Missing
     // TODO XDW
 
   }
