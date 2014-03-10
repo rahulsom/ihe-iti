@@ -304,6 +304,7 @@
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
       <version>${jaxb.impl.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -331,6 +332,26 @@
       <version>0.7-groovy-2.0</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <scope>test</scope>
+      <groupId>co.freeside</groupId>
+      <artifactId>betamax</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${cxf.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http</artifactId>
+      <version>${cxf.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <distributionManagement>
@@ -354,6 +375,7 @@
     <gec.version>2.7.0-01</gec.version>
     <jaxws.plugin.version>2.2</jaxws.plugin.version>
     <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+    <cxf.version>2.2.3</cxf.version>
 
     <!-- set the character encoding for the build, so it is not platform-dependent -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
