@@ -2,6 +2,7 @@ package ihe.iti
 
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
 import ihe.iti.svs._2008.RetrieveValueSetResponseType
+import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType
 import ihe.util.XmlTestHelper
 import oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest
@@ -15,7 +16,7 @@ import javax.xml.bind.JAXBElement
 /**
  * Created by rahulsomasunderam on 2/27/14.
  */
-class ParseAndRewriteSpecTest extends Specification {
+class ParseAndRewriteSpec extends Specification {
 
   @Unroll
   def "#profile: #file can be parsed to #clazz and recreated"() {
@@ -74,6 +75,7 @@ class ParseAndRewriteSpecTest extends Specification {
     'XDS.b' | 'RegisterDocumentSet-bRequest.xml'                                | SubmitObjectsRequest
     'XDS.b' | 'RegistryStoredQueryRequest.xml'                                  | AdhocQueryRequest
     'XDS.b' | 'RegistryStoredQueryResponse.xml'                                 | AdhocQueryResponse
+
     // TODO XCA
     // TODO XCPD Missing
     // TODO XDS.b Missing

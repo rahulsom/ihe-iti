@@ -4,7 +4,6 @@ import ihe.util.XmlTestHelper
 import org.hl7.v3.EnFamily
 import org.hl7.v3.EnGiven
 import org.hl7.v3.PN
-import org.hl7.v3.PRPAIN201305UV02
 import org.hl7.v3.PRPAIN201306UV02
 import spock.lang.Specification
 
@@ -15,14 +14,14 @@ import javax.xml.bind.JAXBElement
  * Tests PRPAIN201306UV02 marshaling and unmarshaling and also support for mixed content
  * @author rahulsomasunderam
  */
-class PdqSpecTest extends Specification {
+class PdqSpec extends Specification {
   def "test if name can be extracted from a PDQ Response"() {
     given: "a parser"
     def jaxbContext = XmlTestHelper.jaxbContext
 
     when: "the message is parsed"
     def r = jaxbContext.createUnmarshaller().unmarshal(
-        PdqSpecTest.classLoader.getResourceAsStream('PDQV3/02_PDQQuery1Response.xml')
+        PdqSpec.classLoader.getResourceAsStream('PDQV3/02_PDQQuery1Response.xml')
     )
 
     then: "a valid object should be returned"

@@ -251,6 +251,9 @@
         <version>2.11</version>
         <configuration>
           <testFailureIgnore>true</testFailureIgnore>
+          <includes>
+            <include>**/*Spec.class</include>
+          </includes>
         </configuration>
       </plugin>
 
