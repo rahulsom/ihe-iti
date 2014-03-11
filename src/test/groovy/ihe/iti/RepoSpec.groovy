@@ -16,15 +16,10 @@ import javax.xml.ws.soap.*
 class RepoSpec extends Specification {
 
   @Rule
-  Recorder recorder
+  Recorder recorder = new Recorder()
 
   void setup() {
     System.setProperty( "com.sun.xml.bind.v2.bytecode.ClassTailor.noOptimize", "true");
-
-    recorder = new Recorder(new Properties().with{
-      put 'proxyTimeout', 30000
-      it
-    })
   }
 
   void cleanup() {
@@ -41,6 +36,7 @@ class RepoSpec extends Specification {
 
     bp.requestContext[BindingProvider.ENDPOINT_ADDRESS_PROPERTY] = 'http://hd-josette/hd/services/xdsrepositoryb'
 
+    and: "a request"
     def request = new RetrieveDocumentSetRequestType().
         withDocumentRequest(
             new RetrieveDocumentSetRequestType.DocumentRequest().
@@ -55,6 +51,11 @@ class RepoSpec extends Specification {
 
     then: "It ends in success"
     resp.registryResponse.status.endsWith('Success')
-
+    !resp.registryResponse.registryErrorList
+    resp.documentResponse.size() == 1
+    resp.documentResponse[0].documentUniqueId == '1.42.20130708171302.244'
+    resp.documentResponse[0].mimeType == 'text/plain'
+    resp.documentResponse[0].document.inputStream.text == this.class.classLoader.getResourceAsStream('XDS.b/four-score.txt').text
   }
+  
 }
