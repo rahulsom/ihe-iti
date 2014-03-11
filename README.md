@@ -44,6 +44,7 @@ Sample code is [here](http://rahulsom.github.io/ihe-iti/).
 
 Changelog
 ---------
+* 0.7 - Fixed XDS broken by RAD
 * 0.6 - (DO NOT USE) Added support for RAD
 * 0.5 - Added utility methods, async services, RFD-FM, SVS
 * 0.4 - (DO NOT USE) Tried avoiding the `.getValue()` calls
@@ -53,7 +54,6 @@ Changelog
 
 Roadmap
 -------
-* 0.7 - Fixed XDS broken by RAD
 * 0.8 - Replaced `byte[]` with `DataHandler`, i.e. streaming of attachments
 
 Contributing
