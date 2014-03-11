@@ -6,7 +6,7 @@
 
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
-  <version>0.6</version>
+  <version>0.7</version>
 
   <name>IHE ITI</name>
   <description>Codegen for IHE ITI Profiles.</description>
@@ -78,13 +78,13 @@
             <goals>
               <goal>wsimport</goal>
             </goals>
-            <!-- Following configuration will pass ${basedir}/src/remote-xjc/bindings.xjc and ${basedir}/src/jaxws/bindings-default.xjc to wsimport. -->
             <configuration>
-			<!--
+			        <!--
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
-              </bindingFiles>-->
+              </bindingFiles>
+              -->
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <!--
@@ -144,6 +144,7 @@
             <exclude>**/ESVS-20100726.xsd</exclude>
             <exclude>**/XCPD_PLQ.xsd</exclude>
             <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
+            <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
           </schemaExcludes>
           <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
           <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
@@ -222,6 +223,50 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>com.github.damage-control.report</groupId>
+        <artifactId>damage-control-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+          <skip>false</skip>
+          <testResultsFolders>
+            <testResultsFolder>target/surefire-reports</testResultsFolder>
+            <testResultsFolder>target/failsafe-reports</testResultsFolder>
+          </testResultsFolders>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.11</version>
+        <configuration>
+          <testFailureIgnore>true</testFailureIgnore>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.16</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
 
   </build>
@@ -259,6 +304,7 @@
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
       <version>${jaxb.impl.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -286,6 +332,26 @@
       <version>0.7-groovy-2.0</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <scope>test</scope>
+      <groupId>co.freeside</groupId>
+      <artifactId>betamax</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${cxf.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http</artifactId>
+      <version>${cxf.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <distributionManagement>
@@ -309,6 +375,7 @@
     <gec.version>2.7.0-01</gec.version>
     <jaxws.plugin.version>2.2</jaxws.plugin.version>
     <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+    <cxf.version>2.2.3</cxf.version>
 
     <!-- set the character encoding for the build, so it is not platform-dependent -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
