@@ -15,7 +15,7 @@ import javax.xml.bind.JAXBElement
  * @author rahulsomasunderam
  */
 class PdqSpec extends Specification {
-  def "test if name can be extracted from a PDQ Response"() {
+  def "name can be extracted from a PDQ Response"() {
     given: "a parser"
     def jaxbContext = XmlTestHelper.jaxbContext
 

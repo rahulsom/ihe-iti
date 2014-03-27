@@ -27,7 +27,7 @@ class RepoSpec extends Specification {
   }
 
   @Betamax(tape = 'repo-retrieve')
-  void 'feature that accesses external web service'() {
+  def 'accesses external web service'() {
     given: "A Webservice"
     def wsdl = this.class.getResource('/iti/wsdl/XDS.b_DocumentRepository.wsdl')
     Service service = new DocumentRepositoryService(wsdl)
