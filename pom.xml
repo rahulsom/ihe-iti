@@ -79,12 +79,10 @@
               <goal>wsimport</goal>
             </goals>
             <configuration>
-			        <!--
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
               </bindingFiles>
-              -->
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <!--
@@ -360,7 +358,7 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexus-oss-snapshot</id>
-      <name>Nexus OSS Snapshots</name>
+      <name>Nexu`s OSS Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
