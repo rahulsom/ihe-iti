@@ -358,7 +358,7 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexus-oss-snapshot</id>
-      <name>Nexu`s OSS Snapshots</name>
+      <name>Nexus OSS Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
