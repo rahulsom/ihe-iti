@@ -122,30 +122,52 @@
         <version>${jaxb.plugin.version}</version>
         <executions>
           <execution>
+            <id>iti</id>
             <goals>
               <goal>generate</goal>
             </goals>
+            <configuration>
+              <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
+              <forceRegenerate>true</forceRegenerate>
+              <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>**/*.xsd</include>
+              </schemaIncludes>
+              <schemaExcludes>
+                <exclude>**/XDW-2012-04-02.xsd</exclude>
+                <exclude>**/XDW/POCD_MT000040.xsd</exclude>
+                <exclude>**/PRPA_IN201303UV02.xsd</exclude>
+                <exclude>**/SVS.xsd</exclude>
+                <exclude>**/ESVS-20100726.xsd</exclude>
+                <exclude>**/XCPD_PLQ.xsd</exclude>
+                <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
+                <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
+              </schemaExcludes>
+              <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>cda</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <forceRegenerate>true</forceRegenerate>
+              <schemaDirectory>src/main/resources/cda/infrastructure/cda</schemaDirectory>
+              <schemaIncludes>
+                <include>**/*.xsd</include>
+              </schemaIncludes>
+              <!--schemaExcludes>
+                <exclude>**/POCD*.xsd</exclude>
+              </schemaExcludes-->
+              <bindingDirectory>${basedir}/src/main/resources/cda/bindings</bindingDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/cda</generateDirectory>
+              <generatePackage>com.github.rahulsom.cda</generatePackage>
+            </configuration>
           </execution>
         </executions>
         <configuration>
-          <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
-          <forceRegenerate>true</forceRegenerate>
-          <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
-          <schemaIncludes>
-            <include>**/*.xsd</include>
-          </schemaIncludes>
-          <schemaExcludes>
-            <exclude>**/XDW-2012-04-02.xsd</exclude>
-            <exclude>**/XDW/POCD_MT000040.xsd</exclude>
-            <exclude>**/PRPA_IN201303UV02.xsd</exclude>
-            <exclude>**/SVS.xsd</exclude>
-            <exclude>**/ESVS-20100726.xsd</exclude>
-            <exclude>**/XCPD_PLQ.xsd</exclude>
-            <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
-            <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
-          </schemaExcludes>
-          <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
-          <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
           <plugins>
             <plugin>
               <groupId>org.jvnet.jaxb2_commons</groupId>

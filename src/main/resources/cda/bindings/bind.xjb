@@ -1,0 +1,17 @@
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:version="2.0">
+  <jaxb:bindings >
+    <jaxb:globalBindings
+        typesafeEnumMaxMembers="2000"
+        generateMixedExtensions="true"
+        />
+
+    <jaxb:bindings schemaLocation="../infrastructure/cda/POCD_MT000040.xsd" node="/xs:schema">
+        <jaxb:bindings node="//xs:attribute[@name='ID']" multiple="true">
+          <jaxb:property name="idAttr"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>

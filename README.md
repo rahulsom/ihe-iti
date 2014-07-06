@@ -22,6 +22,7 @@ Currently this supports these services:
 * SVS Repository
 * RAD
 
+In Addition, it supports parsing of CDA Documents. Look at `com.github.rahulsom.cda.POCDMT000040ClinicalDocument`
 
 
 Usage
