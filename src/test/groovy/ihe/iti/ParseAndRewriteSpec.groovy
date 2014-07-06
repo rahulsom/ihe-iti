@@ -1,8 +1,8 @@
 package ihe.iti
 
+import com.github.rahulsom.cda.POCDMT000040ClinicalDocument
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
 import ihe.iti.svs._2008.RetrieveValueSetResponseType
-import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType
 import ihe.util.XmlTestHelper
 import oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest
@@ -11,6 +11,7 @@ import org.hl7.v3.*
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import javax.xml.bind.JAXBContext
 import javax.xml.bind.JAXBElement
 
 /**
@@ -19,11 +20,24 @@ import javax.xml.bind.JAXBElement
 class ParseAndRewriteSpec extends Specification {
 
   @Unroll
+  def "CDA: #file can be parsed to #clazz and recreated"() {
+
+    expect:
+    parseCda("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
+        parseCda("${profile}/${file}"), "${profile}/${file}", XmlTestHelper.cdaJaxbContext
+    )
+
+    where:
+    profile || file || clazz
+    'CDA' | 'PaulWilson-Clinic.ccd.xml' | POCDMT000040ClinicalDocument
+  }
+
+  @Unroll
   def "#profile: #file can be parsed to #clazz and recreated"() {
 
     expect:
-    parse("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
-        parse("${profile}/${file}"), "${profile}/${file}"
+    parseIti("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
+        parseIti("${profile}/${file}"), "${profile}/${file}"
     )
 
     where:
@@ -83,8 +97,7 @@ class ParseAndRewriteSpec extends Specification {
 
   }
 
-  def parse(String file) {
-    def jaxbContext = XmlTestHelper.jaxbContext
+  def parse(String file, JAXBContext jaxbContext) {
     def obj = jaxbContext.createUnmarshaller().unmarshal(
         this.class.classLoader.getResourceAsStream(file)
     )
@@ -93,5 +106,11 @@ class ParseAndRewriteSpec extends Specification {
     } else {
       obj
     }
+  }
+  def parseCda(String file) {
+    parse(file, XmlTestHelper.cdaJaxbContext)
+  }
+  def parseIti(String file) {
+    parse(file, XmlTestHelper.itiJaxbContext)
   }
 }

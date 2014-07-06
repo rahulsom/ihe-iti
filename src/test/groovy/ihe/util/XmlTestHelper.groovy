@@ -1,7 +1,7 @@
 package ihe.util
 
+import com.github.rahulsom.cda.POCDMT000040ClinicalDocument
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
-import ihe.iti.xds_b._2007.DocumentRegistryPortType
 import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType
 import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType
@@ -23,20 +23,23 @@ import javax.xml.namespace.QName
 class XmlTestHelper {
 
   @Lazy
-  static jaxbContext = JAXBContext.newInstance(
+  static itiJaxbContext = JAXBContext.newInstance(
       PRPAIN201306UV02,RetrieveValueSetRequestType,
       ProvideAndRegisterDocumentSetRequestType, RetrieveDocumentSetRequestType,
       AdhocQueryResponse, RegistryResponseType, RetrieveDocumentSetResponseType
   )
 
-  static <T> List getIrrecoverableDifferences(r, file) {
+  @Lazy
+  static cdaJaxbContext = JAXBContext.newInstance(POCDMT000040ClinicalDocument)
+
+  static <T> List getIrrecoverableDifferences(T r, String file, JAXBContext theContext = itiJaxbContext) {
     def sw = new StringWriter()
     try {
-      jaxbContext.createMarshaller().marshal(r, sw)
+      theContext.createMarshaller().marshal(r, sw)
     } catch (Exception e) {
       def j = new JAXBElement(new QName('foo','bar'), r.class, r)
       sw = new StringWriter()
-      jaxbContext.createMarshaller().marshal(j, sw)
+      theContext.createMarshaller().marshal(j, sw)
     }
 
     def inString = XmlTestHelper.classLoader.getResourceAsStream(file).text

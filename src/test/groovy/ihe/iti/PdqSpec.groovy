@@ -17,7 +17,7 @@ import javax.xml.bind.JAXBElement
 class PdqSpec extends Specification {
   def "name can be extracted from a PDQ Response"() {
     given: "a parser"
-    def jaxbContext = XmlTestHelper.jaxbContext
+    def jaxbContext = XmlTestHelper.itiJaxbContext
 
     when: "the message is parsed"
     def r = jaxbContext.createUnmarshaller().unmarshal(
