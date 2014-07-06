@@ -15,6 +15,16 @@ tough time dealing with these profiles.
 This project aims to make it easier for anyone who wants to work with these
 profiles.
 
+Currently this supports these services:
+
+* PIX, PDQ, XCPD
+* XDS.b (Repository/Registry), XCA (Initiating/Responding)
+* SVS Repository
+* RAD
+
+In Addition, it supports parsing of CDA Documents. Look at `com.github.rahulsom.cda.POCDMT000040ClinicalDocument`
+
+
 Usage
 -----
 

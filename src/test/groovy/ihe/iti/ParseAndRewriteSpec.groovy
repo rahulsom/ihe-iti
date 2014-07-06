@@ -1,5 +1,6 @@
 package ihe.iti
 
+import com.github.rahulsom.cda.POCDMT000040ClinicalDocument
 import ihe.iti.svs._2008.RetrieveValueSetRequestType
 import ihe.iti.svs._2008.RetrieveValueSetResponseType
 import ihe.util.XmlTestHelper
@@ -10,19 +11,33 @@ import org.hl7.v3.*
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import javax.xml.bind.JAXBContext
 import javax.xml.bind.JAXBElement
 
 /**
  * Created by rahulsomasunderam on 2/27/14.
  */
-class ParseAndRewriteSpecTest extends Specification {
+class ParseAndRewriteSpec extends Specification {
+
+  @Unroll
+  def "CDA: #file can be parsed to #clazz and recreated"() {
+
+    expect:
+    parseCda("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
+        parseCda("${profile}/${file}"), "${profile}/${file}", XmlTestHelper.cdaJaxbContext
+    )
+
+    where:
+    profile || file || clazz
+    'CDA' | 'PaulWilson-Clinic.ccd.xml' | POCDMT000040ClinicalDocument
+  }
 
   @Unroll
   def "#profile: #file can be parsed to #clazz and recreated"() {
 
     expect:
-    parse("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
-        parse("${profile}/${file}"), "${profile}/${file}"
+    parseIti("${profile}/${file}").class == clazz && !XmlTestHelper.getIrrecoverableDifferences(
+        parseIti("${profile}/${file}"), "${profile}/${file}"
     )
 
     where:
@@ -74,6 +89,7 @@ class ParseAndRewriteSpecTest extends Specification {
     'XDS.b' | 'RegisterDocumentSet-bRequest.xml'                                | SubmitObjectsRequest
     'XDS.b' | 'RegistryStoredQueryRequest.xml'                                  | AdhocQueryRequest
     'XDS.b' | 'RegistryStoredQueryResponse.xml'                                 | AdhocQueryResponse
+
     // TODO XCA
     // TODO XCPD Missing
     // TODO XDS.b Missing
@@ -81,8 +97,7 @@ class ParseAndRewriteSpecTest extends Specification {
 
   }
 
-  def parse(String file) {
-    def jaxbContext = XmlTestHelper.jaxbContext
+  def parse(String file, JAXBContext jaxbContext) {
     def obj = jaxbContext.createUnmarshaller().unmarshal(
         this.class.classLoader.getResourceAsStream(file)
     )
@@ -91,5 +106,11 @@ class ParseAndRewriteSpecTest extends Specification {
     } else {
       obj
     }
+  }
+  def parseCda(String file) {
+    parse(file, XmlTestHelper.cdaJaxbContext)
+  }
+  def parseIti(String file) {
+    parse(file, XmlTestHelper.itiJaxbContext)
   }
 }

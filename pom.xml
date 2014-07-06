@@ -6,7 +6,7 @@
 
   <groupId>com.github.rahulsom</groupId>
   <artifactId>ihe-iti</artifactId>
-  <version>0.7</version>
+  <version>0.8</version>
 
   <name>IHE ITI</name>
   <description>Codegen for IHE ITI Profiles.</description>
@@ -79,12 +79,10 @@
               <goal>wsimport</goal>
             </goals>
             <configuration>
-			        <!--
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
               </bindingFiles>
-              -->
               <wsdlDirectory>${basedir}/src/main/resources/iti/wsdl</wsdlDirectory>
               <wsdlFiles>
                 <!--
@@ -124,30 +122,52 @@
         <version>${jaxb.plugin.version}</version>
         <executions>
           <execution>
+            <id>iti</id>
             <goals>
               <goal>generate</goal>
             </goals>
+            <configuration>
+              <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
+              <forceRegenerate>true</forceRegenerate>
+              <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>**/*.xsd</include>
+              </schemaIncludes>
+              <schemaExcludes>
+                <exclude>**/XDW-2012-04-02.xsd</exclude>
+                <exclude>**/XDW/POCD_MT000040.xsd</exclude>
+                <exclude>**/PRPA_IN201303UV02.xsd</exclude>
+                <exclude>**/SVS.xsd</exclude>
+                <exclude>**/ESVS-20100726.xsd</exclude>
+                <exclude>**/XCPD_PLQ.xsd</exclude>
+                <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
+                <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
+              </schemaExcludes>
+              <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>cda</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <forceRegenerate>true</forceRegenerate>
+              <schemaDirectory>src/main/resources/cda/infrastructure/cda</schemaDirectory>
+              <schemaIncludes>
+                <include>**/*.xsd</include>
+              </schemaIncludes>
+              <!--schemaExcludes>
+                <exclude>**/POCD*.xsd</exclude>
+              </schemaExcludes-->
+              <bindingDirectory>${basedir}/src/main/resources/cda/bindings</bindingDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/cda</generateDirectory>
+              <generatePackage>com.github.rahulsom.cda</generatePackage>
+            </configuration>
           </execution>
         </executions>
         <configuration>
-          <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
-          <forceRegenerate>true</forceRegenerate>
-          <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
-          <schemaIncludes>
-            <include>**/*.xsd</include>
-          </schemaIncludes>
-          <schemaExcludes>
-            <exclude>**/XDW-2012-04-02.xsd</exclude>
-            <exclude>**/XDW/POCD_MT000040.xsd</exclude>
-            <exclude>**/PRPA_IN201303UV02.xsd</exclude>
-            <exclude>**/SVS.xsd</exclude>
-            <exclude>**/ESVS-20100726.xsd</exclude>
-            <exclude>**/XCPD_PLQ.xsd</exclude>
-            <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
-            <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
-          </schemaExcludes>
-          <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
-          <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
           <plugins>
             <plugin>
               <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -251,6 +271,9 @@
         <version>2.11</version>
         <configuration>
           <testFailureIgnore>true</testFailureIgnore>
+          <includes>
+            <include>**/*Spec.class</include>
+          </includes>
         </configuration>
       </plugin>
 
@@ -368,14 +391,14 @@
   </distributionManagement>
 
   <properties>
-    <jaxb.basics.version>0.6.4</jaxb.basics.version>
-    <junit.version>4.11</junit.version>
-    <groovy.version>2.0.6</groovy.version>
-    <jaxb.impl.version>2.2.6</jaxb.impl.version>
-    <gec.version>2.7.0-01</gec.version>
-    <jaxws.plugin.version>2.2</jaxws.plugin.version>
-    <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
     <cxf.version>2.2.3</cxf.version>
+    <gec.version>2.7.0-01</gec.version>
+    <groovy.version>2.3.0</groovy.version>
+    <jaxb.basics.version>0.6.4</jaxb.basics.version>
+    <jaxb.impl.version>2.2.6</jaxb.impl.version>
+    <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+    <jaxws.plugin.version>2.2</jaxws.plugin.version>
+    <junit.version>4.11</junit.version>
 
     <!-- set the character encoding for the build, so it is not platform-dependent -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

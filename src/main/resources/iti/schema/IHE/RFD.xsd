@@ -5,7 +5,11 @@
   
   Distributed in package 4 for 2009 Trial Implementation
   -->
-<xs:schema xmlns="urn:ihe:iti:rfd:2007" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ihe="urn:ihe:iti:rfd:2007" targetNamespace="urn:ihe:iti:rfd:2007" elementFormDefault="qualified">
+<xs:schema xmlns="urn:ihe:iti:rfd:2007"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ihe="urn:ihe:iti:rfd:2007"
+           xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+           targetNamespace="urn:ihe:iti:rfd:2007" elementFormDefault="qualified">
 	<xs:complexType name="anyXMLContentType">
 		<xs:sequence>
 			<xs:any namespace="##any" processContents="skip" maxOccurs="unbounded"/>
@@ -88,7 +92,7 @@
 						<xs:documentation>XML encoding of form</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Unstructured" type="xs:base64Binary">
+				<xs:element name="Unstructured" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream">
 					<xs:annotation>
 						<xs:documentation> base64Binary encoding of from </xs:documentation>
 					</xs:annotation>
