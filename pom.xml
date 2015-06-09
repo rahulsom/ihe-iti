@@ -79,6 +79,9 @@
               <goal>wsimport</goal>
             </goals>
             <configuration>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
               <bindingFiles>
                 <bindingFile>${basedir}/src/main/resources/iti/wsdlbind/jaxws.xjb</bindingFile>
@@ -240,6 +243,9 @@
             <goals>
               <goal>jar</goal>
             </goals>
+            <configuration>
+              <additionalparam>-Xdoclint:none</additionalparam>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -396,7 +402,7 @@
     <groovy.version>2.3.0</groovy.version>
     <jaxb.basics.version>0.6.4</jaxb.basics.version>
     <jaxb.impl.version>2.2.6</jaxb.impl.version>
-    <jaxb.plugin.version>0.8.3</jaxb.plugin.version>
+    <jaxb.plugin.version>0.9.0</jaxb.plugin.version>
     <jaxws.plugin.version>2.2</jaxws.plugin.version>
     <junit.version>4.11</junit.version>
 
