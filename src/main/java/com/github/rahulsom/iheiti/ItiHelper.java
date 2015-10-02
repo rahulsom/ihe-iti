@@ -1,4 +1,4 @@
-package com.github.rahulsom;
+package com.github.rahulsom.iheiti;
 
 import org.hl7.v3.*;
 
