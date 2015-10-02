@@ -131,6 +131,14 @@ project {
   build {
     plugins {
       plugin {
+        groupId 'com.rimerosolutions.maven.plugins'
+        artifactId 'wrapper-maven-plugin'
+        version '0.0.4'
+        configuration {
+          mavenVersion '3.3.2'
+        }
+      }
+      plugin {
         groupId 'org.jvnet.jax-ws-commons'
         artifactId 'jaxws-maven-plugin'
         version '${jaxws.plugin.version}'
