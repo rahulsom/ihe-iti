@@ -3,10 +3,10 @@ set -e
 
 if [ "$TRAVIS_PULL_REQUEST" = false ]; then
   if [ "$TRAVIS_BRANCH" = "develop" ]; then
-    python addServer.py && mvn deploy --settings ~/.m2/mySettings.xml
+    python addServer.py && ./mvnw deploy --settings ~/.m2/mySettings.xml
   else
-    mvn package
+    ./mvnw package
   fi
 else
-  mvn package
+  ./mvnw package
 fi
