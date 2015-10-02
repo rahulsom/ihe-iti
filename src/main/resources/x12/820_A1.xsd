@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c)Copyright 2004 Washington Publishing Company (http://www.wpc-edi.com) -->
+<xs:schema version="1.0"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wpc="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1" targetNamespace="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC820A1" xmlns="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC820A1" >
+<xs:annotation>
+	<xs:documentation xml:lang="en"> 
+		HIPAA Schema WPC820A1 - Washington Publishing Company (http://www.wpc-edi.com)
+		Copyright (C) 2004 Washington Publishing Company
+		This program is free software; you can redistribute it and/or
+		modify it under the terms of the GNU General Public License
+		as published by the Free Software Foundation; Version 2.
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+	</xs:documentation>
+</xs:annotation>
+<xs:element name="WPC820A1">
+	<xs:annotation>
+		<xs:documentation>Payment Order/Remittance Advice</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProc" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="WPC820A110200__BPR_FinancialInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11035F__TRN_ReassociationKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11040F__CUR_NonUSDollarsCurrency" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A110504__REF_PremiumReceiversIdentificationKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11060F__DTM_ProcessDate" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11061__DTM_DeliveryDate" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11062S__DTM_CoveragePeriod" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11070A_1000A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A111506_1000B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A12010V_2000A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A13010G_2000B" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A110200__BPR_FinancialInformation">
+	<xs:annotation>
+		<xs:documentation>Financial Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11020G__BPR01_TransactionHandlingCode"/>
+		<xs:attribute name="WPC820A11020Q__BPR02_TotalPremiumPaymentAmount"/>
+		<xs:attribute name="WPC820A11020Y__BPR03_CreditOrDebitFlagCode"/>
+		<xs:attribute name="WPC820A11020P__BPR04_PaymentMethodCode"/>
+		<xs:attribute name="WPC820A11020M__BPR05_PaymentFormatCode"/>
+		<xs:attribute name="WPC820A11020S__BPR06_DepositoryFinancialInstitutionDFIIdentificationNumberQualifier"/>
+		<xs:attribute name="WPC820A110208__BPR07_OriginatingDepositoryFinancialInstitutionDFIIdentifier"/>
+		<xs:attribute name="WPC820A11020G__BPR08_AccountNumberQualifier"/>
+		<xs:attribute name="WPC820A11020R__BPR09_SenderBankAccountNumber"/>
+		<xs:attribute name="WPC820A11020A__BPR10_OriginatingCompanyIdentifier"/>
+		<xs:attribute name="WPC820A11020Q__BPR11_OriginatingCompanySupplementalCode"/>
+		<xs:attribute name="WPC820A11020S__BPR12_DepositoryFinancialInstitutionDFIIdentificationNumberQualifier"/>
+		<xs:attribute name="WPC820A11020Y__BPR13_ReceivingDepositoryFinancialInstitutionDFIIdentifier"/>
+		<xs:attribute name="WPC820A11020C__BPR14_AccountNumberQualifier"/>
+		<xs:attribute name="WPC820A110205__BPR15_ReceiverBankAccountNumber"/>
+		<xs:attribute name="WPC820A11020O__BPR16_CheckIssueOrEFTEffectiveDate"/>
+		<xs:attribute name="WPC820A11020Y__BPR17_NotUsed"/>
+		<xs:attribute name="WPC820A11020X__BPR18_NotUsed"/>
+		<xs:attribute name="WPC820A11020U__BPR19_NotUsed"/>
+		<xs:attribute name="WPC820A11020K__BPR20_NotUsed"/>
+		<xs:attribute name="WPC820A11020T__BPR21_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11035F__TRN_ReassociationKey">
+	<xs:annotation>
+		<xs:documentation>Reassociation Key</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11035V__TRN01_TraceTypeCode"/>
+		<xs:attribute name="WPC820A11035Y__TRN02_CheckOrEFTTraceNumber"/>
+		<xs:attribute name="WPC820A110358__TRN03_OriginatingCompanyIdentifier"/>
+		<xs:attribute name="WPC820A11035C__TRN04_OriginatingCompanySupplementalCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11040F__CUR_NonUSDollarsCurrency">
+	<xs:annotation>
+		<xs:documentation>Non-US Dollars Currency</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11040E__CUR01_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A11040L__CUR02_CurrencyCode"/>
+		<xs:attribute name="WPC820A11040S__CUR03_ExchangeRate"/>
+		<xs:attribute name="WPC820A11040R__CUR04_NotUsed"/>
+		<xs:attribute name="WPC820A11040O__CUR05_NotUsed"/>
+		<xs:attribute name="WPC820A11040Z__CUR06_NotUsed"/>
+		<xs:attribute name="WPC820A110404__CUR07_NotUsed"/>
+		<xs:attribute name="WPC820A11040I__CUR08_NotUsed"/>
+		<xs:attribute name="WPC820A11040U__CUR09_NotUsed"/>
+		<xs:attribute name="WPC820A11040C__CUR10_NotUsed"/>
+		<xs:attribute name="WPC820A11040Z__CUR11_NotUsed"/>
+		<xs:attribute name="WPC820A11040V__CUR12_NotUsed"/>
+		<xs:attribute name="WPC820A11040I__CUR13_NotUsed"/>
+		<xs:attribute name="WPC820A11040P__CUR14_NotUsed"/>
+		<xs:attribute name="WPC820A110407__CUR15_NotUsed"/>
+		<xs:attribute name="WPC820A11040U__CUR16_NotUsed"/>
+		<xs:attribute name="WPC820A110401__CUR17_NotUsed"/>
+		<xs:attribute name="WPC820A11040__CUR18_NotUsed"/>
+		<xs:attribute name="WPC820A11040S__CUR19_NotUsed"/>
+		<xs:attribute name="WPC820A11040W__CUR20_NotUsed"/>
+		<xs:attribute name="WPC820A11040T__CUR21_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A110504__REF_PremiumReceiversIdentificationKey">
+	<xs:annotation>
+		<xs:documentation>Premium Receivers Identification Key</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A110505__REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC820A11050C__REF02_PremiumReceiverReferenceIdentifier"/>
+		<xs:attribute name="WPC820A11050K__REF03_NotUsed"/>
+		<xs:attribute name="WPC820A110503__REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11060F__DTM_ProcessDate">
+	<xs:annotation>
+		<xs:documentation>Process Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11060Q__DTM01_DateTimeQualifier"/>
+		<xs:attribute name="WPC820A11060__DTM02_PayerProcessDate"/>
+		<xs:attribute name="WPC820A11060T__DTM03_NotUsed"/>
+		<xs:attribute name="WPC820A11060A__DTM04_NotUsed"/>
+		<xs:attribute name="WPC820A110609__DTM05_NotUsed"/>
+		<xs:attribute name="WPC820A11060O__DTM06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11061__DTM_DeliveryDate">
+	<xs:annotation>
+		<xs:documentation>Delivery Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A110619__DTM01_DateTimeQualifier"/>
+		<xs:attribute name="WPC820A11061L__DTM02_PremiumDeliveryDate"/>
+		<xs:attribute name="WPC820A11061Y__DTM03_NotUsed"/>
+		<xs:attribute name="WPC820A11061B__DTM04_NotUsed"/>
+		<xs:attribute name="WPC820A11061D__DTM05_NotUsed"/>
+		<xs:attribute name="WPC820A11061R__DTM06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11062S__DTM_CoveragePeriod">
+	<xs:annotation>
+		<xs:documentation>Coverage Period</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11062V__DTM01_DateTimeQualifier"/>
+		<xs:attribute name="WPC820A11062__DTM02_NotUsed"/>
+		<xs:attribute name="WPC820A11062L__DTM03_NotUsed"/>
+		<xs:attribute name="WPC820A11062__DTM04_NotUsed"/>
+		<xs:attribute name="WPC820A11062W__DTM05_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC820A11062A__DTM06_CoveragePeriod"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11070A_1000A">
+	<xs:annotation>
+		<xs:documentation>Premium Receiver's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A11070L_1000A_N1_PremiumReceiverSName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11080Y_1000A_N2_PremiumReceiverAdditionalName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11090P_1000A_N3_PremiumReceiverSAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A111005_1000A_N4_PremiumReceiverSCityStateZip" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11070L_1000A_N1_PremiumReceiverSName">
+	<xs:annotation>
+		<xs:documentation>Premium Receiver's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11070Y_1000A_N101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A11070I_1000A_N102_InformationReceiverLastOrOrganizationName"/>
+		<xs:attribute name="WPC820A11070T_1000A_N103_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC820A11070Y_1000A_N104_ReceiverIdentifier"/>
+		<xs:attribute name="WPC820A11070F_1000A_N105_NotUsed"/>
+		<xs:attribute name="WPC820A110707_1000A_N106_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11080Y_1000A_N2_PremiumReceiverAdditionalName">
+	<xs:annotation>
+		<xs:documentation>Premium Receiver Additional Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11080C_1000A_N201_ReceiverAdditionalName"/>
+		<xs:attribute name="WPC820A110809_1000A_N202_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11090P_1000A_N3_PremiumReceiverSAddress">
+	<xs:annotation>
+		<xs:documentation>Premium Receiver's Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11090L_1000A_N301_ReceiverAddressLine"/>
+		<xs:attribute name="WPC820A11090S_1000A_N302_ReceiverAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A111005_1000A_N4_PremiumReceiverSCityStateZip">
+	<xs:annotation>
+		<xs:documentation>Premium Receiver's City, State, Zip</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11100T_1000A_N401_InformationReceiverCityName"/>
+		<xs:attribute name="WPC820A11100Q_1000A_N402_InformationReceiverStateCode"/>
+		<xs:attribute name="WPC820A11100Y_1000A_N403_InformationReceiverPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC820A11100D_1000A_N404_CountryCode"/>
+		<xs:attribute name="WPC820A11100G_1000A_N405_NotUsed"/>
+		<xs:attribute name="WPC820A11100M_1000A_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A111506_1000B">
+	<xs:annotation>
+		<xs:documentation>Premium Payer's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A11150X_1000B_N1_PremiumPayerSName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11160F_1000B_N2_PremiumPayerAdditionalName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11170E_1000B_N3_PremiumPayerSAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A11180J_1000B_N4_PremiumPayerSCityStateZip" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A111855_1000B_PER_PremiumPayerSAdministrativeContact" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11150X_1000B_N1_PremiumPayerSName">
+	<xs:annotation>
+		<xs:documentation>Premium Payer's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11150B_1000B_N101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A11150A_1000B_N102_PremiumPayerName"/>
+		<xs:attribute name="WPC820A111504_1000B_N103_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC820A11150F_1000B_N104_PremiumPayerIdentifier"/>
+		<xs:attribute name="WPC820A11150M_1000B_N105_NotUsed"/>
+		<xs:attribute name="WPC820A11150X_1000B_N106_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11160F_1000B_N2_PremiumPayerAdditionalName">
+	<xs:annotation>
+		<xs:documentation>Premium Payer Additional Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11160E_1000B_N201_PremiumPayerAdditionalName"/>
+		<xs:attribute name="WPC820A11160Y_1000B_N202_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11170E_1000B_N3_PremiumPayerSAddress">
+	<xs:annotation>
+		<xs:documentation>Premium Payer's Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11170E_1000B_N301_PremiumPayerAddressLine"/>
+		<xs:attribute name="WPC820A11170T_1000B_N302_PremiumPayerAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A11180J_1000B_N4_PremiumPayerSCityStateZip">
+	<xs:annotation>
+		<xs:documentation>Premium Payer's City, State, Zip</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11180W_1000B_N401_PremiumPayerCityName"/>
+		<xs:attribute name="WPC820A11180P_1000B_N402_PremiumPayerStateCode"/>
+		<xs:attribute name="WPC820A11180F_1000B_N403_PremiumPayerPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC820A11180F_1000B_N404_CountryCode"/>
+		<xs:attribute name="WPC820A11180Y_1000B_N405_NotUsed"/>
+		<xs:attribute name="WPC820A111803_1000B_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A111855_1000B_PER_PremiumPayerSAdministrativeContact">
+	<xs:annotation>
+		<xs:documentation>Premium Payer's Administrative Contact</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A11185A_1000B_PER01_ContactFunctionCode"/>
+		<xs:attribute name="WPC820A11185S_1000B_PER02_PremiumPayerContactName"/>
+		<xs:attribute name="WPC820A11185L_1000B_PER03_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC820A11185Y_1000B_PER04_CommunicationNumber"/>
+		<xs:attribute name="WPC820A11185_1000B_PER05_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC820A11185A_1000B_PER06_CommunicationNumber"/>
+		<xs:attribute name="WPC820A111852_1000B_PER07_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC820A11185W_1000B_PER08_CommunicationNumber"/>
+		<xs:attribute name="WPC820A11185Y_1000B_PER09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12010V_2000A">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A12010A_2000A_ENT_OrganizationSummaryRemittance" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A12150E_2300A" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12010A_2000A_ENT_OrganizationSummaryRemittance">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A12010_2000A_ENT01_AssignedNumber"/>
+		<xs:attribute name="WPC820A12010T_2000A_ENT02_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A12010E_2000A_ENT03_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC820A12010G_2000A_ENT04_OrganizationIdentificationCode"/>
+		<xs:attribute name="WPC820A12010G_2000A_ENT05_NotUsed"/>
+		<xs:attribute name="WPC820A120107_2000A_ENT06_NotUsed"/>
+		<xs:attribute name="WPC820A12010Q_2000A_ENT07_NotUsed"/>
+		<xs:attribute name="WPC820A12010S_2000A_ENT08_NotUsed"/>
+		<xs:attribute name="WPC820A12010_2000A_ENT09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12150E_2300A">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A12150K_2300A_RMR_OrganizationSummaryRemittanceDetail" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A121908_2310A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A12210U_2320A" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12150K_2300A_RMR_OrganizationSummaryRemittanceDetail">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A12150J_2300A_RMR01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC820A12150G_2300A_RMR02_ContractInvoiceAccountGroupOrPolicyNumber"/>
+		<xs:attribute name="WPC820A12150_2300A_RMR03_PaymentActionCode"/>
+		<xs:attribute name="WPC820A121502_2300A_RMR04_DetailPremiumPaymentAmount"/>
+		<xs:attribute name="WPC820A12150A_2300A_RMR05_BilledPremiumAmount"/>
+		<xs:attribute name="WPC820A12150D_2300A_RMR06_NotUsed"/>
+		<xs:attribute name="WPC820A12150_2300A_RMR07_NotUsed"/>
+		<xs:attribute name="WPC820A12150V_2300A_RMR08_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A121908_2310A">
+	<xs:annotation>
+		<xs:documentation>Summary Line Item</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A12190N_2310A_IT1_SummaryLineItem" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A12204L_2315A" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12190N_2310A_IT1_SummaryLineItem">
+	<xs:annotation>
+		<xs:documentation>Summary Line Item</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A12190X_2310A_IT101_LineItemControlNumber"/>
+		<xs:attribute name="WPC820A12190B_2310A_IT102_NotUsed"/>
+		<xs:attribute name="WPC820A12190Y_2310A_IT103_NotUsed"/>
+		<xs:attribute name="WPC820A12190C_2310A_IT104_NotUsed"/>
+		<xs:attribute name="WPC820A12190F_2310A_IT105_NotUsed"/>
+		<xs:attribute name="WPC820A12190X_2310A_IT106_NotUsed"/>
+		<xs:attribute name="WPC820A12190T_2310A_IT107_NotUsed"/>
+		<xs:attribute name="WPC820A12190Y_2310A_IT108_NotUsed"/>
+		<xs:attribute name="WPC820A12190C_2310A_IT109_NotUsed"/>
+		<xs:attribute name="WPC820A12190U_2310A_IT110_NotUsed"/>
+		<xs:attribute name="WPC820A12190D_2310A_IT111_NotUsed"/>
+		<xs:attribute name="WPC820A12190L_2310A_IT112_NotUsed"/>
+		<xs:attribute name="WPC820A121909_2310A_IT113_NotUsed"/>
+		<xs:attribute name="WPC820A12190_2310A_IT114_NotUsed"/>
+		<xs:attribute name="WPC820A12190N_2310A_IT115_NotUsed"/>
+		<xs:attribute name="WPC820A12190M_2310A_IT116_NotUsed"/>
+		<xs:attribute name="WPC820A12190Y_2310A_IT117_NotUsed"/>
+		<xs:attribute name="WPC820A12190O_2310A_IT118_NotUsed"/>
+		<xs:attribute name="WPC820A121907_2310A_IT119_NotUsed"/>
+		<xs:attribute name="WPC820A121907_2310A_IT120_NotUsed"/>
+		<xs:attribute name="WPC820A12190B_2310A_IT121_NotUsed"/>
+		<xs:attribute name="WPC820A12190Z_2310A_IT122_NotUsed"/>
+		<xs:attribute name="WPC820A121904_2310A_IT123_NotUsed"/>
+		<xs:attribute name="WPC820A12190I_2310A_IT124_NotUsed"/>
+		<xs:attribute name="WPC820A12190Y_2310A_IT125_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12204L_2315A">
+	<xs:annotation>
+		<xs:documentation>Member Count</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A12204U_2315A_SLN_MemberCount" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12204U_2315A_SLN_MemberCount">
+	<xs:annotation>
+		<xs:documentation>Member Count</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A122049_2315A_SLN05_CompositeUnitOfMeasure" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC820A12204O_2315A_SLN01_LineItemControlNumber"/>
+		<xs:attribute name="WPC820A12204_2315A_SLN02_NotUsed"/>
+		<xs:attribute name="WPC820A12204C_2315A_SLN03_InformationOnlyIndicator"/>
+		<xs:attribute name="WPC820A12204U_2315A_SLN04_HeadCount"/>
+		<xs:attribute name="WPC820A12204U_2315A_SLN06_NotUsed"/>
+		<xs:attribute name="WPC820A12204O_2315A_SLN07_NotUsed"/>
+		<xs:attribute name="WPC820A12204W_2315A_SLN08_NotUsed"/>
+		<xs:attribute name="WPC820A12204P_2315A_SLN09_NotUsed"/>
+		<xs:attribute name="WPC820A122042_2315A_SLN10_NotUsed"/>
+		<xs:attribute name="WPC820A12204_2315A_SLN11_NotUsed"/>
+		<xs:attribute name="WPC820A12204Z_2315A_SLN12_NotUsed"/>
+		<xs:attribute name="WPC820A12204X_2315A_SLN13_NotUsed"/>
+		<xs:attribute name="WPC820A12204J_2315A_SLN14_NotUsed"/>
+		<xs:attribute name="WPC820A12204R_2315A_SLN15_NotUsed"/>
+		<xs:attribute name="WPC820A12204H_2315A_SLN16_NotUsed"/>
+		<xs:attribute name="WPC820A12204W_2315A_SLN17_NotUsed"/>
+		<xs:attribute name="WPC820A12204A_2315A_SLN18_NotUsed"/>
+		<xs:attribute name="WPC820A12204Z_2315A_SLN19_NotUsed"/>
+		<xs:attribute name="WPC820A12204N_2315A_SLN20_NotUsed"/>
+		<xs:attribute name="WPC820A12204M_2315A_SLN21_NotUsed"/>
+		<xs:attribute name="WPC820A12204M_2315A_SLN22_NotUsed"/>
+		<xs:attribute name="WPC820A12204D_2315A_SLN23_NotUsed"/>
+		<xs:attribute name="WPC820A12204Z_2315A_SLN24_NotUsed"/>
+		<xs:attribute name="WPC820A122040_2315A_SLN25_NotUsed"/>
+		<xs:attribute name="WPC820A122041_2315A_SLN26_NotUsed"/>
+		<xs:attribute name="WPC820A12204R_2315A_SLN27_NotUsed"/>
+		<xs:attribute name="WPC820A12204K_2315A_SLN28_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A122049_2315A_SLN05_CompositeUnitOfMeasure">
+	<xs:annotation>
+		<xs:documentation>Composite Unit of Measure</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A12204Q_2315A_SLN0501_UnitOrBasisForMeasurementCode"/>
+		<xs:attribute name="WPC820A12204Q_2315A_SLN0502_NotUsed"/>
+		<xs:attribute name="WPC820A12204H_2315A_SLN0503_NotUsed"/>
+		<xs:attribute name="WPC820A122043_2315A_SLN0504_NotUsed"/>
+		<xs:attribute name="WPC820A12204S_2315A_SLN0505_NotUsed"/>
+		<xs:attribute name="WPC820A12204F_2315A_SLN0506_NotUsed"/>
+		<xs:attribute name="WPC820A12204D_2315A_SLN0507_NotUsed"/>
+		<xs:attribute name="WPC820A12204P_2315A_SLN0508_NotUsed"/>
+		<xs:attribute name="WPC820A12204M_2315A_SLN0509_NotUsed"/>
+		<xs:attribute name="WPC820A12204F_2315A_SLN0510_NotUsed"/>
+		<xs:attribute name="WPC820A12204X_2315A_SLN0511_NotUsed"/>
+		<xs:attribute name="WPC820A122046_2315A_SLN0512_NotUsed"/>
+		<xs:attribute name="WPC820A12204M_2315A_SLN0513_NotUsed"/>
+		<xs:attribute name="WPC820A12204O_2315A_SLN0514_NotUsed"/>
+		<xs:attribute name="WPC820A12204T_2315A_SLN0515_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12210U_2320A">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance Level Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A12210E_2320A_ADX_OrganizationSummaryRemittanceLevelAdjustment" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A12210E_2320A_ADX_OrganizationSummaryRemittanceLevelAdjustment">
+	<xs:annotation>
+		<xs:documentation>Organization Summary Remittance Level Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A12210T_2320A_ADX01_AdjustmentAmount"/>
+		<xs:attribute name="WPC820A12210N_2320A_ADX02_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC820A12210S_2320A_ADX03_NotUsed"/>
+		<xs:attribute name="WPC820A122104_2320A_ADX04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13010G_2000B">
+	<xs:annotation>
+		<xs:documentation>Individual Remittance</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A13010W_2000B_ENT_IndividualRemittance" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A13020N_2100B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A13150S_2300B" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13010W_2000B_ENT_IndividualRemittance">
+	<xs:annotation>
+		<xs:documentation>Individual Remittance</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A13010D_2000B_ENT01_AssignedNumber"/>
+		<xs:attribute name="WPC820A13010Q_2000B_ENT02_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A13010A_2000B_ENT03_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC820A130104_2000B_ENT04_ReceiverSIndividualIdentifier"/>
+		<xs:attribute name="WPC820A13010H_2000B_ENT05_NotUsed"/>
+		<xs:attribute name="WPC820A13010N_2000B_ENT06_NotUsed"/>
+		<xs:attribute name="WPC820A13010M_2000B_ENT07_NotUsed"/>
+		<xs:attribute name="WPC820A13010O_2000B_ENT08_NotUsed"/>
+		<xs:attribute name="WPC820A13010O_2000B_ENT09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13020N_2100B">
+	<xs:annotation>
+		<xs:documentation>Individual Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A13020_2100B_NM1_IndividualName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13020_2100B_NM1_IndividualName">
+	<xs:annotation>
+		<xs:documentation>Individual Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A13020O_2100B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC820A13020H_2100B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC820A13020_2100B_NM103_IndividualLastName"/>
+		<xs:attribute name="WPC820A13020U_2100B_NM104_IndividualFirstName"/>
+		<xs:attribute name="WPC820A13020V_2100B_NM105_IndividualMiddleName"/>
+		<xs:attribute name="WPC820A13020R_2100B_NM106_IndividualNamePrefix"/>
+		<xs:attribute name="WPC820A130203_2100B_NM107_IndividualNameSuffix"/>
+		<xs:attribute name="WPC820A13020I_2100B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC820A13020Q_2100B_NM109_IndividualIdentifier"/>
+		<xs:attribute name="WPC820A13020_2100B_NM110_NotUsed"/>
+		<xs:attribute name="WPC820A13020O_2100B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13150S_2300B">
+	<xs:annotation>
+		<xs:documentation>Individual Premium Remittance Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A13150Z_2300B_RMR_IndividualPremiumRemittanceDetail" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A13180G_2300B_DTM_IndividualCoveragePeriod" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC820A13210_2320B" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13150Z_2300B_RMR_IndividualPremiumRemittanceDetail">
+	<xs:annotation>
+		<xs:documentation>Individual Premium Remittance Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A13150G_2300B_RMR01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC820A13150H_2300B_RMR02_InsuranceRemittanceReferenceNumber"/>
+		<xs:attribute name="WPC820A13150J_2300B_RMR03_PaymentActionCode"/>
+		<xs:attribute name="WPC820A13150T_2300B_RMR04_DetailPremiumPaymentAmount"/>
+		<xs:attribute name="WPC820A13150H_2300B_RMR05_BilledPremiumAmount"/>
+		<xs:attribute name="WPC820A13150Y_2300B_RMR06_NotUsed"/>
+		<xs:attribute name="WPC820A13150C_2300B_RMR07_NotUsed"/>
+		<xs:attribute name="WPC820A13150_2300B_RMR08_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13180G_2300B_DTM_IndividualCoveragePeriod">
+	<xs:annotation>
+		<xs:documentation>Individual Coverage Period</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A13180S_2300B_DTM01_DateTimeQualifier"/>
+		<xs:attribute name="WPC820A131800_2300B_DTM02_NotUsed"/>
+		<xs:attribute name="WPC820A13180K_2300B_DTM03_NotUsed"/>
+		<xs:attribute name="WPC820A13180H_2300B_DTM04_NotUsed"/>
+		<xs:attribute name="WPC820A13180U_2300B_DTM05_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC820A13180G_2300B_DTM06_CoveragePeriod"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13210_2320B">
+	<xs:annotation>
+		<xs:documentation>Individual Premium Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC820A13210M_2320B_ADX_IndividualPremiumAdjustment" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC820A13210M_2320B_ADX_IndividualPremiumAdjustment">
+	<xs:annotation>
+		<xs:documentation>Individual Premium Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC820A13210O_2320B_ADX01_AdjustmentAmount"/>
+		<xs:attribute name="WPC820A13210J_2320B_ADX02_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC820A13210H_2320B_ADX03_NotUsed"/>
+		<xs:attribute name="WPC820A13210N_2320B_ADX04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProc">
+	<xs:annotation>
+		<xs:documentation>WPC IProc</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProcEvnt" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC_Errors" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="X12_Envelope" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProcEvnt">
+	<xs:annotation>
+		<xs:documentation>WPC IProcEvent</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="src" use="optional"/>
+		<xs:attribute name="type" use="optional"/>
+		<xs:attribute name="dt" use="optional"/>
+		<xs:attribute name="hsh" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_Errors">
+	<xs:annotation>
+		<xs:documentation>WPC Error Collection</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Violation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="Violation">
+	<xs:annotation>
+		<xs:documentation>Violation Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ErrorType" use="required">
+			<xs:annotation>
+				<xs:documentation>Enumeration of error type</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FileID">
+			<xs:annotation>
+				<xs:documentation>Identifier of original submission</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TraceNumber">
+			<xs:annotation>
+				<xs:documentation>Application layer trace identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationLocation">
+			<xs:annotation>
+				<xs:documentation>Location of errant data</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationDescription">
+			<xs:annotation>
+				<xs:documentation>Text description of violation</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleProcessor">
+			<xs:annotation>
+				<xs:documentation>Rule processor identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleSource">
+			<xs:annotation>
+				<xs:documentation>Source identifier of violated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleViolationText">
+			<xs:annotation>
+				<xs:documentation>Text description of rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+		<xs:attribute name="BadDataContent">
+			<xs:annotation>
+				<xs:documentation>Errant data found in violation of indicated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+	</xs:complexType>
+</xs:element>
+<xs:element name="X12_Envelope">
+	<xs:annotation>
+		<xs:documentation>X12 Envelope</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="ISA_InterchangeControlHeader" minOccurs="0"/>
+			<xs:element ref="GS_FunctionalGroupHeader" minOccurs="0"/>
+			<xs:element ref="ST_TransactionSetHeader" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ST_TransactionSetHeader">
+	<xs:annotation>
+		<xs:documentation>Transaction Set Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ST01__TransactionSetIdentifierCode" use="optional"/>
+		<xs:attribute name="ST02__TransactionSetControlNumber" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GS_FunctionalGroupHeader">
+	<xs:annotation>
+		<xs:documentation>Functional Group Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="GS01__FunctionalIdentifierCode" use="optional"/>
+		<xs:attribute name="GS02__ApplicationSendersCode" use="optional"/>
+		<xs:attribute name="GS03__ApplicationReceiversCode" use="optional"/>
+		<xs:attribute name="GS04__Date" use="optional"/>
+		<xs:attribute name="GS05__Time" use="optional"/>
+		<xs:attribute name="GS06__GroupControlNumber" use="optional"/>
+		<xs:attribute name="GS07__ResponsibleAgencyCode" use="optional"/>
+		<xs:attribute name="GS08__VersionReleaseIndustryIdentifierCode" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ISA_InterchangeControlHeader">
+	<xs:annotation>
+		<xs:documentation>Interchange Control Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ISA01__AuthorizationInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA02__AuthorizationInformation" use="optional"/>
+		<xs:attribute name="ISA03__SecurityInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA04__SecurityInformation" use="optional"/>
+		<xs:attribute name="ISA05__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA06__InterchangeSenderID" use="optional"/>
+		<xs:attribute name="ISA07__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA08__InterchangeReceiverID" use="optional"/>
+		<xs:attribute name="ISA09__InterchangeDate" use="optional"/>
+		<xs:attribute name="ISA10__InterchangeTime" use="optional"/>
+		<xs:attribute name="ISA11__InterchangeControlStandardsIdentifier" use="optional"/>
+		<xs:attribute name="ISA12__InterchangeControlVersionNumber" use="optional"/>
+		<xs:attribute name="ISA13__InterchangeControlNumber" use="optional"/>
+		<xs:attribute name="ISA14__AcknowledgmentRequested" use="optional"/>
+		<xs:attribute name="ISA15__UsageIndicator" use="optional"/>
+		<xs:attribute name="ISA16__ComponentElementSeparator" use="optional"/>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
+
+

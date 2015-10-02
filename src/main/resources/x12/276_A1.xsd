@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c)Copyright 2004 Washington Publishing Company (http://www.wpc-edi.com) -->
+<xs:schema version="1.0"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wpc="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1" targetNamespace="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC276A1" xmlns="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC276A1" >
+<xs:annotation>
+	<xs:documentation xml:lang="en"> 
+		HIPAA Schema WPC276A1 - Washington Publishing Company (http://www.wpc-edi.com)
+		Copyright (C) 2004 Washington Publishing Company
+		This program is free software; you can redistribute it and/or
+		modify it under the terms of the GNU General Public License
+		as published by the Free Software Foundation; Version 2.
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+	</xs:documentation>
+</xs:annotation>
+<xs:element name="WPC276A1">
+	<xs:annotation>
+		<xs:documentation>Health Care Claim Status Request</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProc" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="WPC276A110200__BHT_BeginningOfHierarchicalTransaction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A120108_2000A" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A110200__BHT_BeginningOfHierarchicalTransaction">
+	<xs:annotation>
+		<xs:documentation>Beginning of Hierarchical Transaction</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A11020G__BHT01_HierarchicalStructureCode"/>
+		<xs:attribute name="WPC276A11020Q__BHT02_TransactionSetPurposeCode"/>
+		<xs:attribute name="WPC276A11020Y__BHT03_NotUsed"/>
+		<xs:attribute name="WPC276A11020P__BHT04_TransactionSetCreationDate"/>
+		<xs:attribute name="WPC276A11020M__BHT05_NotUsed"/>
+		<xs:attribute name="WPC276A11020S__BHT06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A120108_2000A">
+	<xs:annotation>
+		<xs:documentation>Information Source Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A12010G_2000A_HL_InformationSourceLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A12050Y_2100A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A13010U_2000B" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A12010G_2000A_HL_InformationSourceLevel">
+	<xs:annotation>
+		<xs:documentation>Information Source Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A12010R_2000A_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC276A12010A_2000A_HL02_NotUsed"/>
+		<xs:attribute name="WPC276A12010Q_2000A_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC276A12010S_2000A_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A12050Y_2100A">
+	<xs:annotation>
+		<xs:documentation>Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A12050C_2100A_NM1_PayerName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A12080C_2100A_PER_PayerContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A12050C_2100A_NM1_PayerName">
+	<xs:annotation>
+		<xs:documentation>Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A120505_2100A_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC276A12050O_2100A_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC276A12050Y_2100A_NM103_PayerName"/>
+		<xs:attribute name="WPC276A12050X_2100A_NM104_NotUsed"/>
+		<xs:attribute name="WPC276A12050U_2100A_NM105_NotUsed"/>
+		<xs:attribute name="WPC276A12050K_2100A_NM106_NotUsed"/>
+		<xs:attribute name="WPC276A12050T_2100A_NM107_NotUsed"/>
+		<xs:attribute name="WPC276A12050F_2100A_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC276A12050V_2100A_NM109_PayerIdentifier"/>
+		<xs:attribute name="WPC276A12050Y_2100A_NM110_NotUsed"/>
+		<xs:attribute name="WPC276A120508_2100A_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A12080C_2100A_PER_PayerContactInformation">
+	<xs:annotation>
+		<xs:documentation>Payer Contact Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A12080F_2100A_PER01_ContactFunctionCode"/>
+		<xs:attribute name="WPC276A12080E_2100A_PER02_PayerContactName"/>
+		<xs:attribute name="WPC276A12080L_2100A_PER03_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC276A12080S_2100A_PER04_CommunicationNumber"/>
+		<xs:attribute name="WPC276A12080R_2100A_PER05_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC276A12080O_2100A_PER06_CommunicationNumber"/>
+		<xs:attribute name="WPC276A12080Z_2100A_PER07_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC276A120804_2100A_PER08_CommunicationNumber"/>
+		<xs:attribute name="WPC276A12080I_2100A_PER09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A13010U_2000B">
+	<xs:annotation>
+		<xs:documentation>Information Receiver Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A13010C_2000B_HL_InformationReceiverLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A130507_2100B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A14010Q_2000C" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A13010C_2000B_HL_InformationReceiverLevel">
+	<xs:annotation>
+		<xs:documentation>Information Receiver Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A13010Z_2000B_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC276A13010V_2000B_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC276A13010I_2000B_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC276A13010P_2000B_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A130507_2100B">
+	<xs:annotation>
+		<xs:documentation>Information Receiver Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A13050U_2100B_NM1_InformationReceiverName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A13050U_2100B_NM1_InformationReceiverName">
+	<xs:annotation>
+		<xs:documentation>Information Receiver Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A130501_2100B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC276A13050_2100B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC276A13050S_2100B_NM103_InformationReceiverLastOrOrganizationName"/>
+		<xs:attribute name="WPC276A13050W_2100B_NM104_InformationReceiverFirstName"/>
+		<xs:attribute name="WPC276A13050T_2100B_NM105_InformationReceiverMiddleName"/>
+		<xs:attribute name="WPC276A130504_2100B_NM106_NotUsed"/>
+		<xs:attribute name="WPC276A130505_2100B_NM107_InformationReceiverNameSuffix"/>
+		<xs:attribute name="WPC276A13050C_2100B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC276A13050K_2100B_NM109_InformationReceiverIdentificationNumber"/>
+		<xs:attribute name="WPC276A130503_2100B_NM110_NotUsed"/>
+		<xs:attribute name="WPC276A13050F_2100B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A14010Q_2000C">
+	<xs:annotation>
+		<xs:documentation>Service Provider Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A14010_2000C_HL_ServiceProviderLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A14050_2100C" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15010A_2000D" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A14010_2000C_HL_ServiceProviderLevel">
+	<xs:annotation>
+		<xs:documentation>Service Provider Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A14010T_2000C_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC276A14010A_2000C_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC276A140109_2000C_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC276A14010O_2000C_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A14050_2100C">
+	<xs:annotation>
+		<xs:documentation>Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A140509_2100C_NM1_ProviderName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A140509_2100C_NM1_ProviderName">
+	<xs:annotation>
+		<xs:documentation>Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A14050L_2100C_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC276A14050Y_2100C_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC276A14050B_2100C_NM103_ProviderLastOrOrganizationName"/>
+		<xs:attribute name="WPC276A14050D_2100C_NM104_ProviderFirstName"/>
+		<xs:attribute name="WPC276A14050R_2100C_NM105_ProviderMiddleName"/>
+		<xs:attribute name="WPC276A14050S_2100C_NM106_ProviderNamePrefix"/>
+		<xs:attribute name="WPC276A14050V_2100C_NM107_ProviderNameSuffix"/>
+		<xs:attribute name="WPC276A14050_2100C_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC276A14050L_2100C_NM109_ProviderIdentifier"/>
+		<xs:attribute name="WPC276A14050_2100C_NM110_NotUsed"/>
+		<xs:attribute name="WPC276A14050W_2100C_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15010A_2000D">
+	<xs:annotation>
+		<xs:documentation>Subscriber Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A15010A_2000D_HL_SubscriberLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15040Y_2000D_DMG_SubscriberDemographicInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15050T_2100D" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15090X_2200D" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A160109_2000E" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15010A_2000D_HL_SubscriberLevel">
+	<xs:annotation>
+		<xs:documentation>Subscriber Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15010L_2000D_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC276A15010Y_2000D_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC276A15010I_2000D_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC276A15010T_2000D_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15040Y_2000D_DMG_SubscriberDemographicInformation">
+	<xs:annotation>
+		<xs:documentation>Subscriber Demographic Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15040F_2000D_DMG01_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A150407_2000D_DMG02_SubscriberBirthDate"/>
+		<xs:attribute name="WPC276A15040Y_2000D_DMG03_SubscriberGenderCode"/>
+		<xs:attribute name="WPC276A15040C_2000D_DMG04_NotUsed"/>
+		<xs:attribute name="WPC276A150409_2000D_DMG05_NotUsed"/>
+		<xs:attribute name="WPC276A15040P_2000D_DMG06_NotUsed"/>
+		<xs:attribute name="WPC276A15040L_2000D_DMG07_NotUsed"/>
+		<xs:attribute name="WPC276A15040S_2000D_DMG08_NotUsed"/>
+		<xs:attribute name="WPC276A150405_2000D_DMG09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15050T_2100D">
+	<xs:annotation>
+		<xs:documentation>Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A15050Q_2100D_NM1_SubscriberName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15050Q_2100D_NM1_SubscriberName">
+	<xs:annotation>
+		<xs:documentation>Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15050Y_2100D_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC276A15050D_2100D_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC276A15050G_2100D_NM103_SubscriberLastName"/>
+		<xs:attribute name="WPC276A15050M_2100D_NM104_SubscriberFirstName"/>
+		<xs:attribute name="WPC276A150506_2100D_NM105_SubscriberMiddleName"/>
+		<xs:attribute name="WPC276A15050X_2100D_NM106_SubscriberNamePrefix"/>
+		<xs:attribute name="WPC276A15050B_2100D_NM107_SubscriberNameSuffix"/>
+		<xs:attribute name="WPC276A15050A_2100D_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC276A150504_2100D_NM109_SubscriberIdentifier"/>
+		<xs:attribute name="WPC276A15050F_2100D_NM110_NotUsed"/>
+		<xs:attribute name="WPC276A15050M_2100D_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15090X_2200D">
+	<xs:annotation>
+		<xs:documentation>Claim Submitter Trace Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A15090F_2200D_TRN_ClaimSubmitterTraceNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15100T_2200D_REF_PayerClaimIdentificationNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15101F_2200D_REF_InstitutionalBillTypeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15102S_2200D_REF_MedicalRecordIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A151032_2200D_REF_GroupNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15110_2200D_AMT_ClaimSubmittedCharges" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15120G_2200D_DTP_ClaimServiceDate" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15130_2210D" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15090F_2200D_TRN_ClaimSubmitterTraceNumber">
+	<xs:annotation>
+		<xs:documentation>Claim Submitter Trace Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15090E_2200D_TRN01_TraceTypeCode"/>
+		<xs:attribute name="WPC276A15090Y_2200D_TRN02_TraceNumber"/>
+		<xs:attribute name="WPC276A15090E_2200D_TRN03_NotUsed"/>
+		<xs:attribute name="WPC276A15090E_2200D_TRN04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15100T_2200D_REF_PayerClaimIdentificationNumber">
+	<xs:annotation>
+		<xs:documentation>Payer Claim Identification Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15100J_2200D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A15100W_2200D_REF02_PayerClaimControlNumber"/>
+		<xs:attribute name="WPC276A15100P_2200D_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A15100F_2200D_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15101F_2200D_REF_InstitutionalBillTypeIdentification">
+	<xs:annotation>
+		<xs:documentation>Institutional Bill Type Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15101Y_2200D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A151013_2200D_REF02_BillTypeIdentifier"/>
+		<xs:attribute name="WPC276A151015_2200D_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A15101A_2200D_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15102S_2200D_REF_MedicalRecordIdentification">
+	<xs:annotation>
+		<xs:documentation>Medical Record Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15102L_2200D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A15102Y_2200D_REF02_MedicalRecordNumber"/>
+		<xs:attribute name="WPC276A15102_2200D_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A15102A_2200D_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A151032_2200D_REF_GroupNumber">
+	<xs:annotation>
+		<xs:documentation>Group Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15103W_2200D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A15103Y_2200D_REF02_ReferenceIdentification"/>
+		<xs:attribute name="WPC276A15103V_2200D_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A15103A_2200D_REF0400_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15110_2200D_AMT_ClaimSubmittedCharges">
+	<xs:annotation>
+		<xs:documentation>Claim Submitted Charges</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15110T_2200D_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC276A15110E_2200D_AMT02_TotalClaimChargeAmount"/>
+		<xs:attribute name="WPC276A15110G_2200D_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15120G_2200D_DTP_ClaimServiceDate">
+	<xs:annotation>
+		<xs:documentation>Claim Service Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A151207_2200D_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC276A15120Q_2200D_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A15120S_2200D_DTP03_ClaimServicePeriod"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15130_2210D">
+	<xs:annotation>
+		<xs:documentation>Service Line Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A15130E_2210D_SVC_ServiceLineInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15140C_2210D_REF_ServiceLineItemIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A15150C_2210D_DTP_ServiceLineDate" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15130E_2210D_SVC_ServiceLineInformation">
+	<xs:annotation>
+		<xs:documentation>Service Line Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A15130K_2210D_SVC01_CompositeMedicalProcedureIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC276A15130V_2210D_SVC02_LineItemChargeAmount"/>
+		<xs:attribute name="WPC276A151308_2210D_SVC03_NotUsed"/>
+		<xs:attribute name="WPC276A15130N_2210D_SVC04_RevenueCode"/>
+		<xs:attribute name="WPC276A15130X_2210D_SVC05_NotUsed"/>
+		<xs:attribute name="WPC276A15130B_2210D_SVC06_NotUsed"/>
+		<xs:attribute name="WPC276A15130Y_2210D_SVC07_OriginalUnitsOfServiceCount"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15130K_2210D_SVC01_CompositeMedicalProcedureIdentifier">
+	<xs:annotation>
+		<xs:documentation>Composite Medical Procedure Identifier</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15130J_2210D_SVC0101_ProductOrServiceIDQualifier"/>
+		<xs:attribute name="WPC276A15130G_2210D_SVC0102_ServiceIdentificationCode"/>
+		<xs:attribute name="WPC276A15130_2210D_SVC0103_ProcedureModifier"/>
+		<xs:attribute name="WPC276A151302_2210D_SVC0104_ProcedureModifier"/>
+		<xs:attribute name="WPC276A15130A_2210D_SVC0105_ProcedureModifier"/>
+		<xs:attribute name="WPC276A15130D_2210D_SVC0106_ProcedureModifier"/>
+		<xs:attribute name="WPC276A15130_2210D_SVC0107_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15140C_2210D_REF_ServiceLineItemIdentification">
+	<xs:annotation>
+		<xs:documentation>Service Line Item Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15140F_2210D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A15140X_2210D_REF02_LineItemControlNumber"/>
+		<xs:attribute name="WPC276A15140T_2210D_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A15140Y_2210D_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A15150C_2210D_DTP_ServiceLineDate">
+	<xs:annotation>
+		<xs:documentation>Service Line Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A15150U_2210D_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC276A15150D_2210D_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A15150L_2210D_DTP03_ServiceLineDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A160109_2000E">
+	<xs:annotation>
+		<xs:documentation>Dependent Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A16010_2000E_HL_DependentLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A160407_2000E_DMG_DependentDemographicInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16050_2100E" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16090F_2200E" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16010_2000E_HL_DependentLevel">
+	<xs:annotation>
+		<xs:documentation>Dependent Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16010N_2000E_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC276A16010M_2000E_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC276A16010Y_2000E_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC276A16010O_2000E_HL04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A160407_2000E_DMG_DependentDemographicInformation">
+	<xs:annotation>
+		<xs:documentation>Dependent Demographic Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A160407_2000E_DMG01_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A16040B_2000E_DMG02_PatientBirthDate"/>
+		<xs:attribute name="WPC276A16040Z_2000E_DMG03_PatientGenderCode"/>
+		<xs:attribute name="WPC276A160404_2000E_DMG04_NotUsed"/>
+		<xs:attribute name="WPC276A16040I_2000E_DMG05_NotUsed"/>
+		<xs:attribute name="WPC276A16040Y_2000E_DMG06_NotUsed"/>
+		<xs:attribute name="WPC276A16040L_2000E_DMG07_NotUsed"/>
+		<xs:attribute name="WPC276A16040U_2000E_DMG08_NotUsed"/>
+		<xs:attribute name="WPC276A16040O_2000E_DMG09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16050_2100E">
+	<xs:annotation>
+		<xs:documentation>Dependent Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A16050C_2100E_NM1_DependentName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16050C_2100E_NM1_DependentName">
+	<xs:annotation>
+		<xs:documentation>Dependent Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16050U_2100E_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC276A160509_2100E_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC276A16050Q_2100E_NM103_PatientLastName"/>
+		<xs:attribute name="WPC276A16050Q_2100E_NM104_PatientFirstName"/>
+		<xs:attribute name="WPC276A16050H_2100E_NM105_PatientMiddleName"/>
+		<xs:attribute name="WPC276A160503_2100E_NM106_PatientNamePrefix"/>
+		<xs:attribute name="WPC276A16050S_2100E_NM107_PatientNameSuffix"/>
+		<xs:attribute name="WPC276A16050F_2100E_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC276A16050D_2100E_NM109_PatientPrimaryIdentifier"/>
+		<xs:attribute name="WPC276A16050P_2100E_NM110_NotUsed"/>
+		<xs:attribute name="WPC276A16050M_2100E_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16090F_2200E">
+	<xs:annotation>
+		<xs:documentation>Claim Submitter Trace Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A16090X_2200E_TRN_ClaimSubmitterTraceNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16100U_2200E_REF_PayerClaimIdentificationNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16101_2200E_REF_InstitutionalBillTypeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16102H_2200E_REF_MedicalRecordIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16110M_2200E_AMT_ClaimSubmittedCharges" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A161200_2200E_DTP_ClaimServiceDate" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16130U_2210E" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16090X_2200E_TRN_ClaimSubmitterTraceNumber">
+	<xs:annotation>
+		<xs:documentation>Claim Submitter Trace Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A160906_2200E_TRN01_TraceTypeCode"/>
+		<xs:attribute name="WPC276A16090M_2200E_TRN02_TraceNumber"/>
+		<xs:attribute name="WPC276A16090O_2200E_TRN03_NotUsed"/>
+		<xs:attribute name="WPC276A16090T_2200E_TRN04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16100U_2200E_REF_PayerClaimIdentificationNumber">
+	<xs:annotation>
+		<xs:documentation>Payer Claim Identification Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16100O_2200E_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A16100W_2200E_REF02_PayerClaimControlNumber"/>
+		<xs:attribute name="WPC276A16100P_2200E_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A161002_2200E_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16101_2200E_REF_InstitutionalBillTypeIdentification">
+	<xs:annotation>
+		<xs:documentation>Institutional Bill Type Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16101Z_2200E_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A16101X_2200E_REF02_BillTypeIdentifier"/>
+		<xs:attribute name="WPC276A16101J_2200E_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A16101R_2200E_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16102H_2200E_REF_MedicalRecordIdentification">
+	<xs:annotation>
+		<xs:documentation>Medical Record Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16102W_2200E_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A16102A_2200E_REF02_MedicalRecordNumber"/>
+		<xs:attribute name="WPC276A16102Z_2200E_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A16102N_2200E_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16110M_2200E_AMT_ClaimSubmittedCharges">
+	<xs:annotation>
+		<xs:documentation>Claim Submitted Charges</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16110M_2200E_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC276A16110D_2200E_AMT02_TotalClaimChargeAmount"/>
+		<xs:attribute name="WPC276A16110Z_2200E_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A161200_2200E_DTP_ClaimServiceDate">
+	<xs:annotation>
+		<xs:documentation>Claim Service Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A161201_2200E_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC276A16120R_2200E_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A16120K_2200E_DTP03_ClaimServicePeriod"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16130U_2210E">
+	<xs:annotation>
+		<xs:documentation>Service Line Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A16130E_2210E_SVC_ServiceLineInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16140O_2210E_REF_ServiceLineItemIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC276A16150_2210E_DTP_ServiceLineDate" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16130E_2210E_SVC_ServiceLineInformation">
+	<xs:annotation>
+		<xs:documentation>Service Line Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC276A16130T_2210E_SVC01_CompositeMedicalProcedureIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC276A16130A_2210E_SVC02_LineItemChargeAmount"/>
+		<xs:attribute name="WPC276A161304_2210E_SVC03_NotUsed"/>
+		<xs:attribute name="WPC276A16130H_2210E_SVC04_RevenueCode"/>
+		<xs:attribute name="WPC276A16130N_2210E_SVC05_NotUsed"/>
+		<xs:attribute name="WPC276A16130M_2210E_SVC06_NotUsed"/>
+		<xs:attribute name="WPC276A16130O_2210E_SVC07_OriginalUnitsOfServiceCount"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16130T_2210E_SVC01_CompositeMedicalProcedureIdentifier">
+	<xs:annotation>
+		<xs:documentation>Composite Medical Procedure Identifier</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16130N_2210E_SVC0101_ProductOrServiceIDQualifier"/>
+		<xs:attribute name="WPC276A16130S_2210E_SVC0102_ServiceIdentificationCode"/>
+		<xs:attribute name="WPC276A161304_2210E_SVC0103_ProcedureModifier"/>
+		<xs:attribute name="WPC276A16130G_2210E_SVC0104_ProcedureModifier"/>
+		<xs:attribute name="WPC276A16130W_2210E_SVC0105_ProcedureModifier"/>
+		<xs:attribute name="WPC276A16130D_2210E_SVC0106_ProcedureModifier"/>
+		<xs:attribute name="WPC276A16130Q_2210E_SVC0107_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16140O_2210E_REF_ServiceLineItemIdentification">
+	<xs:annotation>
+		<xs:documentation>Service Line Item Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16140N_2210E_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC276A16140_2210E_REF02_LineItemControlNumber"/>
+		<xs:attribute name="WPC276A16140O_2210E_REF03_NotUsed"/>
+		<xs:attribute name="WPC276A16140H_2210E_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC276A16150_2210E_DTP_ServiceLineDate">
+	<xs:annotation>
+		<xs:documentation>Service Line Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC276A16150U_2210E_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC276A16150V_2210E_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC276A16150R_2210E_DTP03_ServiceDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProc">
+	<xs:annotation>
+		<xs:documentation>WPC IProc</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProcEvnt" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC_Errors" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="X12_Envelope" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProcEvnt">
+	<xs:annotation>
+		<xs:documentation>WPC IProcEvent</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="src" use="optional"/>
+		<xs:attribute name="type" use="optional"/>
+		<xs:attribute name="dt" use="optional"/>
+		<xs:attribute name="hsh" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_Errors">
+	<xs:annotation>
+		<xs:documentation>WPC Error Collection</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Violation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="Violation">
+	<xs:annotation>
+		<xs:documentation>Violation Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ErrorType" use="required">
+			<xs:annotation>
+				<xs:documentation>Enumeration of error type</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FileID">
+			<xs:annotation>
+				<xs:documentation>Identifier of original submission</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TraceNumber">
+			<xs:annotation>
+				<xs:documentation>Application layer trace identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationLocation">
+			<xs:annotation>
+				<xs:documentation>Location of errant data</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationDescription">
+			<xs:annotation>
+				<xs:documentation>Text description of violation</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleProcessor">
+			<xs:annotation>
+				<xs:documentation>Rule processor identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleSource">
+			<xs:annotation>
+				<xs:documentation>Source identifier of violated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleViolationText">
+			<xs:annotation>
+				<xs:documentation>Text description of rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+		<xs:attribute name="BadDataContent">
+			<xs:annotation>
+				<xs:documentation>Errant data found in violation of indicated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+	</xs:complexType>
+</xs:element>
+<xs:element name="X12_Envelope">
+	<xs:annotation>
+		<xs:documentation>X12 Envelope</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="ISA_InterchangeControlHeader" minOccurs="0"/>
+			<xs:element ref="GS_FunctionalGroupHeader" minOccurs="0"/>
+			<xs:element ref="ST_TransactionSetHeader" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ST_TransactionSetHeader">
+	<xs:annotation>
+		<xs:documentation>Transaction Set Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ST01__TransactionSetIdentifierCode" use="optional"/>
+		<xs:attribute name="ST02__TransactionSetControlNumber" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GS_FunctionalGroupHeader">
+	<xs:annotation>
+		<xs:documentation>Functional Group Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="GS01__FunctionalIdentifierCode" use="optional"/>
+		<xs:attribute name="GS02__ApplicationSendersCode" use="optional"/>
+		<xs:attribute name="GS03__ApplicationReceiversCode" use="optional"/>
+		<xs:attribute name="GS04__Date" use="optional"/>
+		<xs:attribute name="GS05__Time" use="optional"/>
+		<xs:attribute name="GS06__GroupControlNumber" use="optional"/>
+		<xs:attribute name="GS07__ResponsibleAgencyCode" use="optional"/>
+		<xs:attribute name="GS08__VersionReleaseIndustryIdentifierCode" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ISA_InterchangeControlHeader">
+	<xs:annotation>
+		<xs:documentation>Interchange Control Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ISA01__AuthorizationInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA02__AuthorizationInformation" use="optional"/>
+		<xs:attribute name="ISA03__SecurityInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA04__SecurityInformation" use="optional"/>
+		<xs:attribute name="ISA05__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA06__InterchangeSenderID" use="optional"/>
+		<xs:attribute name="ISA07__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA08__InterchangeReceiverID" use="optional"/>
+		<xs:attribute name="ISA09__InterchangeDate" use="optional"/>
+		<xs:attribute name="ISA10__InterchangeTime" use="optional"/>
+		<xs:attribute name="ISA11__InterchangeControlStandardsIdentifier" use="optional"/>
+		<xs:attribute name="ISA12__InterchangeControlVersionNumber" use="optional"/>
+		<xs:attribute name="ISA13__InterchangeControlNumber" use="optional"/>
+		<xs:attribute name="ISA14__AcknowledgmentRequested" use="optional"/>
+		<xs:attribute name="ISA15__UsageIndicator" use="optional"/>
+		<xs:attribute name="ISA16__ComponentElementSeparator" use="optional"/>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
+
+

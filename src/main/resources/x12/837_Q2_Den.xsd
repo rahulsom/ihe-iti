@@ -1,0 +1,2210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c)Copyright 2004 Washington Publishing Company (http://www.wpc-edi.com) -->
+<xs:schema version="1.0"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wpc="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1" targetNamespace="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC837Q2" xmlns="http://schemas.wpc-edi.com/X12/ISOMORPH/HIPAA/4010A1/WPC837Q2" >
+<xs:annotation>
+	<xs:documentation xml:lang="en"> 
+		HIPAA Schema WPC837Q2 - Washington Publishing Company (http://www.wpc-edi.com)
+		Copyright (C) 2004 Washington Publishing Company
+		This program is free software; you can redistribute it and/or
+		modify it under the terms of the GNU General Public License
+		as published by the Free Software Foundation; Version 2.
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+	</xs:documentation>
+</xs:annotation>
+<xs:element name="WPC837Q2">
+	<xs:annotation>
+		<xs:documentation>Health Care Claim: Dental</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProc" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="WPC837Q210100__BHT_BeginningOfHierarchicalTransaction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q210158__REF_TransmissionTypeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q21020S_1000A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q21050I_1000B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22001T_2000A" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q210100__BHT_BeginningOfHierarchicalTransaction">
+	<xs:annotation>
+		<xs:documentation>Beginning of Hierarchical Transaction</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q21010G__BHT01_HierarchicalStructureCode"/>
+		<xs:attribute name="WPC837Q21010Q__BHT02_TransactionSetPurposeCode"/>
+		<xs:attribute name="WPC837Q21010Y__BHT03_OriginatorApplicationTransactionIdentifier"/>
+		<xs:attribute name="WPC837Q21010P__BHT04_TransactionSetCreationDate"/>
+		<xs:attribute name="WPC837Q21010M__BHT05_TransactionSetCreationTime"/>
+		<xs:attribute name="WPC837Q21010S__BHT06_ClaimOrEncounterIdentifier"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q210158__REF_TransmissionTypeIdentification">
+	<xs:annotation>
+		<xs:documentation>Transmission Type Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q21015G__REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q21015R__REF02_TransmissionTypeCode"/>
+		<xs:attribute name="WPC837Q21015A__REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q21015Q__REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q21020S_1000A">
+	<xs:annotation>
+		<xs:documentation>Submitter Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q21020Y_1000A_NM1_SubmitterName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q210458_1000A_PER_SubmitterContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q21020Y_1000A_NM1_SubmitterName">
+	<xs:annotation>
+		<xs:documentation>Submitter Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q21020C_1000A_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q210205_1000A_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q21020O_1000A_NM103_SubmitterLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q21020Y_1000A_NM104_SubmitterFirstName"/>
+		<xs:attribute name="WPC837Q21020X_1000A_NM105_SubmitterMiddleName"/>
+		<xs:attribute name="WPC837Q21020U_1000A_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q21020K_1000A_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q21020T_1000A_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q21020F_1000A_NM109_SubmitterIdentifier"/>
+		<xs:attribute name="WPC837Q21020V_1000A_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q21020Y_1000A_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q210458_1000A_PER_SubmitterContactInformation">
+	<xs:annotation>
+		<xs:documentation>Submitter Contact Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q21045C_1000A_PER01_ContactFunctionCode"/>
+		<xs:attribute name="WPC837Q21045F_1000A_PER02_SubmitterContactName"/>
+		<xs:attribute name="WPC837Q21045E_1000A_PER03_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q21045L_1000A_PER04_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q21045S_1000A_PER05_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q21045R_1000A_PER06_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q21045O_1000A_PER07_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q21045Z_1000A_PER08_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q210454_1000A_PER09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q21050I_1000B">
+	<xs:annotation>
+		<xs:documentation>Receiver Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q21050U_1000B_NM1_ReceiverName" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q21050U_1000B_NM1_ReceiverName">
+	<xs:annotation>
+		<xs:documentation>Receiver Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q21050C_1000B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q21050Z_1000B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q21050V_1000B_NM103_ReceiverName"/>
+		<xs:attribute name="WPC837Q21050I_1000B_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q21050P_1000B_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q210507_1000B_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q21050U_1000B_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q210501_1000B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q21050_1000B_NM109_ReceiverPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q21050S_1000B_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q21050W_1000B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22001T_2000A">
+	<xs:annotation>
+		<xs:documentation>Billing/Pay-to Provider Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q220014_2000A_HL_BillingPayToProviderHierarchicalLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22003F_2000A_PRV_BillingPayToProviderSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22010_2000A_CUR_ForeignCurrencyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22015Y_2010AA" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q230153_2010AB" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24001A_2000B" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q220014_2000A_HL_BillingPayToProviderHierarchicalLevel">
+	<xs:annotation>
+		<xs:documentation>Billing/Pay-to Provider Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q220015_2000A_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC837Q22001C_2000A_HL02_NotUsed"/>
+		<xs:attribute name="WPC837Q22001K_2000A_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC837Q220013_2000A_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22003F_2000A_PRV_BillingPayToProviderSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Billing/Pay-to Provider Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q22003Q_2000A_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q22003_2000A_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q22003T_2000A_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q22003A_2000A_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q220039_2000A_PRV05_NotUsed"/>
+		<xs:attribute name="WPC837Q22003O_2000A_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22010_2000A_CUR_ForeignCurrencyInformation">
+	<xs:annotation>
+		<xs:documentation>Foreign Currency Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q220109_2000A_CUR01_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q22010L_2000A_CUR02_CurrencyCode"/>
+		<xs:attribute name="WPC837Q22010Y_2000A_CUR03_NotUsed"/>
+		<xs:attribute name="WPC837Q22010B_2000A_CUR04_NotUsed"/>
+		<xs:attribute name="WPC837Q22010D_2000A_CUR05_NotUsed"/>
+		<xs:attribute name="WPC837Q22010R_2000A_CUR06_NotUsed"/>
+		<xs:attribute name="WPC837Q22010S_2000A_CUR07_NotUsed"/>
+		<xs:attribute name="WPC837Q22010V_2000A_CUR08_NotUsed"/>
+		<xs:attribute name="WPC837Q22010_2000A_CUR09_NotUsed"/>
+		<xs:attribute name="WPC837Q22010L_2000A_CUR10_NotUsed"/>
+		<xs:attribute name="WPC837Q22010_2000A_CUR11_NotUsed"/>
+		<xs:attribute name="WPC837Q22010W_2000A_CUR12_NotUsed"/>
+		<xs:attribute name="WPC837Q22010A_2000A_CUR13_NotUsed"/>
+		<xs:attribute name="WPC837Q22010A_2000A_CUR14_NotUsed"/>
+		<xs:attribute name="WPC837Q22010L_2000A_CUR15_NotUsed"/>
+		<xs:attribute name="WPC837Q22010Y_2000A_CUR16_NotUsed"/>
+		<xs:attribute name="WPC837Q22010I_2000A_CUR17_NotUsed"/>
+		<xs:attribute name="WPC837Q22010T_2000A_CUR18_NotUsed"/>
+		<xs:attribute name="WPC837Q22010Y_2000A_CUR19_NotUsed"/>
+		<xs:attribute name="WPC837Q22010F_2000A_CUR20_NotUsed"/>
+		<xs:attribute name="WPC837Q220107_2000A_CUR21_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22015Y_2010AA">
+	<xs:annotation>
+		<xs:documentation>Billing Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q22015C_2010AA_NM1_BillingProviderName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q220256_2010AA_N3_BillingProviderAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22030A_2010AA_N4_BillingProviderCityStateZIPCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22035Y_2010AA_REF_BillingProviderSecondaryIdentificationNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q22036W_2010AA_REF_ClaimSubmitterCreditDebitCardInformation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22015C_2010AA_NM1_BillingProviderName">
+	<xs:annotation>
+		<xs:documentation>Billing Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q220159_2010AA_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q22015P_2010AA_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q22015L_2010AA_NM103_BillingProviderLastOrOrganizationalName"/>
+		<xs:attribute name="WPC837Q22015S_2010AA_NM104_BillingProviderFirstName"/>
+		<xs:attribute name="WPC837Q220155_2010AA_NM105_BillingProviderMiddleName"/>
+		<xs:attribute name="WPC837Q22015T_2010AA_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q22015Q_2010AA_NM107_BillingProviderNameSuffix"/>
+		<xs:attribute name="WPC837Q22015Y_2010AA_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q22015D_2010AA_NM109_BillingProviderIdentifier"/>
+		<xs:attribute name="WPC837Q22015G_2010AA_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q22015M_2010AA_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q220256_2010AA_N3_BillingProviderAddress">
+	<xs:annotation>
+		<xs:documentation>Billing Provider Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q22025X_2010AA_N301_BillingProviderAddressLine"/>
+		<xs:attribute name="WPC837Q22025B_2010AA_N302_BillingProviderAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22030A_2010AA_N4_BillingProviderCityStateZIPCode">
+	<xs:annotation>
+		<xs:documentation>Billing Provider City/State/ZIP Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q220304_2010AA_N401_BillingProviderCityName"/>
+		<xs:attribute name="WPC837Q22030F_2010AA_N402_BillingProviderStateOrProvinceCode"/>
+		<xs:attribute name="WPC837Q22030M_2010AA_N403_BillingProviderPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q22030X_2010AA_N404_CountryCode"/>
+		<xs:attribute name="WPC837Q22030F_2010AA_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q22030E_2010AA_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22035Y_2010AA_REF_BillingProviderSecondaryIdentificationNumber">
+	<xs:annotation>
+		<xs:documentation>Billing Provider Secondary Identification Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q22035E_2010AA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q22035E_2010AA_REF02_BillingProviderAdditionalIdentifier"/>
+		<xs:attribute name="WPC837Q22035T_2010AA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q22035J_2010AA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q22036W_2010AA_REF_ClaimSubmitterCreditDebitCardInformation">
+	<xs:annotation>
+		<xs:documentation>Claim Submitter Credit/Debit Card Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q22036P_2010AA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q22036F_2010AA_REF02_BillingProviderCreditCardIdentifier"/>
+		<xs:attribute name="WPC837Q22036F_2010AA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q22036Y_2010AA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q230153_2010AB">
+	<xs:annotation>
+		<xs:documentation>Pay-to Provider's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q230155_2010AB_NM1_PayToProviderSName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q23025_2010AB_N3_PayToProviderSAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q23030G_2010AB_N4_PayToProviderCityStateZip" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q23035K_2010AB_REF_PayToProviderSecondaryIdentificationNumber" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q230155_2010AB_NM1_PayToProviderSName">
+	<xs:annotation>
+		<xs:documentation>Pay-to Provider's Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q23015A_2010AB_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q23015S_2010AB_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q23015L_2010AB_NM103_PayToProviderLastOrOrganizationalName"/>
+		<xs:attribute name="WPC837Q23015Y_2010AB_NM104_PayToProviderFirstName"/>
+		<xs:attribute name="WPC837Q23015_2010AB_NM105_PayToProviderMiddleName"/>
+		<xs:attribute name="WPC837Q23015A_2010AB_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q230152_2010AB_NM107_PayToProviderNameSuffix"/>
+		<xs:attribute name="WPC837Q23015W_2010AB_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q23015Y_2010AB_NM109_PayToProviderIdentifier"/>
+		<xs:attribute name="WPC837Q23015V_2010AB_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q23015A_2010AB_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q23025_2010AB_N3_PayToProviderSAddress">
+	<xs:annotation>
+		<xs:documentation>Pay-to Provider's Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q23025T_2010AB_N301_PayToProviderAddressLine"/>
+		<xs:attribute name="WPC837Q23025E_2010AB_N302_PayToProviderAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q23030G_2010AB_N4_PayToProviderCityStateZip">
+	<xs:annotation>
+		<xs:documentation>Pay-to Provider City/State/Zip</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q23030G_2010AB_N401_PayToProviderCityName"/>
+		<xs:attribute name="WPC837Q230307_2010AB_N402_PayToProviderStateCode"/>
+		<xs:attribute name="WPC837Q23030Q_2010AB_N403_PayToProviderPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q23030S_2010AB_N404_CountryCode"/>
+		<xs:attribute name="WPC837Q23030_2010AB_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q23030E_2010AB_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q23035K_2010AB_REF_PayToProviderSecondaryIdentificationNumber">
+	<xs:annotation>
+		<xs:documentation>Pay-to Provider Secondary Identification Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q23035J_2010AB_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q23035G_2010AB_REF02_PayToProviderIdentifier"/>
+		<xs:attribute name="WPC837Q23035_2010AB_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q230352_2010AB_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24001A_2000B">
+	<xs:annotation>
+		<xs:documentation>Subscriber Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q24001D_2000B_HL_SubscriberHierarchicalLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24005X_2000B_SBR_SubscriberInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24015D_2010BA" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q25015Z_2010BB" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q270754_2010BC" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28001O_2000C" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C130K_2300" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24001D_2000B_HL_SubscriberHierarchicalLevel">
+	<xs:annotation>
+		<xs:documentation>Subscriber Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24001_2000B_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC837Q24001V_2000B_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC837Q240018_2000B_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC837Q24001N_2000B_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24005X_2000B_SBR_SubscriberInformation">
+	<xs:annotation>
+		<xs:documentation>Subscriber Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24005B_2000B_SBR01_PayerResponsibilitySequenceNumberCode"/>
+		<xs:attribute name="WPC837Q24005Y_2000B_SBR02_IndividualRelationshipCode"/>
+		<xs:attribute name="WPC837Q24005C_2000B_SBR03_InsuredGroupOrPolicyNumber"/>
+		<xs:attribute name="WPC837Q24005F_2000B_SBR04_InsuredGroupName"/>
+		<xs:attribute name="WPC837Q24005X_2000B_SBR05_NotUsed"/>
+		<xs:attribute name="WPC837Q24005T_2000B_SBR06_CoordinationOfBenefitsCode"/>
+		<xs:attribute name="WPC837Q24005Y_2000B_SBR07_NotUsed"/>
+		<xs:attribute name="WPC837Q24005C_2000B_SBR08_NotUsed"/>
+		<xs:attribute name="WPC837Q24005U_2000B_SBR09_ClaimFilingIndicatorCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24015D_2010BA">
+	<xs:annotation>
+		<xs:documentation>Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q24015L_2010BA_NM1_SubscriberName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24025I_2010BA_N3_SubscriberAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24030U_2010BA_N4_SubscriberCityStateZIPCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24032Q_2010BA_DMG_SubscriberDemographicInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q240356_2010BA_REF_SubscriberSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q24036O_2010BA_REF_PropertyAndCasualtyClaimNumber" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24015L_2010BA_NM1_SubscriberName">
+	<xs:annotation>
+		<xs:documentation>Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q240159_2010BA_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q24015_2010BA_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q24015N_2010BA_NM103_SubscriberLastName"/>
+		<xs:attribute name="WPC837Q24015M_2010BA_NM104_SubscriberFirstName"/>
+		<xs:attribute name="WPC837Q24015Y_2010BA_NM105_SubscriberMiddleName"/>
+		<xs:attribute name="WPC837Q24015O_2010BA_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q240157_2010BA_NM107_SubscriberNameSuffix"/>
+		<xs:attribute name="WPC837Q240157_2010BA_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q24015B_2010BA_NM109_SubscriberPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q24015Z_2010BA_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q240154_2010BA_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24025I_2010BA_N3_SubscriberAddress">
+	<xs:annotation>
+		<xs:documentation>Subscriber Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24025Y_2010BA_N301_SubscriberAddressLine"/>
+		<xs:attribute name="WPC837Q24025L_2010BA_N302_SubscriberAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24030U_2010BA_N4_SubscriberCityStateZIPCode">
+	<xs:annotation>
+		<xs:documentation>Subscriber City/State/ZIP Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24030O_2010BA_N401_SubscriberCityName"/>
+		<xs:attribute name="WPC837Q24030_2010BA_N402_SubscriberStateCode"/>
+		<xs:attribute name="WPC837Q24030C_2010BA_N403_SubscriberPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q24030U_2010BA_N404_CountryCode"/>
+		<xs:attribute name="WPC837Q240309_2010BA_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q24030Q_2010BA_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24032Q_2010BA_DMG_SubscriberDemographicInformation">
+	<xs:annotation>
+		<xs:documentation>Subscriber Demographic Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24032H_2010BA_DMG01_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q240323_2010BA_DMG02_SubscriberBirthDate"/>
+		<xs:attribute name="WPC837Q24032S_2010BA_DMG03_SubscriberGenderCode"/>
+		<xs:attribute name="WPC837Q24032F_2010BA_DMG04_NotUsed"/>
+		<xs:attribute name="WPC837Q24032D_2010BA_DMG05_NotUsed"/>
+		<xs:attribute name="WPC837Q24032P_2010BA_DMG06_NotUsed"/>
+		<xs:attribute name="WPC837Q24032M_2010BA_DMG07_NotUsed"/>
+		<xs:attribute name="WPC837Q24032F_2010BA_DMG08_NotUsed"/>
+		<xs:attribute name="WPC837Q24032X_2010BA_DMG09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q240356_2010BA_REF_SubscriberSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Subscriber Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24035M_2010BA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q24035O_2010BA_REF02_SubscriberSupplementalIdentifier"/>
+		<xs:attribute name="WPC837Q24035T_2010BA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q24035U_2010BA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q24036O_2010BA_REF_PropertyAndCasualtyClaimNumber">
+	<xs:annotation>
+		<xs:documentation>Property and Casualty Claim Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q24036W_2010BA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q24036P_2010BA_REF02_PropertyCasualtyClaimNumber"/>
+		<xs:attribute name="WPC837Q240362_2010BA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q24036_2010BA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q25015Z_2010BB">
+	<xs:annotation>
+		<xs:documentation>Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q25015X_2010BB_NM1_PayerName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q250250_2010BB_N3_PayerAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q25030K_2010BB_N4_PayerCityStateZIPCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q25035G_2010BB_REF_PayerSecondaryIdentificationNumber" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q25015X_2010BB_NM1_PayerName">
+	<xs:annotation>
+		<xs:documentation>Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q25015J_2010BB_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q25015R_2010BB_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q25015H_2010BB_NM103_PayerName"/>
+		<xs:attribute name="WPC837Q25015W_2010BB_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q25015A_2010BB_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q25015Z_2010BB_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q25015N_2010BB_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q25015M_2010BB_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q25015M_2010BB_NM109_PayerIdentifier"/>
+		<xs:attribute name="WPC837Q25015D_2010BB_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q25015Z_2010BB_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q250250_2010BB_N3_PayerAddress">
+	<xs:annotation>
+		<xs:documentation>Payer Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q250251_2010BB_N301_PayerAddressLine"/>
+		<xs:attribute name="WPC837Q25025R_2010BB_N302_PayerAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q25030K_2010BB_N4_PayerCityStateZIPCode">
+	<xs:annotation>
+		<xs:documentation>Payer City/State/ZIP Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q25030U_2010BB_N401_PayerCityName"/>
+		<xs:attribute name="WPC837Q25030E_2010BB_N402_PayerStateCode"/>
+		<xs:attribute name="WPC837Q25030T_2010BB_N403_PayerPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q25030N_2010BB_N404_PayerPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q25030S_2010BB_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q250304_2010BB_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q25035G_2010BB_REF_PayerSecondaryIdentificationNumber">
+	<xs:annotation>
+		<xs:documentation>Payer Secondary Identification Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q25035W_2010BB_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q25035D_2010BB_REF02_PayerAdditionalIdentifier"/>
+		<xs:attribute name="WPC837Q25035Q_2010BB_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q25035A_2010BB_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q270754_2010BC">
+	<xs:annotation>
+		<xs:documentation>Credit/Debit Card Holder Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q27075H_2010BC_NM1_CreditDebitCardHolderName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q27090R_2010BC_REF_CreditDebitCardInformation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q27075H_2010BC_NM1_CreditDebitCardHolderName">
+	<xs:annotation>
+		<xs:documentation>Credit/Debit Card Holder Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q27075N_2010BC_NM101_LocationQualifier"/>
+		<xs:attribute name="WPC837Q27075M_2010BC_NM102_LoopIdentifierCode"/>
+		<xs:attribute name="WPC837Q27075O_2010BC_NM103_CreditOrDebitCardHolderLastOrOrganizationalName"/>
+		<xs:attribute name="WPC837Q27075O_2010BC_NM104_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q27075N_2010BC_NM105_CreditOrDebitCardHolderMiddleName"/>
+		<xs:attribute name="WPC837Q27075_2010BC_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q27075O_2010BC_NM107_CreditOrDebitCardHolderNameSuffix"/>
+		<xs:attribute name="WPC837Q27075H_2010BC_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q27075_2010BC_NM109_CreditOrDebitCardNumber"/>
+		<xs:attribute name="WPC837Q27075U_2010BC_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q27075V_2010BC_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q27090R_2010BC_REF_CreditDebitCardInformation">
+	<xs:annotation>
+		<xs:documentation>Credit/Debit Card Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q270903_2010BC_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q27090I_2010BC_REF02_CreditOrDebitCardAuthorizationNumber"/>
+		<xs:attribute name="WPC837Q27090Q_2010BC_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q27090_2010BC_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28001O_2000C">
+	<xs:annotation>
+		<xs:documentation>Patient Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q28001S_2000C_HL_PatientHierarchicalLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28007T_2000C_PAT_PatientInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28015U_2010CA" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C130K_2300" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28001S_2000C_HL_PatientHierarchicalLevel">
+	<xs:annotation>
+		<xs:documentation>Patient Hierarchical Level</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28001Z_2000C_HL01_HierarchicalIDNumber"/>
+		<xs:attribute name="WPC837Q28001G_2000C_HL02_HierarchicalParentIDNumber"/>
+		<xs:attribute name="WPC837Q28001H_2000C_HL03_HierarchicalLevelCode"/>
+		<xs:attribute name="WPC837Q28001J_2000C_HL04_HierarchicalChildCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28007T_2000C_PAT_PatientInformation">
+	<xs:annotation>
+		<xs:documentation>Patient Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28007H_2000C_PAT01_IndividualRelationshipCode"/>
+		<xs:attribute name="WPC837Q28007Y_2000C_PAT02_NotUsed"/>
+		<xs:attribute name="WPC837Q28007C_2000C_PAT03_NotUsed"/>
+		<xs:attribute name="WPC837Q28007_2000C_PAT04_StudentStatusCode"/>
+		<xs:attribute name="WPC837Q28007G_2000C_PAT05_NotUsed"/>
+		<xs:attribute name="WPC837Q28007S_2000C_PAT06_NotUsed"/>
+		<xs:attribute name="WPC837Q280070_2000C_PAT07_NotUsed"/>
+		<xs:attribute name="WPC837Q28007K_2000C_PAT08_NotUsed"/>
+		<xs:attribute name="WPC837Q28007H_2000C_PAT09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28015U_2010CA">
+	<xs:annotation>
+		<xs:documentation>Patient Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q28015G_2010CA_NM1_PatientName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28025U_2010CA_N3_PatientAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28030O_2010CA_N4_PatientCityStateZIPCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q28032F_2010CA_DMG_PatientDemographicInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q280357_2010CA_REF_PatientSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q280363_2010CA_REF_PropertyAndCasualtyClaimNumber" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28015G_2010CA_NM1_PatientName">
+	<xs:annotation>
+		<xs:documentation>Patient Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28015_2010CA_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q28015M_2010CA_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q28015O_2010CA_NM103_PatientLastName"/>
+		<xs:attribute name="WPC837Q28015J_2010CA_NM104_PatientFirstName"/>
+		<xs:attribute name="WPC837Q28015H_2010CA_NM105_PatientMiddleName"/>
+		<xs:attribute name="WPC837Q28015N_2010CA_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q28015I_2010CA_NM107_PatientNameSuffix"/>
+		<xs:attribute name="WPC837Q28015I_2010CA_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q28015U_2010CA_NM109_PatientPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q28015Z_2010CA_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q28015H_2010CA_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28025U_2010CA_N3_PatientAddress">
+	<xs:annotation>
+		<xs:documentation>Patient Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28025U_2010CA_N301_PatientAddressLine"/>
+		<xs:attribute name="WPC837Q28025_2010CA_N302_PatientAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28030O_2010CA_N4_PatientCityStateZIPCode">
+	<xs:annotation>
+		<xs:documentation>Patient City/State/ZIP Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28030Q_2010CA_N401_PatientCityName"/>
+		<xs:attribute name="WPC837Q28030S_2010CA_N402_PatientStateCode"/>
+		<xs:attribute name="WPC837Q28030H_2010CA_N403_PatientPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q28030L_2010CA_N404_CountryCode"/>
+		<xs:attribute name="WPC837Q28030N_2010CA_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q28030C_2010CA_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q28032F_2010CA_DMG_PatientDemographicInformation">
+	<xs:annotation>
+		<xs:documentation>Patient Demographic Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28032C_2010CA_DMG01_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q28032E_2010CA_DMG02_PatientBirthDate"/>
+		<xs:attribute name="WPC837Q28032L_2010CA_DMG03_PatientGenderCode"/>
+		<xs:attribute name="WPC837Q28032J_2010CA_DMG04_NotUsed"/>
+		<xs:attribute name="WPC837Q28032F_2010CA_DMG05_NotUsed"/>
+		<xs:attribute name="WPC837Q28032Z_2010CA_DMG06_NotUsed"/>
+		<xs:attribute name="WPC837Q28032C_2010CA_DMG07_NotUsed"/>
+		<xs:attribute name="WPC837Q28032M_2010CA_DMG08_NotUsed"/>
+		<xs:attribute name="WPC837Q280324_2010CA_DMG09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q280357_2010CA_REF_PatientSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Patient Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28035K_2010CA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q28035D_2010CA_REF02_PatientSecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q28035R_2010CA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q28035L_2010CA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q280363_2010CA_REF_PropertyAndCasualtyClaimNumber">
+	<xs:annotation>
+		<xs:documentation>Property and Casualty Claim Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q28036V_2010CA_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q28036T_2010CA_REF02_PropertyCasualtyClaimNumber"/>
+		<xs:attribute name="WPC837Q28036H_2010CA_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q28036T_2010CA_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C130K_2300">
+	<xs:annotation>
+		<xs:documentation>Claim Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2C130F_2300_CLM_ClaimInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C135J_2300_DTP_DateAdmission" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C1366_2300_DTP_DateDischarge" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C137T_2300_DTP_DateReferral" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C139F_2300_DTP_DateAccident" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C13BR_2300_DTP_DateAppliancePlacement" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C13DM_2300_DTP_DateService" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C145Q_2300_DN1_OrthodonticTotalMonthsOfTreatment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C150Z_2300_DN2_ToothStatus" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C1550_2300_PWK_ClaimSupplementalInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C175Y_2300_AMT_PatientAmountPaid" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C176B_2300_AMT_CreditDebitCardMaximumAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C180B_2300_REF_PredeterminationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C181_2300_REF_ServiceAuthorizationExceptionCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C183V_2300_REF_OriginalReferenceNumberICNDCN" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C184N_2300_REF_PriorAuthorizationOrReferralNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C188A_2300_REF_ClaimIdentificationNumberForClearinghousesAndOtherTransmissionIntermediaries" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C190Q_2300_NTE_ClaimNote" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C250Z_2310A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2D250R_2310B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2E250_2310C" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2F250V_2310D" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J290P_2320" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P365B_2400" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C130F_2300_CLM_ClaimInformation">
+	<xs:annotation>
+		<xs:documentation>Claim Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2C130_2300_CLM05_HealthCareServiceLocationInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C130X_2300_CLM11_RelatedCausesInformation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC837Q2C130J_2300_CLM01_PatientAccountNumber"/>
+		<xs:attribute name="WPC837Q2C130J_2300_CLM02_TotalClaimChargeAmount"/>
+		<xs:attribute name="WPC837Q2C130F_2300_CLM03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130S_2300_CLM04_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130W_2300_CLM06_ProviderOrSupplierSignatureIndicator"/>
+		<xs:attribute name="WPC837Q2C1308_2300_CLM07_MedicareAssignmentCode"/>
+		<xs:attribute name="WPC837Q2C130T_2300_CLM08_BenefitsAssignmentCertificationIndicator"/>
+		<xs:attribute name="WPC837Q2C130S_2300_CLM09_ReleaseOfInformationCode"/>
+		<xs:attribute name="WPC837Q2C130R_2300_CLM10_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130U_2300_CLM12_SpecialProgramIndicator"/>
+		<xs:attribute name="WPC837Q2C130A_2300_CLM13_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130R_2300_CLM14_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130Y_2300_CLM15_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130B_2300_CLM16_NotUsed"/>
+		<xs:attribute name="WPC837Q2C1306_2300_CLM17_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130V_2300_CLM18_NotUsed"/>
+		<xs:attribute name="WPC837Q2C130Z_2300_CLM19_ClaimSubmissionReasonCode"/>
+		<xs:attribute name="WPC837Q2C130M_2300_CLM20_DelayReasonCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C130_2300_CLM05_HealthCareServiceLocationInformation">
+	<xs:annotation>
+		<xs:documentation>Health Care Service Location Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C130P_2300_CLM0501_FacilityTypeCode"/>
+		<xs:attribute name="WPC837Q2C130X_2300_CLM0502_NotUsed"/>
+		<xs:attribute name="WPC837Q2C1307_2300_CLM0503_ClaimSubmissionReasonCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C130X_2300_CLM11_RelatedCausesInformation">
+	<xs:annotation>
+		<xs:documentation>Related Causes Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C130E_2300_CLM1101_RelatedCausesCode"/>
+		<xs:attribute name="WPC837Q2C1300_2300_CLM1102_RelatedCausesCode"/>
+		<xs:attribute name="WPC837Q2C130B_2300_CLM1103_RelatedCausesCode"/>
+		<xs:attribute name="WPC837Q2C130H_2300_CLM1104_AutoAccidentStateOrProvinceCode"/>
+		<xs:attribute name="WPC837Q2C130C_2300_CLM1105_CountryCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C135J_2300_DTP_DateAdmission">
+	<xs:annotation>
+		<xs:documentation>Date - Admission</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C1354_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C135L_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C135S_2300_DTP03_RelatedHospitalizationAdmissionDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C1366_2300_DTP_DateDischarge">
+	<xs:annotation>
+		<xs:documentation>Date - Discharge</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C136I_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C136M_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C136B_2300_DTP03_DischargeOrEndOfCareDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C137T_2300_DTP_DateReferral">
+	<xs:annotation>
+		<xs:documentation>Date - Referral</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C137G_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C1375_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C137S_2300_DTP03_ReferralDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C139F_2300_DTP_DateAccident">
+	<xs:annotation>
+		<xs:documentation>Date - Accident</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C139G_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C139I_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C139Z_2300_DTP03_AccidentDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C13BR_2300_DTP_DateAppliancePlacement">
+	<xs:annotation>
+		<xs:documentation>Date - Appliance Placement</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C13BR_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C13BU_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C13B5_2300_DTP03_OrthodonticBandingDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C13DM_2300_DTP_DateService">
+	<xs:annotation>
+		<xs:documentation>Date - Service</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C13DH_2300_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2C13DD_2300_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2C13DS_2300_DTP03_ServiceDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C145Q_2300_DN1_OrthodonticTotalMonthsOfTreatment">
+	<xs:annotation>
+		<xs:documentation>Orthodontic Total Months of Treatment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C145_2300_DN101_OrthodonticTreatmentMonthsCount"/>
+		<xs:attribute name="WPC837Q2C145I_2300_DN102_OrthodonticTreatmentMonthsRemainingCount"/>
+		<xs:attribute name="WPC837Q2C145N_2300_DN103_QuestionResponse"/>
+		<xs:attribute name="WPC837Q2C145F_2300_DN104_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C150Z_2300_DN2_ToothStatus">
+	<xs:annotation>
+		<xs:documentation>Tooth Status</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C150Y_2300_DN201_ToothNumber"/>
+		<xs:attribute name="WPC837Q2C150I_2300_DN202_ToothStatusCode"/>
+		<xs:attribute name="WPC837Q2C150R_2300_DN203_NotUsed"/>
+		<xs:attribute name="WPC837Q2C150F_2300_DN204_NotUsed"/>
+		<xs:attribute name="WPC837Q2C150T_2300_DN205_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C1550_2300_PWK_ClaimSupplementalInformation">
+	<xs:annotation>
+		<xs:documentation>Claim Supplemental Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C155W_2300_PWK01_AttachmentReportTypeCode"/>
+		<xs:attribute name="WPC837Q2C155_2300_PWK02_AttachmentTransmissionCode"/>
+		<xs:attribute name="WPC837Q2C1551_2300_PWK03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C155P_2300_PWK04_NotUsed"/>
+		<xs:attribute name="WPC837Q2C155_2300_PWK05_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2C155O_2300_PWK06_AttachmentControlNumber"/>
+		<xs:attribute name="WPC837Q2C155P_2300_PWK07_NotUsed"/>
+		<xs:attribute name="WPC837Q2C155P_2300_PWK08_NotUsed"/>
+		<xs:attribute name="WPC837Q2C155W_2300_PWK09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C175Y_2300_AMT_PatientAmountPaid">
+	<xs:annotation>
+		<xs:documentation>Patient Amount Paid</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C175Q_2300_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2C175O_2300_AMT02_PatientAmountPaid"/>
+		<xs:attribute name="WPC837Q2C175R_2300_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C176B_2300_AMT_CreditDebitCardMaximumAmount">
+	<xs:annotation>
+		<xs:documentation>Credit/Debit Card - Maximum Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C176P_2300_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2C176T_2300_AMT02_CreditOrDebitCardMaximumAmount"/>
+		<xs:attribute name="WPC837Q2C176O_2300_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C180B_2300_REF_PredeterminationIdentification">
+	<xs:annotation>
+		<xs:documentation>Predetermination Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C180A_2300_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C180Z_2300_REF02_PredeterminationOfBenefitsIdentifier"/>
+		<xs:attribute name="WPC837Q2C180C_2300_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C180R_2300_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C181_2300_REF_ServiceAuthorizationExceptionCode">
+	<xs:annotation>
+		<xs:documentation>Service Authorization Exception Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C181V_2300_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C181A_2300_REF02_ServiceAuthorizationExceptionCode"/>
+		<xs:attribute name="WPC837Q2C181S_2300_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C181V_2300_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C183V_2300_REF_OriginalReferenceNumberICNDCN">
+	<xs:annotation>
+		<xs:documentation>Original Reference Number (ICN/DCN)</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C1831_2300_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C183K_2300_REF02_ClaimOriginalReferenceNumber"/>
+		<xs:attribute name="WPC837Q2C183Y_2300_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C183O_2300_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C184N_2300_REF_PriorAuthorizationOrReferralNumber">
+	<xs:annotation>
+		<xs:documentation>Prior Authorization or Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C184H_2300_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C184S_2300_REF02_ReferralNumber"/>
+		<xs:attribute name="WPC837Q2C1841_2300_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C184A_2300_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C188A_2300_REF_ClaimIdentificationNumberForClearinghousesAndOtherTransmissionIntermediaries">
+	<xs:annotation>
+		<xs:documentation>Claim Identification Number for Clearinghouses and Other Transmission ?
+Intermediaries</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C188F_2300_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C188L_2300_REF02_ValueAddedNetworkTraceNumber"/>
+		<xs:attribute name="WPC837Q2C1881_2300_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C188V_2300_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C190Q_2300_NTE_ClaimNote">
+	<xs:annotation>
+		<xs:documentation>Claim Note</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C190B_2300_NTE01_NoteReferenceCode"/>
+		<xs:attribute name="WPC837Q2C190H_2300_NTE02_ClaimNoteText"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C250Z_2310A">
+	<xs:annotation>
+		<xs:documentation>Referring Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2C2503_2310A_NM1_ReferringProviderName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C255I_2310A_PRV_ReferringProviderSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2C271H_2310A_REF_ReferringProviderSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C2503_2310A_NM1_ReferringProviderName">
+	<xs:annotation>
+		<xs:documentation>Referring Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C2503_2310A_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2C250A_2310A_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2C250N_2310A_NM103_ReferringProviderLastName"/>
+		<xs:attribute name="WPC837Q2C2502_2310A_NM104_ReferringProviderFirstName"/>
+		<xs:attribute name="WPC837Q2C250D_2310A_NM105_ReferringProviderMiddleName"/>
+		<xs:attribute name="WPC837Q2C250J_2310A_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2C250N_2310A_NM107_ReferringProviderNameSuffix"/>
+		<xs:attribute name="WPC837Q2C2507_2310A_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2C250S_2310A_NM109_ReferringProviderIdentifier"/>
+		<xs:attribute name="WPC837Q2C250Y_2310A_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2C250Q_2310A_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C255I_2310A_PRV_ReferringProviderSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Referring Provider Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C255N_2310A_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q2C255K_2310A_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C255W_2310A_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q2C255I_2310A_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q2C255B_2310A_PRV05_NotUsed"/>
+		<xs:attribute name="WPC837Q2C255_2310A_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2C271H_2310A_REF_ReferringProviderSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Referring Provider Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2C271P_2310A_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2C271U_2310A_REF02_ReferringProviderSecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q2C271M_2310A_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2C271M_2310A_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2D250R_2310B">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2D250T_2310B_NM1_RenderingProviderName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2D255T_2310B_PRV_RenderingProviderSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2D2716_2310B_REF_RenderingProviderSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2D250T_2310B_NM1_RenderingProviderName">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2D250K_2310B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2D250Z_2310B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2D250B_2310B_NM103_RenderingProviderLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2D2509_2310B_NM104_RenderingProviderFirstName"/>
+		<xs:attribute name="WPC837Q2D2506_2310B_NM105_RenderingProviderMiddleName"/>
+		<xs:attribute name="WPC837Q2D250A_2310B_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2D2503_2310B_NM107_RenderingProviderNameSuffix"/>
+		<xs:attribute name="WPC837Q2D250Q_2310B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2D250O_2310B_NM109_RenderingProviderIdentifier"/>
+		<xs:attribute name="WPC837Q2D250B_2310B_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2D250Q_2310B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2D255T_2310B_PRV_RenderingProviderSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2D255Z_2310B_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q2D255_2310B_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2D2553_2310B_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q2D2555_2310B_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q2D255J_2310B_PRV05_NotUsed"/>
+		<xs:attribute name="WPC837Q2D255F_2310B_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2D2716_2310B_REF_RenderingProviderSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2D271Q_2310B_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2D271C_2310B_REF02_RenderingProviderSecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q2D271C_2310B_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2D271W_2310B_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2E250_2310C">
+	<xs:annotation>
+		<xs:documentation>Service Facility Location</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2E2500_2310C_NM1_ServiceFacilityLocation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2E271I_2310C_REF_ServiceFacilityLocationSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2E2500_2310C_NM1_ServiceFacilityLocation">
+	<xs:annotation>
+		<xs:documentation>Service Facility Location</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2E250S_2310C_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2E250Z_2310C_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2E250Y_2310C_NM103_LaboratoryOrFacilityName"/>
+		<xs:attribute name="WPC837Q2E250J_2310C_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2E2508_2310C_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2E250Y_2310C_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2E250_2310C_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2E250H_2310C_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2E2506_2310C_NM109_LaboratoryOrFacilityPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q2E250W_2310C_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2E250B_2310C_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2E271I_2310C_REF_ServiceFacilityLocationSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Service Facility Location Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2E271W_2310C_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2E271I_2310C_REF02_LaboratoryOrFacilitySecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q2E271M_2310C_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2E2718_2310C_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2F250V_2310D">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2F250F_2310D_NM1_AssistantSurgeonName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2F255U_2310D_PRV_AssistantSurgeonSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2F271A_2310D_REF_AssistantSurgeonSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2F250F_2310D_NM1_AssistantSurgeonName">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2F250T_2310D_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2F250B_2310D_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2F250B_2310D_NM103_NameLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2F250X_2310D_NM104_AssistantSurgeonFirstName"/>
+		<xs:attribute name="WPC837Q2F250T_2310D_NM105_AssistantSurgeonMiddleName"/>
+		<xs:attribute name="WPC837Q2F2500_2310D_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2F250N_2310D_NM107_AssistantSurgeonNameSuffix"/>
+		<xs:attribute name="WPC837Q2F2508_2310D_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2F250R_2310D_NM109_IdentificationCode"/>
+		<xs:attribute name="WPC837Q2F250G_2310D_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2F250W_2310D_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2F255U_2310D_PRV_AssistantSurgeonSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2F255N_2310D_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q2F255Z_2310D_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2F255M_2310D_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q2F255V_2310D_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q2F255_2310D_PRV0500_NotUsed"/>
+		<xs:attribute name="WPC837Q2F255O_2310D_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2F271A_2310D_REF_AssistantSurgeonSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2F271B_2310D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2F271W_2310D_REF02_ReferenceIdentification"/>
+		<xs:attribute name="WPC837Q2F271Q_2310D_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2F271U_2310D_REF0400_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J290P_2320">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2J290L_2320_SBR_OtherSubscriberInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J295_2320_CAS_ClaimAdjustment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J3006_2320_AMT_CoordinationOfBenefitsCOBPayerPaidAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J301D_2320_AMT_CoordinationOfBenefitsCOBApprovedAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J302O_2320_AMT_CoordinationOfBenefitsCOBAllowedAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J303_2320_AMT_CoordinationOfBenefitsCOBPatientResponsibilityAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J304H_2320_AMT_CoordinationOfBenefitsCOBCoveredAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J305K_2320_AMT_CoordinationOfBenefitsCOBDiscountAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J306F_2320_AMT_CoordinationOfBenefitsCOBPatientPaidAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J310E_2320_DMG_OtherInsuredDemographicInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J311X_2320_OI_OtherInsuranceCoverageInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J325O_2330A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K325Y_2330B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2L325_2330C" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2M3252_2330D" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2N325H_2330E" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J290L_2320_SBR_OtherSubscriberInformation">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J290_2320_SBR01_PayerResponsibilitySequenceNumberCode"/>
+		<xs:attribute name="WPC837Q2J290F_2320_SBR02_IndividualRelationshipCode"/>
+		<xs:attribute name="WPC837Q2J290O_2320_SBR03_InsuredGroupOrPolicyNumber"/>
+		<xs:attribute name="WPC837Q2J2909_2320_SBR04_PolicyName"/>
+		<xs:attribute name="WPC837Q2J290X_2320_SBR05_NotUsed"/>
+		<xs:attribute name="WPC837Q2J2907_2320_SBR06_NotUsed"/>
+		<xs:attribute name="WPC837Q2J290B_2320_SBR07_NotUsed"/>
+		<xs:attribute name="WPC837Q2J290Q_2320_SBR08_NotUsed"/>
+		<xs:attribute name="WPC837Q2J2907_2320_SBR09_ClaimFilingIndicatorCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J295_2320_CAS_ClaimAdjustment">
+	<xs:annotation>
+		<xs:documentation>Claim Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J2955_2320_CAS01_ClaimAdjustmentGroupCode"/>
+		<xs:attribute name="WPC837Q2J295A_2320_CAS02_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295V_2320_CAS03_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J295E_2320_CAS04_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2J2955_2320_CAS05_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295T_2320_CAS06_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J295I_2320_CAS07_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2J295K_2320_CAS08_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295O_2320_CAS09_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J2954_2320_CAS10_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2J295I_2320_CAS11_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295D_2320_CAS12_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J295V_2320_CAS13_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2J295V_2320_CAS14_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295H_2320_CAS15_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J2955_2320_CAS16_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2J295G_2320_CAS17_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2J295E_2320_CAS18_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2J295K_2320_CAS19_AdjustmentQuantity"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J3006_2320_AMT_CoordinationOfBenefitsCOBPayerPaidAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Payer Paid Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J300C_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J300Q_2320_AMT02_PayerPaidAmount"/>
+		<xs:attribute name="WPC837Q2J300V_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J301D_2320_AMT_CoordinationOfBenefitsCOBApprovedAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Approved Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J301V_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J301P_2320_AMT02_ApprovedAmount"/>
+		<xs:attribute name="WPC837Q2J3015_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J302O_2320_AMT_CoordinationOfBenefitsCOBAllowedAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Allowed Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J302U_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J302X_2320_AMT02_AllowedAmount"/>
+		<xs:attribute name="WPC837Q2J302E_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J303_2320_AMT_CoordinationOfBenefitsCOBPatientResponsibilityAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Patient Responsibility Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J303Y_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J3033_2320_AMT02_PatientResponsibilityAmount"/>
+		<xs:attribute name="WPC837Q2J303N_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J304H_2320_AMT_CoordinationOfBenefitsCOBCoveredAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Covered Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J3043_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J3044_2320_AMT02_CoveredAmount"/>
+		<xs:attribute name="WPC837Q2J3040_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J305K_2320_AMT_CoordinationOfBenefitsCOBDiscountAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Discount Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J305N_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J305X_2320_AMT02_OtherPayerDiscountAmount"/>
+		<xs:attribute name="WPC837Q2J305U_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J306F_2320_AMT_CoordinationOfBenefitsCOBPatientPaidAmount">
+	<xs:annotation>
+		<xs:documentation>Coordination of Benefits (COB) Patient Paid Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J306Q_2320_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2J306_2320_AMT02_OtherPayerPatientPaidAmount"/>
+		<xs:attribute name="WPC837Q2J306P_2320_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J310E_2320_DMG_OtherInsuredDemographicInformation">
+	<xs:annotation>
+		<xs:documentation>Other Insured Demographic Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J310B_2320_DMG01_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2J310Q_2320_DMG02_OtherInsuredBirthDate"/>
+		<xs:attribute name="WPC837Q2J310V_2320_DMG03_OtherInsuredGenderCode"/>
+		<xs:attribute name="WPC837Q2J310H_2320_DMG04_NotUsed"/>
+		<xs:attribute name="WPC837Q2J310U_2320_DMG05_NotUsed"/>
+		<xs:attribute name="WPC837Q2J310J_2320_DMG06_NotUsed"/>
+		<xs:attribute name="WPC837Q2J310D_2320_DMG07_NotUsed"/>
+		<xs:attribute name="WPC837Q2J310M_2320_DMG08_NotUsed"/>
+		<xs:attribute name="WPC837Q2J310F_2320_DMG09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J311X_2320_OI_OtherInsuranceCoverageInformation">
+	<xs:annotation>
+		<xs:documentation>Other Insurance Coverage Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J3116_2320_OI01_NotUsed"/>
+		<xs:attribute name="WPC837Q2J311Z_2320_OI02_NotUsed"/>
+		<xs:attribute name="WPC837Q2J311J_2320_OI03_BenefitsAssignmentCertificationIndicator"/>
+		<xs:attribute name="WPC837Q2J311K_2320_OI04_NotUsed"/>
+		<xs:attribute name="WPC837Q2J311B_2320_OI05_NotUsed"/>
+		<xs:attribute name="WPC837Q2J311D_2320_OI06_ReleaseOfInformationCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J325O_2330A">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2J325K_2330A_NM1_OtherSubscriberName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J332P_2330A_N3_OtherSubscriberAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J340_2330A_N4_OtherSubscriberCityStateZipCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2J355G_2330A_REF_OtherSubscriberSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J325K_2330A_NM1_OtherSubscriberName">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J325E_2330A_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2J325U_2330A_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2J325P_2330A_NM103_OtherInsuredLastName"/>
+		<xs:attribute name="WPC837Q2J325A_2330A_NM104_OtherInsuredFirstName"/>
+		<xs:attribute name="WPC837Q2J325O_2330A_NM105_OtherInsuredMiddleName"/>
+		<xs:attribute name="WPC837Q2J3255_2330A_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2J325C_2330A_NM107_OtherInsuredNameSuffix"/>
+		<xs:attribute name="WPC837Q2J325V_2330A_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2J325T_2330A_NM109_OtherInsuredIdentifier"/>
+		<xs:attribute name="WPC837Q2J325A_2330A_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2J325F_2330A_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J332P_2330A_N3_OtherSubscriberAddress">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Address</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J332E_2330A_N301_OtherInsuredAddressLine"/>
+		<xs:attribute name="WPC837Q2J332K_2330A_N302_OtherInsuredAddressLine"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J340_2330A_N4_OtherSubscriberCityStateZipCode">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber City/State/Zip Code</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J340L_2330A_N401_OtherInsuredCityName"/>
+		<xs:attribute name="WPC837Q2J340I_2330A_N402_OtherInsuredStateCode"/>
+		<xs:attribute name="WPC837Q2J340F_2330A_N403_OtherInsuredPostalZoneOrZIPCode"/>
+		<xs:attribute name="WPC837Q2J340B_2330A_N404_CountryCode"/>
+		<xs:attribute name="WPC837Q2J3400_2330A_N405_NotUsed"/>
+		<xs:attribute name="WPC837Q2J340I_2330A_N406_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2J355G_2330A_REF_OtherSubscriberSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Other Subscriber Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2J355Q_2330A_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2J355T_2330A_REF02_OtherInsuredAdditionalIdentifier"/>
+		<xs:attribute name="WPC837Q2J355S_2330A_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2J355U_2330A_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K325Y_2330B">
+	<xs:annotation>
+		<xs:documentation>Other Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2K325Z_2330B_NM1_OtherPayerName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K345Y_2330B_PER_OtherPayerContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K350R_2330B_DTP_ClaimPaidDate" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K355N_2330B_REF_OtherPayerSecondaryIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K356S_2330B_REF_OtherPayerPriorAuthorizationOrReferralNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2K357G_2330B_REF_OtherPayerClaimAdjustmentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K325Z_2330B_NM1_OtherPayerName">
+	<xs:annotation>
+		<xs:documentation>Other Payer Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K325_2330B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2K325B_2330B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2K325T_2330B_NM103_OtherPayerLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2K325L_2330B_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2K325T_2330B_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2K325M_2330B_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2K325H_2330B_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2K325R_2330B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2K325J_2330B_NM109_OtherPayerPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q2K325F_2330B_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2K325H_2330B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K345Y_2330B_PER_OtherPayerContactInformation">
+	<xs:annotation>
+		<xs:documentation>Other Payer Contact Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K345M_2330B_PER01_ContactFunctionCode"/>
+		<xs:attribute name="WPC837Q2K345V_2330B_PER02_OtherPayerContactName"/>
+		<xs:attribute name="WPC837Q2K345I_2330B_PER03_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q2K345V_2330B_PER04_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q2K345Y_2330B_PER05_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q2K345Y_2330B_PER06_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q2K345J_2330B_PER07_CommunicationNumberQualifier"/>
+		<xs:attribute name="WPC837Q2K345N_2330B_PER08_CommunicationNumber"/>
+		<xs:attribute name="WPC837Q2K345Q_2330B_PER09_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K350R_2330B_DTP_ClaimPaidDate">
+	<xs:annotation>
+		<xs:documentation>Claim Paid Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K350R_2330B_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2K350J_2330B_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2K350T_2330B_DTP03_DateClaimPaid"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K355N_2330B_REF_OtherPayerSecondaryIdentifier">
+	<xs:annotation>
+		<xs:documentation>Other Payer Secondary Identifier</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K355H_2330B_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2K355F_2330B_REF02_OtherPayerSecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q2K3553_2330B_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2K3556_2330B_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K356S_2330B_REF_OtherPayerPriorAuthorizationOrReferralNumber">
+	<xs:annotation>
+		<xs:documentation>Other Payer Prior Authorization or Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K356_2330B_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2K3561_2330B_REF02_OtherPayerPriorAuthorizationOrReferralNumber"/>
+		<xs:attribute name="WPC837Q2K3567_2330B_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2K356V_2330B_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2K357G_2330B_REF_OtherPayerClaimAdjustmentIndicator">
+	<xs:annotation>
+		<xs:documentation>Other Payer Claim Adjustment Indicator</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2K357E_2330B_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2K357I_2330B_REF02_OtherPayerClaimAdjustmentIndicator"/>
+		<xs:attribute name="WPC837Q2K357G_2330B_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2K3576_2330B_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2L325_2330C">
+	<xs:annotation>
+		<xs:documentation>Other Payer Patient Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2L325V_2330C_NM1_OtherPayerPatientInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2L355J_2330C_REF_OtherPayerPatientIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2L325V_2330C_NM1_OtherPayerPatientInformation">
+	<xs:annotation>
+		<xs:documentation>Other Payer Patient Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2L325R_2330C_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2L325_2330C_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2L3257_2330C_NM103_NotUsed"/>
+		<xs:attribute name="WPC837Q2L325U_2330C_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2L325Q_2330C_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2L325L_2330C_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2L325K_2330C_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2L325Z_2330C_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2L3250_2330C_NM109_OtherPayerPatientPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q2L325S_2330C_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2L3254_2330C_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2L355J_2330C_REF_OtherPayerPatientIdentification">
+	<xs:annotation>
+		<xs:documentation>Other Payer Patient Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2L3554_2330C_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2L355V_2330C_REF02_OtherPayerPatientPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q2L3555_2330C_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2L3553_2330C_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2M3252_2330D">
+	<xs:annotation>
+		<xs:documentation>Other Payer Referring Provider</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2M325W_2330D_NM1_OtherPayerReferringProvider" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2M355B_2330D_REF_OtherPayerReferringProviderIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2M325W_2330D_NM1_OtherPayerReferringProvider">
+	<xs:annotation>
+		<xs:documentation>Other Payer Referring Provider</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2M325_2330D_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2M325V_2330D_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2M3254_2330D_NM103_NotUsed"/>
+		<xs:attribute name="WPC837Q2M325L_2330D_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2M325H_2330D_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2M325A_2330D_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2M3259_2330D_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2M3258_2330D_NM108_NotUsed"/>
+		<xs:attribute name="WPC837Q2M325M_2330D_NM109_NotUsed"/>
+		<xs:attribute name="WPC837Q2M3255_2330D_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2M325C_2330D_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2M355B_2330D_REF_OtherPayerReferringProviderIdentification">
+	<xs:annotation>
+		<xs:documentation>Other Payer Referring Provider Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2M355B_2330D_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2M355W_2330D_REF02_OtherPayerReferringProviderIdentifier"/>
+		<xs:attribute name="WPC837Q2M355J_2330D_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2M355Y_2330D_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2N325H_2330E">
+	<xs:annotation>
+		<xs:documentation>Other Payer Rendering Provider</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2N325A_2330E_NM1_OtherPayerRenderingProvider" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2N355D_2330E_REF_OtherPayerRenderingProviderIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2N325A_2330E_NM1_OtherPayerRenderingProvider">
+	<xs:annotation>
+		<xs:documentation>Other Payer Rendering Provider</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2N3257_2330E_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2N325W_2330E_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2N3252_2330E_NM103_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325O_2330E_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325B_2330E_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325R_2330E_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325Z_2330E_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325P_2330E_NM108_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325R_2330E_NM109_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325M_2330E_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2N325W_2330E_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2N355D_2330E_REF_OtherPayerRenderingProviderIdentification">
+	<xs:annotation>
+		<xs:documentation>Other Payer Rendering Provider Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2N355O_2330E_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2N355V_2330E_REF02_OtherPayerRenderingProviderIdentifier"/>
+		<xs:attribute name="WPC837Q2N355T_2330E_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2N355V_2330E_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P365B_2400">
+	<xs:annotation>
+		<xs:documentation>Line Counter</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2P365O_2400_LX_LineCounter" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P380Z_2400_SV3_DentalService" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P382Q_2400_TOO_ToothInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P4553_2400_DTP_DateService" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P456U_2400_DTP_DatePriorPlacement" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P457H_2400_DTP_DateAppliancePlacement" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P458_2400_DTP_DateReplacement" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P4605_2400_QTY_AnesthesiaQuantity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P470F_2400_REF_ServicePredeterminationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P471O_2400_REF_PriorAuthorizationOrReferralNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P472I_2400_REF_LineItemControlNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P480H_2400_AMT_ApprovedAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P482C_2400_AMT_SalesTaxAmount" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P486C_2400_NTE_LineNote" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P5002_2420A" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2R500M_2420B" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2S500T_2420C" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2W540L_2430" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P365O_2400_LX_LineCounter">
+	<xs:annotation>
+		<xs:documentation>Line Counter</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P365_2400_LX01_AssignedNumber"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P380Z_2400_SV3_DentalService">
+	<xs:annotation>
+		<xs:documentation>Dental Service</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2P380Y_2400_SV301_CompositeMedicalProcedureIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P380O_2400_SV304_OralCavityDesignation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC837Q2P380K_2400_SV302_LineItemChargeAmount"/>
+		<xs:attribute name="WPC837Q2P380M_2400_SV303_FacilityTypeCode"/>
+		<xs:attribute name="WPC837Q2P380U_2400_SV305_ProsthesisCrownOrInlayCode"/>
+		<xs:attribute name="WPC837Q2P3808_2400_SV306_ProcedureCount"/>
+		<xs:attribute name="WPC837Q2P380Z_2400_SV307_NotUsed"/>
+		<xs:attribute name="WPC837Q2P380G_2400_SV308_NotUsed"/>
+		<xs:attribute name="WPC837Q2P380W_2400_SV309_NotUsed"/>
+		<xs:attribute name="WPC837Q2P380N_2400_SV310_NotUsed"/>
+		<xs:attribute name="WPC837Q2P380R_2400_SV311_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P380Y_2400_SV301_CompositeMedicalProcedureIdentifier">
+	<xs:annotation>
+		<xs:documentation>Composite Medical Procedure Identifier</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P380U_2400_SV30101_ProductOrServiceIDQualifier"/>
+		<xs:attribute name="WPC837Q2P380Z_2400_SV30102_ProcedureCode"/>
+		<xs:attribute name="WPC837Q2P3805_2400_SV30103_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2P380E_2400_SV30104_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2P380Y_2400_SV30105_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2P380R_2400_SV30106_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2P3806_2400_SV30107_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P380O_2400_SV304_OralCavityDesignation">
+	<xs:annotation>
+		<xs:documentation>Oral Cavity Designation</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P380_2400_SV30401_OralCavityDesignationCode"/>
+		<xs:attribute name="WPC837Q2P380Z_2400_SV30402_OralCavityDesignationCode"/>
+		<xs:attribute name="WPC837Q2P380J_2400_SV30403_OralCavityDesignationCode"/>
+		<xs:attribute name="WPC837Q2P380P_2400_SV30404_OralCavityDesignationCode"/>
+		<xs:attribute name="WPC837Q2P380Z_2400_SV30405_OralCavityDesignationCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P382Q_2400_TOO_ToothInformation">
+	<xs:annotation>
+		<xs:documentation>Tooth Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2P382U_2400_TOO03_ToothSurface" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC837Q2P382I_2400_TOO01_CodeListQualifierCode"/>
+		<xs:attribute name="WPC837Q2P382Y_2400_TOO02_ToothCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P382U_2400_TOO03_ToothSurface">
+	<xs:annotation>
+		<xs:documentation>Tooth Surface</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P382_2400_TOO0301_ToothSurfaceCode"/>
+		<xs:attribute name="WPC837Q2P382Y_2400_TOO0302_ToothSurfaceCode"/>
+		<xs:attribute name="WPC837Q2P3826_2400_TOO0303_ToothSurfaceCode"/>
+		<xs:attribute name="WPC837Q2P382A_2400_TOO0304_ToothSurfaceCode"/>
+		<xs:attribute name="WPC837Q2P382_2400_TOO0305_ToothSurfaceCode"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P4553_2400_DTP_DateService">
+	<xs:annotation>
+		<xs:documentation>Date - Service</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P455J_2400_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2P455J_2400_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2P455F_2400_DTP03_ServiceDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P456U_2400_DTP_DatePriorPlacement">
+	<xs:annotation>
+		<xs:documentation>Date - Prior Placement</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P456V_2400_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2P456F_2400_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2P4560_2400_DTP03_PriorPlacementDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P457H_2400_DTP_DateAppliancePlacement">
+	<xs:annotation>
+		<xs:documentation>Date - Appliance Placement</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P457V_2400_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2P4578_2400_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2P457Z_2400_DTP03_OrthodonticBandingDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P458_2400_DTP_DateReplacement">
+	<xs:annotation>
+		<xs:documentation>Date - Replacement</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P458A_2400_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2P4587_2400_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2P458J_2400_DTP03_ReplacementDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P4605_2400_QTY_AnesthesiaQuantity">
+	<xs:annotation>
+		<xs:documentation>Anesthesia Quantity</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P460D_2400_QTY01_QuantityQualifier"/>
+		<xs:attribute name="WPC837Q2P460N_2400_QTY02_AnesthesiaUnitCount"/>
+		<xs:attribute name="WPC837Q2P4600_2400_QTY03_NotUsed"/>
+		<xs:attribute name="WPC837Q2P460N_2400_QTY04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P470F_2400_REF_ServicePredeterminationIdentification">
+	<xs:annotation>
+		<xs:documentation>Service Predetermination Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P470F_2400_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2P470C_2400_REF02_PredeterminationOfBenefitsIdentifier"/>
+		<xs:attribute name="WPC837Q2P470T_2400_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2P4709_2400_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P471O_2400_REF_PriorAuthorizationOrReferralNumber">
+	<xs:annotation>
+		<xs:documentation>Prior Authorization or Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P4715_2400_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2P4710_2400_REF02_ReferralNumber"/>
+		<xs:attribute name="WPC837Q2P471G_2400_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2P471I_2400_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P472I_2400_REF_LineItemControlNumber">
+	<xs:annotation>
+		<xs:documentation>Line Item Control Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P472O_2400_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2P472Y_2400_REF02_LineItemControlNumber"/>
+		<xs:attribute name="WPC837Q2P472C_2400_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2P472R_2400_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P480H_2400_AMT_ApprovedAmount">
+	<xs:annotation>
+		<xs:documentation>Approved Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P480U_2400_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2P4804_2400_AMT02_ApprovedAmount"/>
+		<xs:attribute name="WPC837Q2P480G_2400_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P482C_2400_AMT_SalesTaxAmount">
+	<xs:annotation>
+		<xs:documentation>Sales Tax Amount</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P482L_2400_AMT01_AmountQualifierCode"/>
+		<xs:attribute name="WPC837Q2P482W_2400_AMT02_SalesTaxAmount"/>
+		<xs:attribute name="WPC837Q2P482Q_2400_AMT03_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P486C_2400_NTE_LineNote">
+	<xs:annotation>
+		<xs:documentation>Line Note</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P486G_2400_NTE01_NoteReferenceCode"/>
+		<xs:attribute name="WPC837Q2P486T_2400_NTE02_ClaimNoteText"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P5002_2420A">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2P500H_2420A_NM1_RenderingProviderName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P505A_2420A_PRV_RenderingProviderSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2P525E_2420A_REF_RenderingProviderSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P500H_2420A_NM1_RenderingProviderName">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P500M_2420A_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2P500N_2420A_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2P500E_2420A_NM103_RenderingProviderLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2P500Y_2420A_NM104_RenderingProviderFirstName"/>
+		<xs:attribute name="WPC837Q2P5002_2420A_NM105_RenderingProviderMiddleName"/>
+		<xs:attribute name="WPC837Q2P5004_2420A_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2P500E_2420A_NM107_RenderingProviderNameSuffix"/>
+		<xs:attribute name="WPC837Q2P5002_2420A_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2P500O_2420A_NM109_RenderingProviderIdentifier"/>
+		<xs:attribute name="WPC837Q2P500C_2420A_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2P500U_2420A_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P505A_2420A_PRV_RenderingProviderSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P505F_2420A_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q2P505I_2420A_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2P505F_2420A_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q2P505D_2420A_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q2P505V_2420A_PRV05_NotUsed"/>
+		<xs:attribute name="WPC837Q2P505L_2420A_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2P525E_2420A_REF_RenderingProviderSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Rendering Provider Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2P525L_2420A_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2P525Z_2420A_REF02_RenderingProviderSecondaryIdentifier"/>
+		<xs:attribute name="WPC837Q2P525U_2420A_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2P525Y_2420A_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2R500M_2420B">
+	<xs:annotation>
+		<xs:documentation>Other Payer Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2R500U_2420B_NM1_OtherPayerReferralNumber" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2R5275_2420B_REF_OtherPayerPriorAuthorizationOrReferralNumber" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2R500U_2420B_NM1_OtherPayerReferralNumber">
+	<xs:annotation>
+		<xs:documentation>Other Payer Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2R500A_2420B_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2R500_2420B_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2R500M_2420B_NM103_OtherPayerLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2R500V_2420B_NM104_NotUsed"/>
+		<xs:attribute name="WPC837Q2R500O_2420B_NM105_NotUsed"/>
+		<xs:attribute name="WPC837Q2R500G_2420B_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2R500X_2420B_NM107_NotUsed"/>
+		<xs:attribute name="WPC837Q2R500L_2420B_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2R5006_2420B_NM109_OtherPayerReferralNumber"/>
+		<xs:attribute name="WPC837Q2R5007_2420B_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2R500L_2420B_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2R5275_2420B_REF_OtherPayerPriorAuthorizationOrReferralNumber">
+	<xs:annotation>
+		<xs:documentation>Other Payer Prior Authorization or Referral Number</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2R527A_2420B_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2R5275_2420B_REF02_OtherPayerPriorAuthorizationOrReferralNumber"/>
+		<xs:attribute name="WPC837Q2R527Q_2420B_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2R527G_2420B_REF04_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2S500T_2420C">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2S500K_2420C_NM1_AssistantSurgeonName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2S505Y_2420C_PRV_AssistantSurgeonSpecialtyInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2S5257_2420C_REF_AssistantSurgeonSecondaryIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2S500K_2420C_NM1_AssistantSurgeonName">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Name</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2S500Y_2420C_NM101_EntityIdentifierCode"/>
+		<xs:attribute name="WPC837Q2S500G_2420C_NM102_EntityTypeQualifier"/>
+		<xs:attribute name="WPC837Q2S500Z_2420C_NM103_NameLastOrOrganizationName"/>
+		<xs:attribute name="WPC837Q2S500U_2420C_NM104_AssistantSurgeonFirstName"/>
+		<xs:attribute name="WPC837Q2S500I_2420C_NM105_AssistantSurgeonMiddleName"/>
+		<xs:attribute name="WPC837Q2S5007_2420C_NM106_NotUsed"/>
+		<xs:attribute name="WPC837Q2S500D_2420C_NM107_AssistantSurgeonNameSuffix"/>
+		<xs:attribute name="WPC837Q2S5006_2420C_NM108_IdentificationCodeQualifier"/>
+		<xs:attribute name="WPC837Q2S5007_2420C_NM109_IdentificationCode"/>
+		<xs:attribute name="WPC837Q2S5005_2420C_NM110_NotUsed"/>
+		<xs:attribute name="WPC837Q2S500N_2420C_NM111_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2S505Y_2420C_PRV_AssistantSurgeonSpecialtyInformation">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Specialty Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2S5057_2420C_PRV01_ProviderCode"/>
+		<xs:attribute name="WPC837Q2S5054_2420C_PRV02_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2S505C_2420C_PRV03_ProviderTaxonomyCode"/>
+		<xs:attribute name="WPC837Q2S505_2420C_PRV04_NotUsed"/>
+		<xs:attribute name="WPC837Q2S505C_2420C_PRV0500_NotUsed"/>
+		<xs:attribute name="WPC837Q2S505B_2420C_PRV06_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2S5257_2420C_REF_AssistantSurgeonSecondaryIdentification">
+	<xs:annotation>
+		<xs:documentation>Assistant Surgeon Secondary Identification</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2S525R_2420C_REF01_ReferenceIdentificationQualifier"/>
+		<xs:attribute name="WPC837Q2S5254_2420C_REF02_ReferenceIdentification"/>
+		<xs:attribute name="WPC837Q2S525J_2420C_REF03_NotUsed"/>
+		<xs:attribute name="WPC837Q2S525H_2420C_REF0400_NotUsed"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2W540L_2430">
+	<xs:annotation>
+		<xs:documentation>Line Adjudication Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2W540Q_2430_SVD_LineAdjudicationInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2W545M_2430_CAS_ServiceAdjustment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC837Q2W550A_2430_DTP_LineAdjudicationDate" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2W540Q_2430_SVD_LineAdjudicationInformation">
+	<xs:annotation>
+		<xs:documentation>Line Adjudication Information</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC837Q2W540C_2430_SVD03_CompositeMedicalProcedureIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="WPC837Q2W540U_2430_SVD01_OtherPayerPrimaryIdentifier"/>
+		<xs:attribute name="WPC837Q2W540Y_2430_SVD02_ServiceLinePaidAmount"/>
+		<xs:attribute name="WPC837Q2W540Y_2430_SVD04_NotUsed"/>
+		<xs:attribute name="WPC837Q2W540T_2430_SVD05_PaidServiceUnitCount"/>
+		<xs:attribute name="WPC837Q2W540W_2430_SVD06_BundledOrUnbundledLineNumber"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2W540C_2430_SVD03_CompositeMedicalProcedureIdentifier">
+	<xs:annotation>
+		<xs:documentation>Composite Medical Procedure Identifier</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2W540E_2430_SVD0301_ProductOrServiceIDQualifier"/>
+		<xs:attribute name="WPC837Q2W540N_2430_SVD0302_ProcedureCode"/>
+		<xs:attribute name="WPC837Q2W5409_2430_SVD0303_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2W5407_2430_SVD0304_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2W540B_2430_SVD0305_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2W540Z_2430_SVD0306_ProcedureModifier"/>
+		<xs:attribute name="WPC837Q2W540S_2430_SVD0307_ProcedureCodeDescription"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2W545M_2430_CAS_ServiceAdjustment">
+	<xs:annotation>
+		<xs:documentation>Service Adjustment</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2W545X_2430_CAS01_ClaimAdjustmentGroupCode"/>
+		<xs:attribute name="WPC837Q2W545H_2430_CAS02_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W5458_2430_CAS03_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545R_2430_CAS04_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2W545T_2430_CAS05_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W545L_2430_CAS06_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545L_2430_CAS07_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2W545B_2430_CAS08_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W545W_2430_CAS09_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545D_2430_CAS10_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2W545B_2430_CAS11_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W545F_2430_CAS12_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545K_2430_CAS13_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2W545M_2430_CAS14_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W545U_2430_CAS15_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545P_2430_CAS16_AdjustmentQuantity"/>
+		<xs:attribute name="WPC837Q2W545K_2430_CAS17_AdjustmentReasonCode"/>
+		<xs:attribute name="WPC837Q2W545F_2430_CAS18_AdjustmentAmount"/>
+		<xs:attribute name="WPC837Q2W545P_2430_CAS19_AdjustmentQuantity"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC837Q2W550A_2430_DTP_LineAdjudicationDate">
+	<xs:annotation>
+		<xs:documentation>Line Adjudication Date</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="WPC837Q2W550W_2430_DTP01_DateTimeQualifier"/>
+		<xs:attribute name="WPC837Q2W550P_2430_DTP02_DateTimePeriodFormatQualifier"/>
+		<xs:attribute name="WPC837Q2W5501_2430_DTP03_AdjudicationOrPaymentDate"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProc">
+	<xs:annotation>
+		<xs:documentation>WPC IProc</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="WPC_IProcEvnt" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="WPC_Errors" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="X12_Envelope" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_IProcEvnt">
+	<xs:annotation>
+		<xs:documentation>WPC IProcEvent</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="src" use="optional"/>
+		<xs:attribute name="type" use="optional"/>
+		<xs:attribute name="dt" use="optional"/>
+		<xs:attribute name="hsh" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="WPC_Errors">
+	<xs:annotation>
+		<xs:documentation>WPC Error Collection</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="Violation" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="Violation">
+	<xs:annotation>
+		<xs:documentation>Violation Detail</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ErrorType" use="required">
+			<xs:annotation>
+				<xs:documentation>Enumeration of error type</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FileID">
+			<xs:annotation>
+				<xs:documentation>Identifier of original submission</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TraceNumber">
+			<xs:annotation>
+				<xs:documentation>Application layer trace identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationLocation">
+			<xs:annotation>
+				<xs:documentation>Location of errant data</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ViolationDescription">
+			<xs:annotation>
+				<xs:documentation>Text description of violation</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleProcessor">
+			<xs:annotation>
+				<xs:documentation>Rule processor identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleSource">
+			<xs:annotation>
+				<xs:documentation>Source identifier of violated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RuleViolationText">
+			<xs:annotation>
+				<xs:documentation>Text description of rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+		<xs:attribute name="BadDataContent">
+			<xs:annotation>
+				<xs:documentation>Errant data found in violation of indicated rule</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>			
+	</xs:complexType>
+</xs:element>
+<xs:element name="X12_Envelope">
+	<xs:annotation>
+		<xs:documentation>X12 Envelope</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="ISA_InterchangeControlHeader" minOccurs="0"/>
+			<xs:element ref="GS_FunctionalGroupHeader" minOccurs="0"/>
+			<xs:element ref="ST_TransactionSetHeader" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ST_TransactionSetHeader">
+	<xs:annotation>
+		<xs:documentation>Transaction Set Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ST01__TransactionSetIdentifierCode" use="optional"/>
+		<xs:attribute name="ST02__TransactionSetControlNumber" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GS_FunctionalGroupHeader">
+	<xs:annotation>
+		<xs:documentation>Functional Group Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="GS01__FunctionalIdentifierCode" use="optional"/>
+		<xs:attribute name="GS02__ApplicationSendersCode" use="optional"/>
+		<xs:attribute name="GS03__ApplicationReceiversCode" use="optional"/>
+		<xs:attribute name="GS04__Date" use="optional"/>
+		<xs:attribute name="GS05__Time" use="optional"/>
+		<xs:attribute name="GS06__GroupControlNumber" use="optional"/>
+		<xs:attribute name="GS07__ResponsibleAgencyCode" use="optional"/>
+		<xs:attribute name="GS08__VersionReleaseIndustryIdentifierCode" use="optional"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ISA_InterchangeControlHeader">
+	<xs:annotation>
+		<xs:documentation>Interchange Control Header</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:attribute name="ISA01__AuthorizationInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA02__AuthorizationInformation" use="optional"/>
+		<xs:attribute name="ISA03__SecurityInformationQualifier" use="optional"/>
+		<xs:attribute name="ISA04__SecurityInformation" use="optional"/>
+		<xs:attribute name="ISA05__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA06__InterchangeSenderID" use="optional"/>
+		<xs:attribute name="ISA07__InterchangeIDQualifier" use="optional"/>
+		<xs:attribute name="ISA08__InterchangeReceiverID" use="optional"/>
+		<xs:attribute name="ISA09__InterchangeDate" use="optional"/>
+		<xs:attribute name="ISA10__InterchangeTime" use="optional"/>
+		<xs:attribute name="ISA11__InterchangeControlStandardsIdentifier" use="optional"/>
+		<xs:attribute name="ISA12__InterchangeControlVersionNumber" use="optional"/>
+		<xs:attribute name="ISA13__InterchangeControlNumber" use="optional"/>
+		<xs:attribute name="ISA14__AcknowledgmentRequested" use="optional"/>
+		<xs:attribute name="ISA15__UsageIndicator" use="optional"/>
+		<xs:attribute name="ISA16__ComponentElementSeparator" use="optional"/>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
+
+
