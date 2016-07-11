@@ -12,8 +12,26 @@ import java.util.Map;
  */
 public class CcdSections {
 
-    public static final String DCM = "2.16.840.1.113883.​10.20.6.1.1";
+    public static final String DCM = "2.16.840.1.113883.10.20.6.1.1";
     public static final String LOINC = "2.16.840.1.113883.6.1";
+
+    private static final Map<String, String> codeSystemNames = new HashMap<String, String>();
+
+    static {
+        codeSystemNames.put(DCM, "DCM");
+        codeSystemNames.put(LOINC, "LOINC");
+    }
+
+    private static final List<CE> sections = new ArrayList<CE>();
+
+    private static CE code(String code, String displayName, String oid) {
+        String codeSystemName = codeSystemNames.get(oid);
+        CE ce = new CE().
+                withCode(code).withDisplayName(displayName).
+                withCodeSystem(oid).withCodeSystemName(codeSystemName);
+        sections.add(ce);
+        return ce;
+    }
 
     public static final CE AdvanceDirectives = code("42348-3", "Advance Directives", LOINC);
     public static final CE Addendum = code("55107-7", "Addendum", LOINC);
@@ -86,26 +104,8 @@ public class CcdSections {
     public static final CE SurgicalDrains = code("11537-8", "Surgical Drains", LOINC);
     public static final CE VitalSigns = code("8716-3", "Vital Signs ", LOINC);
 
-    private static final Map<String, String> codeSystemNames = new HashMap<String, String>();
-
-    static {
-        codeSystemNames.put(DCM, "DCM");
-        codeSystemNames.put(LOINC, "LOINC");
-    }
-
-    private static final List<CE> sections = new ArrayList<CE>();
-
-    private static CE code(String code, String displayName, String oid) {
-        CE ce = new CE().
-                withCode(code).withDisplayName(displayName).
-                withCodeSystem(oid).withCodeSystemName(codeSystemNames.get(oid));
-        sections.add(ce);
-        return ce;
-    }
-
     public static CE find(String codeSystem, String code) {
-        for (CE section:
-             sections) {
+        for (CE section: sections) {
             if (section.getCode().equals(code) && section.getCodeSystem().equals(codeSystem)) {
                 return section;
             }
