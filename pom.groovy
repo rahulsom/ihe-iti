@@ -242,28 +242,6 @@ project {
               generatePackage 'com.github.rahulsom.cda'
             }
           }
-          [
-              X12_837P: '837_Q1_Pro.xsd',
-              X12_837I: '837_Q3_Ins.xsd',
-          ].each { k, v ->
-            execution {
-              id k
-              goals {
-                goal 'generate'
-              }
-              configuration {
-                forceRegenerate 'true'
-                schemaDirectory "src/main/resources/x12"
-                schemaIncludes {
-                  include v
-                }
-                // bindingDirectory '${basedir}/src/main/resources/cda/bindings'
-                generateDirectory "\${project.build.directory}/generated-sources/${k}".toString()
-                generatePackage "com.github.rahulsom.${k}".toString()
-              }
-            }
-          }
-
         }
         configuration {
           plugins {
