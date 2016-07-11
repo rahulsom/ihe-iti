@@ -78,8 +78,7 @@ project {
       groupId 'org.codehaus.groovy'
       artifactId 'groovy-all'
       version '${groovy.version}'
-      scope 'provided'
-      optional 'true'
+      scope 'test'
     }
     dependency {
       groupId 'com.sun.xml.bind'
