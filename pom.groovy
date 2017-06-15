@@ -374,4 +374,15 @@ project {
       }
     }
   }
+  profiles {
+    profile {
+      id 'disable-java8-doclint'
+      activation {
+        jdk '[1.8,)'
+      }
+      properties {
+        additionalparam '-Xdoclint:none'
+      }
+    }
+  }
 }
