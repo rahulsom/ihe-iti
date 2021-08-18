@@ -1,6 +1,4 @@
 [![Build Status](https://travis-ci.org/rahulsom/ihe-iti.svg?branch=master)](https://travis-ci.org/rahulsom/ihe-iti)
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/groups/rahulsom/locations/ihe-iti/public/results/branches/develop/badge-risk.svg)](https://copilot.blackducksoftware.com/github/groups/rahulsom/locations/ihe-iti/public/results/branches/develop)
-[ ![Download](https://api.bintray.com/packages/rahulsom/myjava/com.github.rahulsom%3Aihe-iti/images/download.svg) ](https://bintray.com/rahulsom/myjava/com.github.rahulsom%3Aihe-iti/_latestVersion)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ihe-iti
