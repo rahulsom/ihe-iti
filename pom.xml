@@ -60,7 +60,7 @@
   <properties>
     <jaxws.plugin.version>2.3</jaxws.plugin.version>
     <junit.version>4.13.2</junit.version>
-    <jaxb.basics.version>0.6.4</jaxb.basics.version>
+    <jaxb.basics.version>0.13.1</jaxb.basics.version>
     <gec.version>2.9.2-01</gec.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cxf.version>2.7.18</cxf.version>
