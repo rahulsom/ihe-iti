@@ -61,7 +61,7 @@
     <jaxws.plugin.version>2.2</jaxws.plugin.version>
     <junit.version>4.11</junit.version>
     <jaxb.basics.version>0.6.4</jaxb.basics.version>
-    <gec.version>2.9.1-01</gec.version>
+    <gec.version>2.9.2-01</gec.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cxf.version>2.2.3</cxf.version>
     <jaxb.plugin.version>0.9.0</jaxb.plugin.version>
