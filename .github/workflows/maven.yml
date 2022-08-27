@@ -21,5 +21,6 @@ jobs:
       with:
         java-version: '8'
         distribution: 'zulu'
+        cache: maven
     - name: Build with Maven
-      run: ./mvnw -B package
+      run: mvn -B package --file pom.xml
