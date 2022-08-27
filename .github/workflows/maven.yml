@@ -24,3 +24,16 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v3
+      if: always()
+      with:
+        report_paths: 'target/surefire-reports/*.xml'
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: JUnit Tests
+        path: 'target/surefire-reports/*.xml'
+        reporter: java-junit
