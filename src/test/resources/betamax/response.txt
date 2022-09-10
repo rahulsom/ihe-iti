@@ -1,0 +1,18 @@
+
+--uuid:69897320-fe2e-4b04-94e2-1254ce1813c0
+Content-Type: application/xop+xml; charset=UTF-8; type="application/soap+xml";
+Content-Transfer-Encoding: binary
+Content-ID: <root.message@cxf.apache.org>
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns4:RetrieveDocumentSetResponse xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns4="urn:ihe:iti:xds-b:2007" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"><ns2:RegistryResponse status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"/><ns4:DocumentResponse><ns4:RepositoryUniqueId>2.16.840.1.113883.3.1317.8.1000</ns4:RepositoryUniqueId><ns4:DocumentUniqueId>1.42.20130708171302.244</ns4:DocumentUniqueId><ns4:mimeType>text/plain</ns4:mimeType><ns4:Document><xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" href="cid:01be0bdc-6fbd-4188-bec7-af2659f35c3d-4@urn%3Aihe%3Aiti%3Axds-b%3A2007"/></ns4:Document></ns4:DocumentResponse></ns4:RetrieveDocumentSetResponse></soap:Body></soap:Envelope>
+--uuid:69897320-fe2e-4b04-94e2-1254ce1813c0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+Content-ID: <01be0bdc-6fbd-4188-bec7-af2659f35c3d-4@urn:ihe:iti:xds-b:2007>
+
+Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But, in a larger sense, we can not dedicate...we can not consecrate...we can not hallow this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government: of the people, by the people, for the people, shall not perish from the earth.
+--uuid:69897320-fe2e-4b04-94e2-1254ce1813c0--
