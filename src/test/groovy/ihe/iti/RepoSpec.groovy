@@ -54,8 +54,6 @@ class RepoSpec extends Specification {
                 withRepositoryUniqueId('2.16.840.1.113883.3.1317.8.1000')
         )
 
-    println "Request created"
-
     when: "You send a request"
     def resp = port.documentRepositoryRetrieveDocumentSet(request)
 
