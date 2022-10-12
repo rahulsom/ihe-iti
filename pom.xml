@@ -63,7 +63,7 @@
     <jaxb.basics.version>1.11.1-PUBLISHED-BY-MISTAKE</jaxb.basics.version>
     <gec.version>3.7.0</gec.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <cxf.version>3.5.3</cxf.version>
+    <cxf.version>3.5.4</cxf.version>
     <jaxb.plugin.version>0.9.0</jaxb.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jaxb.impl.version>2.3.6</jaxb.impl.version>
