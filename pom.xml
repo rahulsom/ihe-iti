@@ -64,7 +64,7 @@
     <gec.version>3.7.0</gec.version>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cxf.version>4.0.0</cxf.version>
-    <jaxb.plugin.version>0.9.0</jaxb.plugin.version>
+    <jaxb.plugin.version>0.15.1</jaxb.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jaxb.impl.version>2.3.7</jaxb.impl.version>
   </properties>
