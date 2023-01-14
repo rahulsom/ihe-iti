@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:1.11.1-PUBLISHED-BY-MISTAKE")
+  api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:1.11.1")
   api("commons-lang:commons-lang:2.6")
   testImplementation("junit:junit:4.13.2")
   testImplementation("xmlunit:xmlunit:1.6")
