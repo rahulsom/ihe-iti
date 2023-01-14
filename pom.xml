@@ -17,7 +17,7 @@
     <cxf.version>4.0.0</cxf.version>
     <jaxb.plugin.version>0.15.2</jaxb.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jaxb.impl.version>2.3.7</jaxb.impl.version>
+    <jaxb.impl.version>4.0.1</jaxb.impl.version>
   </properties>
   <dependencies>
     <dependency>
