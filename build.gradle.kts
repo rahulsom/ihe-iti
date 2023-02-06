@@ -18,7 +18,7 @@ dependencies {
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
   testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.0.0")
   testImplementation("org.apache.cxf:cxf-rt-transports-http:4.0.0")
-  compileOnly("com.sun.xml.bind:jaxb-impl:2.3.7")
+  compileOnly("com.sun.xml.bind:jaxb-impl:2.3.8")
 }
 
 group = "com.github.rahulsom"
