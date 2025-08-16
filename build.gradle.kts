@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:1.11.1")
+  api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
   api("commons-lang:commons-lang:2.6")
   compileOnly("javax.xml.bind:jaxb-api:2.3.1")
   compileOnly("com.sun.xml.bind:jaxb-core:2.3.0")
