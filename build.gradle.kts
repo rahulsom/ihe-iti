@@ -19,7 +19,7 @@ dependencies {
   testImplementation("xmlunit:xmlunit:1.6")
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
   testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.1.3")
-  testImplementation("org.apache.cxf:cxf-rt-transports-http:4.0.0")
+  testImplementation("org.apache.cxf:cxf-rt-transports-http:4.1.3")
 }
 
 group = "com.github.rahulsom"
