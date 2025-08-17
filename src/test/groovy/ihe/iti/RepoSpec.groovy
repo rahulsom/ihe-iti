@@ -1,8 +1,10 @@
 package ihe.iti
 
-import com.sun.net.httpserver.HttpExchange
-import com.sun.net.httpserver.HttpHandler
-import com.sun.net.httpserver.HttpServer
+import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.server.Request
+import org.eclipse.jetty.server.handler.AbstractHandler
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import spock.lang.Specification
 
 import ihe.iti.xds_b._2007.*
@@ -25,16 +27,20 @@ class RepoSpec extends Specification {
 
   def 'accesses external web service'() {
     given: "A Webservice"
-    HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0)
-    server.createContext("/xdsrepositoryb", new HttpHandler() {
+    Server server = new Server(8080)
+    server.setHandler(new AbstractHandler() {
       @Override
-      void handle(HttpExchange httpExchange) throws IOException {
-        def bytes = this.class.getResource('/betamax/response.txt').text.getBytes(Charset.forName('UTF-8'))
-        httpExchange.responseHeaders.add("Content-Type", "multipart/related; type=\"application/xop+xml\"; boundary=\"uuid:69897320-fe2e-4b04-94e2-1254ce1813c0\"; start=\"<root.message@cxf.apache.org>\"; start-info=\"application/soap+xml\";charset=UTF-8")
-        httpExchange.sendResponseHeaders(200, bytes.length)
+      void handle(String target, Request baseRequest, HttpServletRequest httpRequest, HttpServletResponse response) throws IOException {
+        if (target == "/xdsrepositoryb") {
+          def bytes = this.class.getResource('/betamax/response.txt').text.getBytes(Charset.forName('UTF-8'))
+          response.setContentType("multipart/related; type=\"application/xop+xml\"; boundary=\"uuid:69897320-fe2e-4b04-94e2-1254ce1813c0\"; start=\"<root.message@cxf.apache.org>\"; start-info=\"application/soap+xml\";charset=UTF-8")
+          response.setStatus(HttpServletResponse.SC_OK)
+          response.setContentLength(bytes.length)
 
-        httpExchange.getResponseBody().write(bytes)
-        httpExchange.getResponseBody().close()
+          response.getOutputStream().write(bytes)
+          response.getOutputStream().close()
+          baseRequest.setHandled(true)
+        }
       }
     })
     server.start()
@@ -66,7 +72,7 @@ class RepoSpec extends Specification {
     resp.documentResponse[0].document.inputStream.text == this.class.classLoader.getResourceAsStream('XDS.b/four-score.txt').text
 
     cleanup:
-    server.stop(0)
+    server.stop()
   }
 
 }
