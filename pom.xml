@@ -76,7 +76,7 @@
             </goals>
             <configuration>
               <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
-              <forceRegenerate>true</forceRegenerate>
+              <strict>false</strict>
               <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
               <schemaIncludes>
                 <include>**/*.xsd</include>
@@ -101,7 +101,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <forceRegenerate>true</forceRegenerate>
+              <strict>false</strict>
               <schemaDirectory>src/main/resources/cda/infrastructure/cda</schemaDirectory>
               <schemaIncludes>
                 <include>**/*.xsd</include>
