@@ -3,7 +3,7 @@ plugins {
   id("groovy")
   id("com.github.rahulsom.waena.root").version("0.6.1")
   id("com.github.rahulsom.waena.published").version("0.6.1")
-  id("com.github.dkorotych.gradle-maven-exec").version("3.0.2")
+  id("com.github.dkorotych.gradle-maven-exec").version("4.0.1")
 }
 
 repositories {
