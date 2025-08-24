@@ -20,7 +20,7 @@ dependencies {
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
   testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.1.3")
   testImplementation("org.apache.cxf:cxf-rt-transports-http:4.1.3")
-  testImplementation("org.eclipse.jetty:jetty-server:9.4.58.v20250814")
+  testImplementation("org.eclipse.jetty:jetty-server:12.1.0")
   testImplementation("javax.servlet:javax.servlet-api:4.0.1")
 }
 
