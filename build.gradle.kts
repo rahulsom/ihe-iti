@@ -10,11 +10,19 @@ repositories {
   mavenCentral()
 }
 
+val jaxb by configurations.creating
+
 dependencies {
+  jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
+  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
+  jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
+
   api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
   api("commons-lang:commons-lang:2.6")
+
   compileOnly("javax.xml.bind:jaxb-api:2.3.1")
   compileOnly("com.sun.xml.bind:jaxb-core:2.3.0.1")
+
   testImplementation("junit:junit:4.13.2")
   testImplementation("xmlunit:xmlunit:1.6")
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
@@ -51,6 +59,7 @@ sourceSets {
   main {
     java {
       srcDir("${layout.buildDirectory.get()}/generated-sources/cda")
+      srcDir("${layout.buildDirectory.get()}/generated-sources/iti")
       srcDir("target/generated-sources/ihe")
     }
   }
@@ -74,12 +83,19 @@ tasks.withType<Test>().configureEach {
   useJUnitPlatform()
 }
 
-val jaxb by configurations.creating
+tasks.register("syncItiSchemas", Sync::class) {
+  from("src/main/resources")
+  into("${layout.buildDirectory.get()}/iti-schemas")
+  include("iti/**", "w3/**", "ihe-iti.cat")
 
-dependencies {
-  jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
-  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
-  jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
+  exclude("**/XDW-2012-04-02.xsd")
+  exclude("**/XDW/POCD_MT000040.xsd")
+  exclude("**/PRPA_IN201303UV02.xsd")
+  exclude("**/SVS.xsd")
+  exclude("**/ESVS-20100726.xsd")
+  exclude("**/XCPD_PLQ.xsd")
+  exclude("**/XDS.b_DocumentRepository.xsd")
+  exclude("**/XDSI.b_ImagingDocumentSource.xsd")
 }
 
 tasks.register("generateCda", JavaExec::class) {
@@ -102,9 +118,30 @@ tasks.register("generateCda", JavaExec::class) {
   outputs.dir("${layout.buildDirectory.get()}/generated-sources/cda")
 }
 
+tasks.register("generateIti", JavaExec::class) {
+  mainClass.set("com.sun.tools.xjc.Driver")
+  classpath = jaxb
+  args(
+    "-extension",
+    "-Xfluent-api",
+    "-Xcommons-lang",
+    "-npa",
+    "-d", "target/generated-sources/ihe",
+    "-b", "${layout.buildDirectory.get()}/iti-schemas/iti/bindings/bind.xjb",
+    "-quiet",
+    "${layout.buildDirectory.get()}/iti-schemas/iti/schema"
+  )
+  doFirst {
+    file("target/generated-sources/ihe").mkdirs()
+  }
+  inputs.dir("${layout.buildDirectory.get()}/iti-schemas")
+  outputs.dir("target/generated-sources/ihe")
+  dependsOn("syncItiSchemas")
+}
+
 tasks.named("compileJava").configure {
-  dependsOn("generateCda")
+  dependsOn("generateCda", "generateIti")
 }
 tasks.named("sourceJar").configure {
-  dependsOn("generateCda")
+  dependsOn("generateCda", "generateIti")
 }
