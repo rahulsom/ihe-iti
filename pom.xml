@@ -47,6 +47,7 @@
               <xjcArgs>
                 <xjcArg>-Xfluent-api</xjcArg>
                 <xjcArg>-Xcommons-lang</xjcArg>
+                <xjcArg>-npa</xjcArg>
               </xjcArgs>
             </configuration>
           </execution>
@@ -63,58 +64,6 @@
             <version>2.3</version>
           </dependency>
         </dependencies>
-      </plugin>
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.15.3</version>
-        <executions>
-          <execution>
-            <id>iti</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <catalog>${basedir}/src/main/resources/ihe-iti.cat</catalog>
-              <forceRegenerate>true</forceRegenerate>
-              <schemaDirectory>src/main/resources/iti/schema</schemaDirectory>
-              <schemaIncludes>
-                <include>**/*.xsd</include>
-              </schemaIncludes>
-              <schemaExcludes>
-                <exclude>**/XDW-2012-04-02.xsd</exclude>
-                <exclude>**/XDW/POCD_MT000040.xsd</exclude>
-                <exclude>**/PRPA_IN201303UV02.xsd</exclude>
-                <exclude>**/SVS.xsd</exclude>
-                <exclude>**/ESVS-20100726.xsd</exclude>
-                <exclude>**/XCPD_PLQ.xsd</exclude>
-                <exclude>**/XDS.b_DocumentRepository.xsd</exclude>
-                <exclude>**/XDSI.b_ImagingDocumentSource.xsd</exclude>
-              </schemaExcludes>
-              <bindingDirectory>${basedir}/src/main/resources/iti/bindings</bindingDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <plugins>
-            <plugin>
-              <groupId>org.jvnet.jaxb2_commons</groupId>
-              <artifactId>jaxb2-fluent-api</artifactId>
-              <version>3.0</version>
-            </plugin>
-            <plugin>
-              <groupId>org.jvnet.jaxb2_commons</groupId>
-              <artifactId>jaxb2-commons-lang</artifactId>
-              <version>2.3</version>
-            </plugin>
-          </plugins>
-          <args>
-            <arg>-Xfluent-api</arg>
-            <arg>-Xcommons-lang</arg>
-            <arg>-npa</arg>
-          </args>
-        </configuration>
       </plugin>
     </plugins>
   </build>
