@@ -50,7 +50,7 @@ tasks.getByName("sourceJar").dependsOn(generateClients)
 sourceSets {
   main {
     java {
-      srcDir("target/generated-sources/cda")
+      srcDir("${layout.buildDirectory.get()}/generated-sources/cda")
       srcDir("target/generated-sources/ihe")
     }
   }
@@ -72,4 +72,39 @@ tasks.getByName<Jar>("sourceJar") {
 
 tasks.withType<Test>().configureEach {
   useJUnitPlatform()
+}
+
+val jaxb by configurations.creating
+
+dependencies {
+  jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
+  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
+  jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
+}
+
+tasks.register("generateCda", JavaExec::class) {
+  mainClass.set("com.sun.tools.xjc.Driver")
+  classpath = jaxb
+  args(
+    "-extension",
+    "-Xfluent-api",
+    "-Xcommons-lang",
+    "-d", "${layout.buildDirectory.get()}/generated-sources/cda",
+    "-b", "${layout.projectDirectory}/src/main/resources/cda/bindings/bind.xjb",
+    "-p", "com.github.rahulsom.cda",
+    "-quiet",
+    "${layout.projectDirectory}/src/main/resources/cda/infrastructure/cda"
+  )
+  doFirst {
+    file("${layout.buildDirectory.get()}/generated-sources/cda").mkdirs()
+  }
+  inputs.dir("src/main/resources/cda")
+  outputs.dir("${layout.buildDirectory.get()}/generated-sources/cda")
+}
+
+tasks.named("compileJava").configure {
+  dependsOn("generateCda")
+}
+tasks.named("sourceJar").configure {
+  dependsOn("generateCda")
 }

@@ -95,22 +95,6 @@
               <generateDirectory>${project.build.directory}/generated-sources/ihe</generateDirectory>
             </configuration>
           </execution>
-          <execution>
-            <id>cda</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <forceRegenerate>true</forceRegenerate>
-              <schemaDirectory>src/main/resources/cda/infrastructure/cda</schemaDirectory>
-              <schemaIncludes>
-                <include>**/*.xsd</include>
-              </schemaIncludes>
-              <bindingDirectory>${basedir}/src/main/resources/cda/bindings</bindingDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/cda</generateDirectory>
-              <generatePackage>com.github.rahulsom.cda</generatePackage>
-            </configuration>
-          </execution>
         </executions>
         <configuration>
           <plugins>
