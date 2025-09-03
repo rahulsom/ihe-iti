@@ -12,7 +12,7 @@ jobs:
   build:
     uses: rahulsom/_/.github/workflows/gradle.yml@main
     with:
-      java-version: 17
+      java-version: 21
     secrets:
       ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.ORG_GRADLE_PROJECT_sonatypeUsername }}
       ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.ORG_GRADLE_PROJECT_sonatypePassword }}
