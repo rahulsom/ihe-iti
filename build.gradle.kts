@@ -93,32 +93,42 @@ tasks.register("syncItiSchemas", Sync::class) {
   exclude("**/XDSI.b_ImagingDocumentSource.xsd")
 }
 
-val generateCode = tasks.register("generateCode") {
-    dependsOn("syncItiSchemas")
+abstract class GenerateCodeTask : DefaultTask() {
+    @get:InputDirectory
+    abstract val resourcesDir: DirectoryProperty
+    
+    @get:InputDirectory
+    abstract val itiSchemasDir: DirectoryProperty
+    
+    @get:OutputDirectory
+    abstract val cdaOutputDir: DirectoryProperty
+    
+    @get:OutputDirectory
+    abstract val iheOutputDir: DirectoryProperty
+    
+    @get:Classpath
+    abstract val jaxbClasspath: ConfigurableFileCollection
+    
+    @get:Inject
+    abstract val execOps: ExecOperations
 
-    val cdaOutputDir = layout.buildDirectory.dir("generated-sources/cda")
-    val iheOutputDir = layout.buildDirectory.dir("generated-sources/ihe")
-    val xjcCommonArgs = listOf("-extension", "-Xfluent-api", "-Xcommons-lang")
-
-    inputs.dir("src/main/resources")
-    inputs.dir(layout.buildDirectory.dir("iti-schemas"))
-    outputs.dir(cdaOutputDir)
-    outputs.dir(iheOutputDir)
-
-    doLast {
+    @TaskAction
+    fun generate() {
         cdaOutputDir.get().asFile.mkdirs()
         iheOutputDir.get().asFile.mkdirs()
 
+        val xjcCommonArgs = listOf("-extension", "-Xfluent-api", "-Xcommons-lang")
+
         // CDA
-        project.javaexec {
+        execOps.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
-            classpath = jaxb
+            classpath = jaxbClasspath
             args = xjcCommonArgs + listOf(
                 "-d", cdaOutputDir.get().asFile.absolutePath,
-                "-b", file("src/main/resources/cda/bindings/bind.xjb").absolutePath,
+                "-b", project.file("src/main/resources/cda/bindings/bind.xjb").absolutePath,
                 "-p", "com.github.rahulsom.cda",
                 "-quiet",
-                file("src/main/resources/cda/infrastructure/cda").absolutePath
+                project.file("src/main/resources/cda/infrastructure/cda").absolutePath
             )
         }
 
@@ -140,13 +150,13 @@ val generateCode = tasks.register("generateCode") {
             "XDS-I.b_ImagingDocumentSource.wsdl",
         )
         wsdlFiles.forEach { wsdlFile ->
-            project.javaexec {
+            execOps.javaexec {
                 mainClass.set("com.sun.tools.ws.WsImport")
-                classpath = jaxb
+                classpath = jaxbClasspath
                 systemProperty("javax.xml.accessExternalSchema", "all")
                 args(
-                    "-catalog", file("src/main/resources/ihe-iti.cat.xml").absolutePath,
-                    "-b", file("src/main/resources/iti/bindings/bind.xjb").absolutePath,
+                    "-catalog", project.file("src/main/resources/ihe-iti.cat.xml").absolutePath,
+                    "-b", project.file("src/main/resources/iti/bindings/bind.xjb").absolutePath,
                     "-extension",
                     "-B-Xfluent-api",
                     "-B-Xcommons-lang",
@@ -155,24 +165,34 @@ val generateCode = tasks.register("generateCode") {
                     "-keep",
                     "-quiet",
                     "-s", iheOutputDir.get().asFile.absolutePath,
-                    file("src/main/resources/iti/wsdl/$wsdlFile").absolutePath
+                    project.file("src/main/resources/iti/wsdl/$wsdlFile").absolutePath
                 )
             }
         }
 
         // ITI
-        project.javaexec {
+        execOps.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
-            classpath = jaxb
+            classpath = jaxbClasspath
             args = xjcCommonArgs + listOf(
                 "-npa",
                 "-d", iheOutputDir.get().asFile.absolutePath,
-                "-b", layout.buildDirectory.file("iti-schemas/iti/bindings/bind.xjb").get().asFile.absolutePath,
+                "-b", project.layout.buildDirectory.file("iti-schemas/iti/bindings/bind.xjb").get().asFile.absolutePath,
                 "-quiet",
-                layout.buildDirectory.dir("iti-schemas/iti/schema").get().asFile.absolutePath
+                project.layout.buildDirectory.dir("iti-schemas/iti/schema").get().asFile.absolutePath
             )
         }
     }
+}
+
+val generateCode = tasks.register<GenerateCodeTask>("generateCode") {
+    dependsOn("syncItiSchemas")
+    
+    resourcesDir.set(layout.projectDirectory.dir("src/main/resources"))
+    itiSchemasDir.set(layout.buildDirectory.dir("iti-schemas"))
+    cdaOutputDir.set(layout.buildDirectory.dir("generated-sources/cda"))
+    iheOutputDir.set(layout.buildDirectory.dir("generated-sources/ihe"))
+    jaxbClasspath.from(jaxb)
 }
 
 tasks.named("compileJava").configure {
