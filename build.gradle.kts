@@ -1,8 +1,8 @@
 plugins {
   id("java-library")
   id("groovy")
-  id("com.github.rahulsom.waena.root").version("0.6.1")
-  id("com.github.rahulsom.waena.published").version("0.6.1")
+  alias(libs.plugins.waena.root)
+  alias(libs.plugins.waena.published)
 }
 
 repositories {
@@ -12,28 +12,28 @@ repositories {
 val jaxb by configurations.creating
 
 dependencies {
-  jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
-  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
-  jaxb("com.sun.xml.bind:jaxb-xjc:4.0.5")
-  jaxb("jakarta.jws:jakarta.jws-api:3.0.0")
-  jaxb("com.sun.xml.ws:jaxws-tools:4.0.3")
+  jaxb(libs.jaxb.fluent.api)
+  jaxb(libs.jaxb.commons.lang)
+  jaxb(libs.jaxb.xjc)
+  jaxb(libs.jakarta.jws.api)
+  jaxb(libs.jaxws.tools)
 
-  api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
-  api("commons-lang:commons-lang:2.6")
-  api("com.sun.xml.bind:jaxb-impl:4.0.5")
+  api(libs.jaxb.basics.runtime)
+  api(libs.commons.lang)
+  api(libs.jaxb.impl)
 
-  compileOnly("jakarta.xml.bind:jakarta.xml.bind-api:4.0.2")
-  compileOnly("jakarta.xml.ws:jakarta.xml.ws-api:4.0.2")
+  compileOnly(libs.jakarta.xml.bind.api)
+  compileOnly(libs.jakarta.xml.ws.api)
 
-  testImplementation("junit:junit:4.13.2")
-  testImplementation("xmlunit:xmlunit:1.6")
-  testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
-  testImplementation("jakarta.xml.ws:jakarta.xml.ws-api:4.0.2")
-  testImplementation("com.sun.xml.ws:jaxws-rt:4.0.3")
-  testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.1.3")
-  testImplementation("org.apache.cxf:cxf-rt-transports-http:4.1.3")
-  testImplementation("org.eclipse.jetty:jetty-server:9.4.58.v20250814")
-  testImplementation("javax.servlet:javax.servlet-api:4.0.1")
+  testImplementation(libs.junit)
+  testImplementation(libs.xmlunit)
+  testImplementation(libs.spock.core)
+  testImplementation(libs.jakarta.xml.ws.api)
+  testImplementation(libs.jaxws.rt)
+  testImplementation(libs.cxf.rt.frontend.jaxws)
+  testImplementation(libs.cxf.rt.transports.http)
+  testImplementation(libs.jetty.server)
+  testImplementation(libs.servlet.api)
 }
 
 group = "com.github.rahulsom"
