@@ -4,9 +4,11 @@ import org.hl7.v3.*;
 
 import jakarta.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -81,33 +83,33 @@ public class ItiHelper {
   }
 
   public static PN pn(Collection<JAXBElement<? extends ENXP>> data) {
-    List arg = new ArrayList();
-    arg.addAll(data);
+    List<Serializable> arg = new ArrayList<>(data);
     return new PN().withContent(arg);
   }
 
   public static EN en(Collection<JAXBElement<? extends ENXP>> data) {
-    List arg = new ArrayList();
-    arg.addAll(data);
+    List<Serializable> arg = new ArrayList<>(data);
     return new EN().withContent(arg);
   }
 
   public static AD ad(Collection<JAXBElement<? extends ADXP>> data) {
-    List arg = new ArrayList();
-    arg.addAll(data);
+    List<Serializable> arg = new ArrayList<>(data);
     return new AD().withContent(arg);
   }
 
   public static PN pn(JAXBElement<? extends ENXP> ... data) {
-    return new PN().withContent(data);
+    List<Serializable> arg = new ArrayList<>(Arrays.asList(data));
+    return new PN().withContent(arg);
   }
 
   public static EN en(JAXBElement<? extends ENXP> ... data) {
-    return new EN().withContent(data);
+    List<Serializable> arg = new ArrayList<>(Arrays.asList(data));
+    return new EN().withContent(arg);
   }
 
   public static AD ad(JAXBElement<? extends ADXP> ... data) {
-    return new AD().withContent(data);
+    List<Serializable> arg = new ArrayList<>(Arrays.asList(data));
+    return new AD().withContent(arg);
   }
 
   public static class En {
