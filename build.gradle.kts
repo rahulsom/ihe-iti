@@ -21,7 +21,7 @@ dependencies {
   jaxb(libs.jaxws.tools)
 
   api(libs.jaxb.basics.runtime)
-  api(libs.commons.lang)
+  api(libs.commons.lang3)
   api(libs.jaxb.impl)
 
   compileOnly(libs.jakarta.xml.bind.api)
