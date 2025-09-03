@@ -104,7 +104,7 @@ val generateCode = tasks.register("generateCode") {
         iheOutputDir.get().asFile.mkdirs()
 
         // CDA
-        javaexec {
+        project.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
             classpath = jaxb
             args = xjcCommonArgs + listOf(
@@ -134,7 +134,7 @@ val generateCode = tasks.register("generateCode") {
             "XDS-I.b_ImagingDocumentSource.wsdl",
         )
         wsdlFiles.forEach { wsdlFile ->
-            javaexec {
+            project.javaexec {
                 mainClass.set("com.sun.tools.ws.WsImport")
                 classpath = jaxb
                 systemProperty("javax.xml.accessExternalSchema", "all")
@@ -155,7 +155,7 @@ val generateCode = tasks.register("generateCode") {
         }
 
         // ITI
-        javaexec {
+        project.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
             classpath = jaxb
             args = xjcCommonArgs + listOf(
