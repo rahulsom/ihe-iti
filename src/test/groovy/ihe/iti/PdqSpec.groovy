@@ -7,7 +7,7 @@ import org.hl7.v3.PN
 import org.hl7.v3.PRPAIN201306UV02
 import spock.lang.Specification
 
-import javax.xml.bind.JAXBElement
+import jakarta.xml.bind.JAXBElement
 
 
 /**

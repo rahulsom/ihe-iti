@@ -12,8 +12,8 @@ import org.custommonkey.xmlunit.Diff
 import org.custommonkey.xmlunit.Difference
 import org.hl7.v3.PRPAIN201306UV02
 
-import javax.xml.bind.JAXBContext
-import javax.xml.bind.JAXBElement
+import jakarta.xml.bind.JAXBContext
+import jakarta.xml.bind.JAXBElement
 import javax.xml.namespace.QName
 
 /**
