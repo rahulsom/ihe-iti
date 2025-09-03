@@ -11,8 +11,8 @@ import org.hl7.v3.*
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import javax.xml.bind.JAXBContext
-import javax.xml.bind.JAXBElement
+import jakarta.xml.bind.JAXBContext
+import jakarta.xml.bind.JAXBElement
 
 /**
  * Created by rahulsomasunderam on 2/27/14.

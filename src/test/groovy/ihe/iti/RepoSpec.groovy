@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServletResponse
 import spock.lang.Specification
 
 import ihe.iti.xds_b._2007.*
-import javax.xml.ws.*
-import javax.xml.ws.soap.*
+import jakarta.xml.ws.BindingProvider
+import jakarta.xml.ws.Service
+import jakarta.xml.ws.soap.MTOMFeature
 import java.nio.charset.Charset
 
 /**
@@ -45,8 +46,8 @@ class RepoSpec extends Specification {
     })
     server.start()
 
-    def wsdl = this.class.getResource('/iti/wsdl/XDS.b_DocumentRepository.wsdl')
-    Service service = new DocumentRepositoryService(wsdl)
+    def wsdl = new File('src/main/resources/iti/wsdl/XDS.b_DocumentRepository.wsdl')
+    Service service = new DocumentRepositoryService(wsdl.toURI().toURL())
     def port = service.getDocumentRepositoryPortSoap12(new MTOMFeature(true))
     BindingProvider bp = port
 

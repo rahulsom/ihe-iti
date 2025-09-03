@@ -2,7 +2,7 @@ package com.github.rahulsom.iheiti;
 
 import org.hl7.v3.*;
 
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;

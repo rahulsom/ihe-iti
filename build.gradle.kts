@@ -14,19 +14,22 @@ val jaxb by configurations.creating
 dependencies {
   jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
   jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
-  jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
-  jaxb("javax.jws:javax.jws-api:1.1")
-  jaxb("com.sun.xml.ws:jaxws-tools:2.3.7")
+  jaxb("com.sun.xml.bind:jaxb-xjc:4.0.5")
+  jaxb("jakarta.jws:jakarta.jws-api:3.0.0")
+  jaxb("com.sun.xml.ws:jaxws-tools:4.0.3")
 
   api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
   api("commons-lang:commons-lang:2.6")
+  api("com.sun.xml.bind:jaxb-impl:4.0.5")
 
-  compileOnly("javax.xml.bind:jaxb-api:2.3.1")
-  compileOnly("com.sun.xml.bind:jaxb-core:2.3.0.1")
+  compileOnly("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+  compileOnly("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
 
   testImplementation("junit:junit:4.13.2")
   testImplementation("xmlunit:xmlunit:1.6")
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
+  testImplementation("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
+  testImplementation("com.sun.xml.ws:jaxws-rt:4.0.3")
   testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.1.3")
   testImplementation("org.apache.cxf:cxf-rt-transports-http:4.1.3")
   testImplementation("org.eclipse.jetty:jetty-server:9.4.58.v20250814")
@@ -138,7 +141,7 @@ tasks.register("generateCode") {
                 classpath = jaxb
                 systemProperty("javax.xml.accessExternalSchema", "all")
                 args(
-                    "-catalog", file("src/main/resources/ihe-iti.cat").absolutePath,
+                    "-catalog", file("src/main/resources/ihe-iti.cat.xml").absolutePath,
                     "-b", file("src/main/resources/iti/bindings/bind.xjb").absolutePath,
                     "-extension",
                     "-B-Xfluent-api",
