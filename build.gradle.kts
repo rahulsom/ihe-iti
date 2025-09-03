@@ -50,7 +50,7 @@ sourceSets {
     java {
       srcDir("${layout.buildDirectory.get()}/generated-sources/cda")
       srcDir("${layout.buildDirectory.get()}/generated-sources/iti")
-      srcDir("target/generated-sources/ihe")
+      srcDir("${layout.buildDirectory.get()}/generated-sources/ihe")
     }
   }
 }
@@ -61,9 +61,7 @@ tasks.withType<Javadoc>().configureEach {
   }
 }
 
-tasks.getByName<Delete>("clean") {
-  delete.add("target")
-}
+
 
 tasks.getByName<Jar>("sourceJar") {
   exclude("**/sun-jaxb.episode")
@@ -88,95 +86,91 @@ tasks.register("syncItiSchemas", Sync::class) {
   exclude("**/XDSI.b_ImagingDocumentSource.xsd")
 }
 
-tasks.register("generateCda", JavaExec::class) {
-  mainClass.set("com.sun.tools.xjc.Driver")
-  classpath = jaxb
-  args(
-    "-extension",
-    "-Xfluent-api",
-    "-Xcommons-lang",
-    "-d", "${layout.buildDirectory.get()}/generated-sources/cda",
-    "-b", "${layout.projectDirectory}/src/main/resources/cda/bindings/bind.xjb",
-    "-p", "com.github.rahulsom.cda",
-    "-quiet",
-    "${layout.projectDirectory}/src/main/resources/cda/infrastructure/cda"
-  )
-  doFirst {
-    file("${layout.buildDirectory.get()}/generated-sources/cda").mkdirs()
-  }
-  inputs.dir("src/main/resources/cda")
-  outputs.dir("${layout.buildDirectory.get()}/generated-sources/cda")
-}
+tasks.register("generateCode") {
+    dependsOn("syncItiSchemas")
 
-tasks.register("generateIti", JavaExec::class) {
-  mainClass.set("com.sun.tools.xjc.Driver")
-  classpath = jaxb
-  args(
-    "-extension",
-    "-Xfluent-api",
-    "-Xcommons-lang",
-    "-npa",
-    "-d", "target/generated-sources/ihe",
-    "-b", "${layout.buildDirectory.get()}/iti-schemas/iti/bindings/bind.xjb",
-    "-quiet",
-    "${layout.buildDirectory.get()}/iti-schemas/iti/schema"
-  )
-  doFirst {
-    file("target/generated-sources/ihe").mkdirs()
-  }
-  inputs.dir("${layout.buildDirectory.get()}/iti-schemas")
-  outputs.dir("target/generated-sources/ihe")
-  dependsOn("syncItiSchemas", "generateWsdl")
-}
+    val cdaOutputDir = layout.buildDirectory.dir("generated-sources/cda")
+    val iheOutputDir = layout.buildDirectory.dir("generated-sources/ihe")
+    val xjcCommonArgs = listOf("-extension", "-Xfluent-api", "-Xcommons-lang")
 
-tasks.register("generateWsdl") {
-  val files = listOf(
-    "PDQSupplier.wsdl",
-    "PIXConsumer.wsdl",
-    "PIXManager.wsdl",
-    "RFDFormManager.wsdl",
-    "SVS_ValueSetRepository.wsdl",
-    "XCAInitiatingGatewayQuery.wsdl",
-    "XCAInitiatingGatewayRetrieve.wsdl",
-    "XCARespondingGatewayQuery.wsdl",
-    "XCARespondingGatewayRetrieve.wsdl",
-    "XCPDInitiatingGateway.wsdl",
-    "XCPDRespondingGateway.wsdl",
-    "XDS.b_DocumentRegistry.wsdl",
-    "XDS.b_DocumentRepository.wsdl",
-    "XDS-I.b_ImagingDocumentSource.wsdl",
-  )
+    inputs.dir("src/main/resources")
+    inputs.dir(layout.buildDirectory.dir("iti-schemas"))
+    outputs.dir(cdaOutputDir)
+    outputs.dir(iheOutputDir)
 
-  doLast {
-    file("target/generated-sources/ihe").mkdirs()
-    files.forEach {
-      javaexec {
-        mainClass.set("com.sun.tools.ws.WsImport")
-        classpath = jaxb
-        systemProperty("javax.xml.accessExternalSchema", "all")
-        args(
-          "-catalog", "src/main/resources/ihe-iti.cat",
-          "-b","src/main/resources/iti/bindings/bind.xjb",
-          "-extension",
-          "-B-Xfluent-api",
-          "-B-Xcommons-lang",
-          "-B-npa",
-          "-Xnocompile",
-          "-keep",
-          "-quiet",
-          "-s", "target/generated-sources/ihe",
-          "src/main/resources/iti/wsdl/$it"
+    doLast {
+        cdaOutputDir.get().asFile.mkdirs()
+        iheOutputDir.get().asFile.mkdirs()
+
+        // CDA
+        javaexec {
+            mainClass.set("com.sun.tools.xjc.Driver")
+            classpath = jaxb
+            args = xjcCommonArgs + listOf(
+                "-d", cdaOutputDir.get().asFile.absolutePath,
+                "-b", file("src/main/resources/cda/bindings/bind.xjb").absolutePath,
+                "-p", "com.github.rahulsom.cda",
+                "-quiet",
+                file("src/main/resources/cda/infrastructure/cda").absolutePath
+            )
+        }
+
+        // WSDL
+        val wsdlFiles = listOf(
+            "PDQSupplier.wsdl",
+            "PIXConsumer.wsdl",
+            "PIXManager.wsdl",
+            "RFDFormManager.wsdl",
+            "SVS_ValueSetRepository.wsdl",
+            "XCAInitiatingGatewayQuery.wsdl",
+            "XCAInitiatingGatewayRetrieve.wsdl",
+            "XCARespondingGatewayQuery.wsdl",
+            "XCARespondingGatewayRetrieve.wsdl",
+            "XCPDInitiatingGateway.wsdl",
+            "XCPDRespondingGateway.wsdl",
+            "XDS.b_DocumentRegistry.wsdl",
+            "XDS.b_DocumentRepository.wsdl",
+            "XDS-I.b_ImagingDocumentSource.wsdl",
         )
-      }
+        wsdlFiles.forEach { wsdlFile ->
+            javaexec {
+                mainClass.set("com.sun.tools.ws.WsImport")
+                classpath = jaxb
+                systemProperty("javax.xml.accessExternalSchema", "all")
+                args(
+                    "-catalog", file("src/main/resources/ihe-iti.cat").absolutePath,
+                    "-b", file("src/main/resources/iti/bindings/bind.xjb").absolutePath,
+                    "-extension",
+                    "-B-Xfluent-api",
+                    "-B-Xcommons-lang",
+                    "-B-npa",
+                    "-Xnocompile",
+                    "-keep",
+                    "-quiet",
+                    "-s", iheOutputDir.get().asFile.absolutePath,
+                    file("src/main/resources/iti/wsdl/$wsdlFile").absolutePath
+                )
+            }
+        }
+
+        // ITI
+        javaexec {
+            mainClass.set("com.sun.tools.xjc.Driver")
+            classpath = jaxb
+            args = xjcCommonArgs + listOf(
+                "-npa",
+                "-d", iheOutputDir.get().asFile.absolutePath,
+                "-b", layout.buildDirectory.file("iti-schemas/iti/bindings/bind.xjb").get().asFile.absolutePath,
+                "-quiet",
+                layout.buildDirectory.dir("iti-schemas/iti/schema").get().asFile.absolutePath
+            )
+        }
     }
-  }
-  inputs.dir("src/main/resources")
-  outputs.dir("target/generated-sources/ihe")
 }
 
 tasks.named("compileJava").configure {
-  dependsOn("generateCda", "generateIti")
+  dependsOn("generateCode")
 }
 tasks.named("sourceJar").configure {
-  dependsOn("generateCda", "generateIti")
+  dependsOn("generateCode")
 }
