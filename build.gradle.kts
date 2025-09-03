@@ -2,7 +2,6 @@ import com.github.rahulsom.waena.WaenaExtension
 
 plugins {
   id("java-library")
-  id("groovy")
   alias(libs.plugins.waena.root)
   alias(libs.plugins.waena.published)
 }
@@ -27,9 +26,10 @@ dependencies {
   compileOnly(libs.jakarta.xml.bind.api)
   compileOnly(libs.jakarta.xml.ws.api)
 
-  testImplementation(libs.junit)
+  testImplementation(platform(libs.junit.bom))
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.junit.params)
   testImplementation(libs.xmlunit)
-  testImplementation(libs.spock.core)
   testImplementation(libs.jakarta.xml.ws.api)
   testImplementation(libs.jaxws.rt)
   testImplementation(libs.cxf.rt.frontend.jaxws)

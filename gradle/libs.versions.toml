@@ -9,9 +9,8 @@ jaxb-fluent-api = "3.0"
 jaxb = "4.0.5"
 jaxws = "4.0.3"
 jetty = "9.4.58.v20250814"
-junit = "4.13.2"
+junit = "5.11.4"
 servlet-api = "4.0.1"
-spock = "2.3-groovy-4.0"
 waena = "0.12.0"
 xmlunit = "1.6"
 
@@ -30,9 +29,10 @@ jaxb-xjc = { module = "com.sun.xml.bind:jaxb-xjc", version.ref = "jaxb" }
 jaxws-rt = { module = "com.sun.xml.ws:jaxws-rt", version.ref = "jaxws" }
 jaxws-tools = { module = "com.sun.xml.ws:jaxws-tools", version.ref = "jaxws" }
 jetty-server = { module = "org.eclipse.jetty:jetty-server", version.ref = "jetty" }
-junit = { module = "junit:junit", version.ref = "junit" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params" }
 servlet-api = { module = "javax.servlet:javax.servlet-api", version.ref = "servlet-api" }
-spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
 xmlunit = { module = "xmlunit:xmlunit", version.ref = "xmlunit" }
 
 [plugins]
