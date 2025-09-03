@@ -14,7 +14,7 @@ val jaxb by configurations.creating
 dependencies {
   jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
   jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
-  jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
+  jaxb("com.sun.xml.bind:jaxb-xjc:4.0.5")
   jaxb("javax.jws:javax.jws-api:1.1")
   jaxb("com.sun.xml.ws:jaxws-tools:2.3.7")
 
@@ -22,7 +22,7 @@ dependencies {
   api("commons-lang:commons-lang:2.6")
 
   compileOnly("javax.xml.bind:jaxb-api:2.3.1")
-  compileOnly("com.sun.xml.bind:jaxb-core:2.3.0.1")
+  compileOnly("com.sun.xml.bind:jaxb-core:4.0.5")
 
   testImplementation("junit:junit:4.13.2")
   testImplementation("xmlunit:xmlunit:1.6")
