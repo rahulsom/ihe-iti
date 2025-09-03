@@ -23,12 +23,12 @@ dependencies {
   api("com.sun.xml.bind:jaxb-impl:4.0.5")
 
   compileOnly("jakarta.xml.bind:jakarta.xml.bind-api:4.0.2")
-  compileOnly("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
+  compileOnly("jakarta.xml.ws:jakarta.xml.ws-api:4.0.2")
 
   testImplementation("junit:junit:4.13.2")
   testImplementation("xmlunit:xmlunit:1.6")
   testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
-  testImplementation("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
+  testImplementation("jakarta.xml.ws:jakarta.xml.ws-api:4.0.2")
   testImplementation("com.sun.xml.ws:jaxws-rt:4.0.3")
   testImplementation("org.apache.cxf:cxf-rt-frontend-jaxws:4.1.3")
   testImplementation("org.apache.cxf:cxf-rt-transports-http:4.1.3")
