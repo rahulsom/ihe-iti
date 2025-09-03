@@ -66,10 +66,6 @@ tasks.withType<Javadoc>().configureEach {
 
 
 
-tasks.getByName<Jar>("sourceJar") {
-  exclude("**/sun-jaxb.episode")
-}
-
 tasks.withType<Test>().configureEach {
   useJUnitPlatform()
 }
@@ -89,7 +85,7 @@ tasks.register("syncItiSchemas", Sync::class) {
   exclude("**/XDSI.b_ImagingDocumentSource.xsd")
 }
 
-tasks.register("generateCode") {
+val generateCode = tasks.register("generateCode") {
     dependsOn("syncItiSchemas")
 
     val cdaOutputDir = layout.buildDirectory.dir("generated-sources/cda")
@@ -172,8 +168,8 @@ tasks.register("generateCode") {
 }
 
 tasks.named("compileJava").configure {
-  dependsOn("generateCode")
+  inputs.files(generateCode)
 }
-tasks.named("sourceJar").configure {
-  dependsOn("generateCode")
+tasks.named("sourcesJar").configure {
+  inputs.files(generateCode)
 }
