@@ -2,7 +2,7 @@ plugins {
   id("java-library")
   id("groovy")
   id("com.github.rahulsom.waena.root").version("0.6.1")
-  id("com.github.rahulsom.waena.published").version("0.6.1")
+  id("com.github.rahulsom.waena.published").version("0.15.1")
 }
 
 repositories {
