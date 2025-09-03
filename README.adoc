@@ -1,0 +1,76 @@
+= ihe-iti
+:package: com.github.rahulsom
+:package-path: com/github/rahulsom
+:package-path-encoded: com%2Fgithub%2Frahulsom
+:snapshot-prefix: image:https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2F{package-path-encoded}%2F
+:snapshot-middle: %2Fmaven-metadata.xml&style=for-the-badge&label=S[alt=Maven Snapshot,height=30,link="https://central.sonatype.com/repository/maven-snapshots/{package-path}/
+:snapshot-suffix: /maven-metadata.xml"]
+:central-prefix: image:https://img.shields.io/maven-central/v/{package}/
+:central-middle: ?style=for-the-badge&label=R&color=green[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/{package}/
+:central-suffix: /overview"]
+:deprecated-middle: ?style=for-the-badge&label=R&color=lightgrey[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/{package}/
+
+image:https://img.shields.io/github/commits-since/rahulsom/ihe-iti/latest?style=for-the-badge[GitHub commits since latest release, link="https://github.com/rahulsom/nothing/releases/new"]
+
+image::http://i.imgur.com/M6TjMim.jpg[Bender]
+
+== A better description
+
+IHE has a bunch of profiles as part of the IT Infrastructure (ITI) Framework.
+Like anything related to healthcare, it comes with its own quirks.
+Also given that these profiles use SOAP Web Services and use MTOM and JAXB doesn't like a lot of things that are being done here, any developer is likely to have a tough time dealing with these profiles.
+
+This project aims to make it easier for anyone who wants to work with these profiles.
+
+Currently this supports these services:
+
+* PIX, PDQ, XCPD
+* XDS.b (Repository/Registry), XCA (Initiating/Responding)
+* SVS Repository
+* RAD
+
+In Addition, it supports parsing of CDA Documents.
+Look at `com.github.rahulsom.cda.POCDMT000040ClinicalDocument`
+
+== Usage
+
+If you want to download the library from Maven Central, add this to your dependencies section:
+
+[source,kotlin]
+----
+dependencies {
+  implementation("com.github.rahulsom:ihe-iti:<VERSION>")
+}
+----
+
+=== Available versions
+
+{central-prefix}ihe-iti{central-middle}ihe-iti{central-suffix}
+{snapshot-prefix}ihe-iti{snapshot-middle}ihe-iti{snapshot-suffix}
+
+
+Alternately you can download and build this locally.
+This project is built using Gradle.
+Just clone the repo & checkout the branch, and run
+
+[source,shell]
+----
+./gradlew build
+----
+
+That should make it possible for you to use these classes.
+
+Sample code is link:http://rahulsom.github.io/ihe-iti/[here].
+
+== Contributing
+
+A lot of profiles are not being built because they haven't been tested.
+If you feel you need to use one of these, please feel free to modify the build configuration and send a pull request.
+
+Issue tracking is done through GitHub at https://github.com/rahulsom/ihe-iti/issues.
+Feel free to raise issues or fix open issues.
+
+== Questions & Discussion
+
+There's a Google Groups Mailing list at link:https://groups.google.com/d/forum/ihe-iti[ihe-iti].
+That's the best way to get answers.
