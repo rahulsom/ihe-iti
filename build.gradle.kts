@@ -13,7 +13,7 @@ val jaxb by configurations.creating
 
 dependencies {
   jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
-  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
+  jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.4")
   jaxb("com.sun.xml.bind:jaxb-xjc:4.0.5")
   jaxb("jakarta.jws:jakarta.jws-api:3.0.0")
   jaxb("com.sun.xml.ws:jaxws-tools:4.0.3")
