@@ -3,7 +3,6 @@ plugins {
   id("groovy")
   id("com.github.rahulsom.waena.root").version("0.6.1")
   id("com.github.rahulsom.waena.published").version("0.6.1")
-  id("com.github.dkorotych.gradle-maven-exec").version("3.0.2")
 }
 
 repositories {
@@ -16,6 +15,8 @@ dependencies {
   jaxb("org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0")
   jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
   jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
+  jaxb("javax.jws:javax.jws-api:1.1")
+  jaxb("com.sun.xml.ws:jaxws-tools:2.3.2")
 
   api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
   api("commons-lang:commons-lang:2.6")
@@ -43,17 +44,6 @@ configure<nebula.plugin.contacts.ContactsExtension> {
     github("https://github.com/rahulsom")
   })
 }
-
-val generateClients = tasks.create<com.github.dkorotych.gradle.maven.exec.MavenExec>("generateClients") {
-  goals("generate-sources")
-  inputs.dir("src/main/resources")
-  inputs.file("pom.xml")
-  inputs.file("maven/maven-wrapper.properties")
-  outputs.dir("target")
-}
-
-tasks.getByName("compileJava").dependsOn(generateClients)
-tasks.getByName("sourceJar").dependsOn(generateClients)
 
 sourceSets {
   main {
@@ -136,7 +126,52 @@ tasks.register("generateIti", JavaExec::class) {
   }
   inputs.dir("${layout.buildDirectory.get()}/iti-schemas")
   outputs.dir("target/generated-sources/ihe")
-  dependsOn("syncItiSchemas")
+  dependsOn("syncItiSchemas", "generateWsdl")
+}
+
+tasks.register("generateWsdl") {
+  val files = listOf(
+    "PDQSupplier.wsdl",
+    "PIXConsumer.wsdl",
+    "PIXManager.wsdl",
+    "RFDFormManager.wsdl",
+    "SVS_ValueSetRepository.wsdl",
+    "XCAInitiatingGatewayQuery.wsdl",
+    "XCAInitiatingGatewayRetrieve.wsdl",
+    "XCARespondingGatewayQuery.wsdl",
+    "XCARespondingGatewayRetrieve.wsdl",
+    "XCPDInitiatingGateway.wsdl",
+    "XCPDRespondingGateway.wsdl",
+    "XDS.b_DocumentRegistry.wsdl",
+    "XDS.b_DocumentRepository.wsdl",
+    "XDS-I.b_ImagingDocumentSource.wsdl",
+  )
+
+  doLast {
+    file("target/generated-sources/ihe").mkdirs()
+    files.forEach {
+      javaexec {
+        mainClass.set("com.sun.tools.ws.WsImport")
+        classpath = jaxb
+        systemProperty("javax.xml.accessExternalSchema", "all")
+        args(
+          "-catalog", "src/main/resources/ihe-iti.cat",
+          "-b","src/main/resources/iti/bindings/bind.xjb",
+          "-extension",
+          "-B-Xfluent-api",
+          "-B-Xcommons-lang",
+          "-B-npa",
+          "-Xnocompile",
+          "-keep",
+          "-quiet",
+          "-s", "target/generated-sources/ihe",
+          "src/main/resources/iti/wsdl/$it"
+        )
+      }
+    }
+  }
+  inputs.dir("src/main/resources")
+  outputs.dir("target/generated-sources/ihe")
 }
 
 tasks.named("compileJava").configure {
