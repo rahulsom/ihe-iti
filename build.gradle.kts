@@ -22,7 +22,7 @@ dependencies {
   api("commons-lang:commons-lang:2.6")
   api("com.sun.xml.bind:jaxb-impl:4.0.5")
 
-  compileOnly("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+  compileOnly("jakarta.xml.bind:jakarta.xml.bind-api:4.0.2")
   compileOnly("jakarta.xml.ws:jakarta.xml.ws-api:4.0.0")
 
   testImplementation("junit:junit:4.13.2")
