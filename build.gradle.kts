@@ -16,7 +16,7 @@ dependencies {
   jaxb("org.jvnet.jaxb2_commons:jaxb2-commons-lang:2.3")
   jaxb("com.sun.xml.bind:jaxb-xjc:2.3.9")
   jaxb("javax.jws:javax.jws-api:1.1")
-  jaxb("com.sun.xml.ws:jaxws-tools:2.3.2")
+  jaxb("com.sun.xml.ws:jaxws-tools:2.3.7")
 
   api("org.jvnet.jaxb2_commons:jaxb2-basics-runtime:2.0.12")
   api("commons-lang:commons-lang:2.6")
