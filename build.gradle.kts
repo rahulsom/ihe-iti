@@ -149,7 +149,7 @@ abstract class GenerateCodeTask : DefaultTask() {
             "XDS.b_DocumentRepository.wsdl",
             "XDS-I.b_ImagingDocumentSource.wsdl",
         )
-        wsdlFiles.forEach { wsdlFile ->
+        wsdlFiles.parallelStream().forEach { wsdlFile ->
             execOps.javaexec {
                 mainClass.set("com.sun.tools.ws.WsImport")
                 classpath = jaxbClasspath
