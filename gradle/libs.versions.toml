@@ -11,6 +11,7 @@ jaxws = "4.0.3"
 jetty = "9.4.58.v20250814"
 junit = "5.11.4"
 servlet-api = "4.0.1"
+testLogger = "4.0.0"
 waena = "0.12.0"
 xmlunit = "1.6"
 
@@ -36,5 +37,6 @@ servlet-api = { module = "javax.servlet:javax.servlet-api", version.ref = "servl
 xmlunit = { module = "xmlunit:xmlunit", version.ref = "xmlunit" }
 
 [plugins]
+testLogger = { id = "com.adarshr.test-logger", version.ref = "testLogger" }
 waena-published = { id = "com.github.rahulsom.waena.published", version.ref = "waena" }
 waena-root = { id = "com.github.rahulsom.waena.root", version.ref = "waena" }

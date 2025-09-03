@@ -1,9 +1,11 @@
 import com.github.rahulsom.waena.WaenaExtension
+import com.adarshr.gradle.testlogger.theme.ThemeType
 
 plugins {
   id("java-library")
   alias(libs.plugins.waena.root)
   alias(libs.plugins.waena.published)
+  alias(libs.plugins.testLogger)
 }
 
 java {
@@ -96,19 +98,19 @@ tasks.register("syncItiSchemas", Sync::class) {
 abstract class GenerateCodeTask : DefaultTask() {
     @get:InputDirectory
     abstract val resourcesDir: DirectoryProperty
-    
+
     @get:InputDirectory
     abstract val itiSchemasDir: DirectoryProperty
-    
+
     @get:OutputDirectory
     abstract val cdaOutputDir: DirectoryProperty
-    
+
     @get:OutputDirectory
     abstract val iheOutputDir: DirectoryProperty
-    
+
     @get:Classpath
     abstract val jaxbClasspath: ConfigurableFileCollection
-    
+
     @get:Inject
     abstract val execOps: ExecOperations
 
@@ -120,6 +122,7 @@ abstract class GenerateCodeTask : DefaultTask() {
         val xjcCommonArgs = listOf("-extension", "-Xfluent-api", "-Xcommons-lang")
 
         // CDA
+        print("Generating code from CDA schemas...")
         execOps.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
             classpath = jaxbClasspath
@@ -131,6 +134,7 @@ abstract class GenerateCodeTask : DefaultTask() {
                 project.file("src/main/resources/cda/infrastructure/cda").absolutePath
             )
         }
+        println("... Done.")
 
         // WSDL
         val wsdlFiles = listOf(
@@ -150,6 +154,7 @@ abstract class GenerateCodeTask : DefaultTask() {
             "XDS-I.b_ImagingDocumentSource.wsdl",
         )
         wsdlFiles.forEach { wsdlFile ->
+            print("Generating code from $wsdlFile ...")
             execOps.javaexec {
                 mainClass.set("com.sun.tools.ws.WsImport")
                 classpath = jaxbClasspath
@@ -168,9 +173,11 @@ abstract class GenerateCodeTask : DefaultTask() {
                     project.file("src/main/resources/iti/wsdl/$wsdlFile").absolutePath
                 )
             }
+            println("... Done.")
         }
 
         // ITI
+        print("Generating code from ITI schemas...")
         execOps.javaexec {
             mainClass.set("com.sun.tools.xjc.Driver")
             classpath = jaxbClasspath
@@ -182,12 +189,13 @@ abstract class GenerateCodeTask : DefaultTask() {
                 project.layout.buildDirectory.dir("iti-schemas/iti/schema").get().asFile.absolutePath
             )
         }
+        println("... Done.")
     }
 }
 
 val generateCode = tasks.register<GenerateCodeTask>("generateCode") {
     dependsOn("syncItiSchemas")
-    
+
     resourcesDir.set(layout.projectDirectory.dir("src/main/resources"))
     itiSchemasDir.set(layout.buildDirectory.dir("iti-schemas"))
     cdaOutputDir.set(layout.buildDirectory.dir("generated-sources/cda"))
@@ -205,4 +213,10 @@ tasks.named("sourcesJar").configure {
 waena {
   license.set(WaenaExtension.License.Apache2)
   publishMode.set(WaenaExtension.PublishMode.Central)
+}
+
+testlogger {
+  theme = if (System.getProperty("idea.active") == "true") ThemeType.PLAIN else ThemeType.MOCHA
+  slowThreshold = 5000
+
 }
