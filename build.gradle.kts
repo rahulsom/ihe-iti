@@ -1,3 +1,5 @@
+import com.github.rahulsom.waena.WaenaExtension
+
 plugins {
   id("java-library")
   id("groovy")
@@ -172,4 +174,9 @@ tasks.named("compileJava").configure {
 }
 tasks.named("sourcesJar").configure {
   inputs.files(generateCode)
+}
+
+waena {
+  license.set(WaenaExtension.License.Apache2)
+  publishMode.set(WaenaExtension.PublishMode.Central)
 }
