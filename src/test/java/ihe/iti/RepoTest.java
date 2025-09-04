@@ -2,7 +2,9 @@ package ihe.iti;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Request;
-import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.eclipse.jetty.server.Response;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.util.Callback;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,8 +13,6 @@ import ihe.iti.xds_b._2007.*;
 import jakarta.xml.ws.BindingProvider;
 import jakarta.xml.ws.Service;
 import jakarta.xml.ws.soap.MTOMFeature;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -38,24 +38,23 @@ class RepoTest {
     @Test
     void accessesExternalWebService() throws Exception {
         Server server = new Server(0); // Use any available port
-        server.setHandler(new AbstractHandler() {
+        server.setHandler(new Handler.Abstract() {
             @Override
-            public void handle(String target, Request baseRequest, HttpServletRequest httpRequest, 
-                             HttpServletResponse response) throws IOException {
-                if ("/xdsrepositoryb".equals(target)) {
+            public boolean handle(Request request, Response response, Callback callback) throws Exception {
+                if ("/xdsrepositoryb".equals(request.getHttpURI().getPath())) {
                     var responseText = loadResource("betamax/response.txt");
                     var bytes = responseText.getBytes(StandardCharsets.UTF_8);
-                    response.setContentType("multipart/related; type=\"application/xop+xml\"; " +
+                    response.getHeaders().put("Content-Type", "multipart/related; type=\"application/xop+xml\"; " +
                         "boundary=\"uuid:69897320-fe2e-4b04-94e2-1254ce1813c0\"; " +
                         "start=\"<root.message@cxf.apache.org>\"; " +
                         "start-info=\"application/soap+xml\";charset=UTF-8");
-                    response.setStatus(HttpServletResponse.SC_OK);
-                    response.setContentLength(bytes.length);
+                    response.setStatus(200);
+                    response.getHeaders().put("Content-Length", String.valueOf(bytes.length));
 
-                    response.getOutputStream().write(bytes);
-                    response.getOutputStream().close();
-                    baseRequest.setHandled(true);
+                    response.write(true, java.nio.ByteBuffer.wrap(bytes), callback);
+                    return true;
                 }
+                return false;
             }
         });
         server.start();
