@@ -37,6 +37,7 @@ dependencies {
   testImplementation(platform(libs.junit.bom))
   testImplementation(libs.junit.jupiter)
   testImplementation(libs.junit.params)
+  testRuntimeOnly("org.junit.platform:junit-platform-launcher")
   testImplementation(libs.xmlunit)
   testImplementation(libs.jakarta.xml.ws.api)
   testImplementation(libs.jaxws.rt)
