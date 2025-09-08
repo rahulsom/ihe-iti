@@ -50,7 +50,7 @@ dependencies {
 group = "com.github.rahulsom"
 description = "IHE ITI"
 
-configure<nebula.plugin.contacts.ContactsExtension> {
+contacts {
   validateEmails = true
   addPerson("rahulsom@noreply.github.com", delegateClosureOf<nebula.plugin.contacts.Contact> {
     moniker("Rahul Somasunderam")
