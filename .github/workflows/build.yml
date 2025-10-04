@@ -10,6 +10,8 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: read
     uses: rahulsom/_/.github/workflows/gradle.yml@main
     with:
       java-version: 21
