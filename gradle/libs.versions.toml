@@ -11,7 +11,7 @@ jaxb = "4.0.6"
 jaxws = "4.0.3"
 jetty = "12.1.4"
 junit = "6.0.1"
-servlet-api = "4.0.1"
+servlet-api = "6.1.0"
 testLogger = "4.0.0"
 waena = "0.20.0"
 xmlunit = "1.6"
@@ -34,7 +34,7 @@ jetty-server = { module = "org.eclipse.jetty:jetty-server", version.ref = "jetty
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
 junit-params = { module = "org.junit.jupiter:junit-jupiter-params" }
-servlet-api = { module = "javax.servlet:javax.servlet-api", version.ref = "servlet-api" }
+servlet-api = { module = "jakarta.servlet:jakarta.servlet-api", version.ref = "servlet-api" }
 xmlunit = { module = "xmlunit:xmlunit", version.ref = "xmlunit" }
 
 [plugins]
