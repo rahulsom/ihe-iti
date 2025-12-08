@@ -16,6 +16,9 @@ permissions:
 jobs:
   build:
     permissions:
+      actions: read
+      packages: read
+      security-events: write
       contents: read
     uses: rahulsom/_/.github/workflows/gradle.yml@main
     with:
