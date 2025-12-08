@@ -8,6 +8,11 @@ on:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
+permissions:
+  actions: read
+  packages: read
+  security-events: write
+
 jobs:
   build:
     permissions:
