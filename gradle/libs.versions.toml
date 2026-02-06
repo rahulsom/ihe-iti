@@ -2,7 +2,7 @@
 commons-lang3 = "3.20.0"
 cxf = "4.1.4"
 jakarta-jws-api = "3.0.0"
-jakarta-xml-bind = "4.0.4"
+jakarta-xml-bind = "4.0.5"
 jakarta-xml-ws = "4.0.2"
 jaxb-basics-runtime = "2.0.12"
 jaxb-commons-lang = "2.4"
