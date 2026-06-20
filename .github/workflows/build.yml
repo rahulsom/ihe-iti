@@ -10,14 +10,14 @@ on:
 
 permissions:
   actions: read
-  packages: read
+  packages: write
   security-events: write
 
 jobs:
   build:
     permissions:
       actions: read
-      packages: read
+      packages: write
       security-events: write
       contents: read
     uses: rahulsom/_/.github/workflows/gradle.yml@main
