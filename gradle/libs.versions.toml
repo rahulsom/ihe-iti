@@ -13,7 +13,7 @@ jetty = "12.1.10"
 junit = "6.1.0"
 servlet-api = "6.1.0"
 testLogger = "4.0.0"
-waena = "0.27.0"
+waena = "0.28.0"
 xmlunit = "1.6"
 
 [libraries]
