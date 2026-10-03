@@ -9,6 +9,11 @@
 :central-middle: ?style=for-the-badge&label=R&color=green[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/{package}/
 :central-suffix: /overview"]
 :deprecated-middle: ?style=for-the-badge&label=R&color=lightgrey[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/{package}/
+:icons: font
+
+IMPORTANT: It's been a very long time since I worked on Healthcare.
+I don't plan to maintain this project anymore.
+If you're interested in taking over, please fork and publish your copy.
 
 image:https://img.shields.io/github/commits-since/rahulsom/ihe-iti/latest?style=for-the-badge[GitHub commits since latest release, link="https://github.com/rahulsom/nothing/releases/new"]
 
